@@ -11,23 +11,31 @@ This library allows you to transmit and receive application protocol data units 
 Compilation of verified -
 Windows:
 MS Visual Studio 2015/Qt 5.7
+
 Qt Creator 4.1.0/Qt 5.7/mingw 5.3 32
+
 Linux (tested on SUSE Linux 14):
+
 Qt Creator 4.1.0/Qt 5.7/gcc 4
+
 
 # Project directory structure
 
 /windows/ contains the relevant windows project
+
 /windows/qwinscard/ contains the relevant Qt5 pro file, compatible with mingw32 compiler
 
 /linux/ contains the relevant linux version files (temporary only sources, without makefile or pro-file)
 
 # Requirements
 c++11 compiler (desirable с++14)
-Qt 5
-pcsc-lite library for linux/mac
-# Sample code
 
+Qt 5
+
+pcsc-lite library for linux/mac
+
+# Sample code
+<code>
 class QT_token_check : public QMainWindow
 {
 Q_OBJECT
@@ -47,7 +55,7 @@ private:
 QT_token_check::QT_token_check(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags)
 {
-	ui.setupUi(this);
+ ui.setupUi(this);
   //Establish context on smart card service
   CardWorkSpace->EstablishContext(Smartcards::User);
   //Connect signal on smartcards watcher

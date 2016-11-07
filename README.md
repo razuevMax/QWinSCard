@@ -35,7 +35,7 @@ Qt 5
 pcsc-lite library for linux/mac
 
 # Sample code
-<code>
+'''c++
 class QT_token_check : public QMainWindow
 {
 Q_OBJECT

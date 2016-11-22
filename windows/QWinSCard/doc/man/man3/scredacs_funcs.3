@@ -1,0 +1,207 @@
+.TH "scredacs_funcs" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scredacs_funcs \- Smart Card and Reader Access Functions
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual long \fBSmartcards::WinSCard::Connect\fP (const QString &Reader, \fBSHARE\fP ShareMode, \fBPROTOCOL\fP PreferredProtocols)"
+.br
+.RI "Establishes a connection between the calling application and a smart card contained by a specific reader\&. If no card exists in the specified reader, an exception is throwed else return SUCCESS\&. "
+.ti -1c
+.RI "virtual \fBPROTOCOL\fP \fBSmartcards::WinSCard::Reconnect\fP (\fBSHARE\fP ShareMode, \fBPROTOCOL\fP PreferredProtocols, \fBDISCONNECT\fP Initialization)"
+.br
+.RI "reestablishes an existing connection between the calling application and a smart card\&. This function moves a card handle from direct access to general access, or acknowledges and clears an error condition that is preventing further access to the card\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::Disconnect\fP (\fBDISCONNECT\fP Disposition)"
+.br
+.RI "Terminates a connection previously opened between the calling application and a smart card in the target reader\&. "
+.ti -1c
+.RI "virtual bool \fBSmartcards::WinSCard::isConnected\fP (void) const"
+.br
+.RI "Check is card connected\&. "
+.ti -1c
+.RI "virtual \fBAPDUResponse\fP \fBSmartcards::WinSCard::Transmit\fP (\fBAPDUCommand\fP ApduCmd)"
+.br
+.RI "Sends a service request to the smart card and expects to receive data back from the card\&. "
+.ti -1c
+.RI "virtual QByteArray \fBSmartcards::WinSCard::GetCardStatus\fP (DWORD &state, DWORD &protocol)"
+.br
+.RI "Gets card status(card state, card protocol and card ATR)\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::BeginTransaction\fP (void)"
+.br
+.RI "Begins a transaction\&. The function waits for the completion of all other transactions before it begins\&. After the transaction starts, all other applications are blocked from accessing the smart card while the transaction is in progress\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::EndTransaction\fP (\fBDISCONNECT\fP Disposition)"
+.br
+.RI "Completes a previously declared transaction, allowing other applications to resume interactions with the card\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "void Smartcards::WinSCard::BeginTransaction (void)\fC [virtual]\fP"
+
+.PP
+Begins a transaction\&. The function waits for the completion of all other transactions before it begins\&. After the transaction starts, all other applications are blocked from accessing the smart card while the transaction is in progress\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+
+.SS "long Smartcards::WinSCard::Connect (const QString & Reader, \fBSHARE\fP ShareMode, \fBPROTOCOL\fP PreferredProtocols)\fC [virtual]\fP"
+
+.PP
+Establishes a connection between the calling application and a smart card contained by a specific reader\&. If no card exists in the specified reader, an exception is throwed else return SUCCESS\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIReader\fP The reader name\&. 
+.br
+\fIShareMode\fP The share mode\&. 
+.br
+\fIPreferredProtocols\fP The preferred protocols\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A SUCCESS if successful\&. NO_SERVICE if context not valid\&. 
+.RE
+.PP
+
+.SS "void Smartcards::WinSCard::Disconnect (\fBDISCONNECT\fP Disposition)\fC [virtual]\fP"
+
+.PP
+Terminates a connection previously opened between the calling application and a smart card in the target reader\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+It requires that the context has been established 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDisposition\fP Action to take on the card in the connected reader on close\&. 
+.RE
+.PP
+
+.SS "void Smartcards::WinSCard::EndTransaction (\fBDISCONNECT\fP Disposition)\fC [virtual]\fP"
+
+.PP
+Completes a previously declared transaction, allowing other applications to resume interactions with the card\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDisposition\fP Action to take on the card in the connected reader on close\&. 
+.RE
+.PP
+
+.SS "QByteArray Smartcards::WinSCard::GetCardStatus (DWORD & state, DWORD & protocol)\fC [virtual]\fP"
+
+.PP
+Gets card status(card state, card protocol and card ATR)\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+It requires that the card has been connected 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstate\fP The card state\&. 
+.br
+\fIprotocol\fP The card protocol\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The card ATR\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::WinSCard::isConnected (void) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Check is card connected\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+True if it connected, false if it not\&. 
+.RE
+.PP
+
+.SS "\fBPROTOCOL\fP Smartcards::WinSCard::Reconnect (\fBSHARE\fP ShareMode, \fBPROTOCOL\fP PreferredProtocols, \fBDISCONNECT\fP Initialization)\fC [virtual]\fP"
+
+.PP
+reestablishes an existing connection between the calling application and a smart card\&. This function moves a card handle from direct access to general access, or acknowledges and clears an error condition that is preventing further access to the card\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIShareMode\fP Flag that indicates whether other applications may form connections to this card\&. 
+.br
+\fIPreferredProtocols\fP Bitmask of acceptable protocols for this connection\&. 
+.br
+\fIInitialization\fP Type of initialization that should be performed on the card\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Flag that indicates the established active protocol\&. 
+.RE
+.PP
+
+.SS "\fBAPDUResponse\fP Smartcards::WinSCard::Transmit (\fBAPDUCommand\fP ApduCmd)\fC [virtual]\fP"
+
+.PP
+Sends a service request to the smart card and expects to receive data back from the card\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIApduCmd\fP The apdu command\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An \fBAPDUResponse\fP\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

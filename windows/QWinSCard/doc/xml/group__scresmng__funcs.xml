@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__scresmng__funcs" kind="group">
+    <compoundname>scresmng_funcs</compoundname>
+    <title>Resource Manager Context Functions</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__scresmng__funcs_1ga42d6fa39463352c1ca9ab89ec7228b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::EstablishContext</definition>
+        <argsstring>(SCOPE Scope)</argsstring>
+        <name>EstablishContext</name>
+        <param>
+          <type><ref refid="namespace_smartcards_1a58ca156488c781fb42e2cf0a8b6bc34b" kindref="member">SCOPE</ref></type>
+          <declname>Scope</declname>
+        </param>
+        <briefdescription>
+<para>Establishes the resource manager context (the scope) within which database operations are performed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Scope</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scope of the resource manager context. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="484" column="1" bodyfile="NativeSCard.cpp" bodystart="515" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scresmng__funcs_1ga571ec5becfb8bbe104127c4337cc1262" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::isContextEstablished</definition>
+        <argsstring>(void) const</argsstring>
+        <name>isContextEstablished</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check is resource manager context is established. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if it established, false if it not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="488" column="1" bodyfile="NativeSCard.h" bodystart="488" bodyend="488"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scresmng__funcs_1ga1274ff604a3c2cae84a046bd94fe545c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::isContextValid</definition>
+        <argsstring>(void)</argsstring>
+        <name>isContextValid</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Query if resource manager context is valid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the context is valid, false if not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="493" column="1" bodyfile="NativeSCard.cpp" bodystart="525" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scresmng__funcs_1gae385b71f00634fe32921eb64af1b7b23" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ReleaseContext</definition>
+        <argsstring>(void)</argsstring>
+        <name>ReleaseContext</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Closes an established resource manager context, freeing any resources allocated under that context, including SCARDHANDLE objects and memory allocated using the AUTOALLOCATE length designator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="498" column="1" bodyfile="NativeSCard.cpp" bodystart="537" bodyend="546"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

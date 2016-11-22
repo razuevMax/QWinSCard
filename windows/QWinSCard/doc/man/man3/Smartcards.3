@@ -1,0 +1,434 @@
+.TH "Smartcards" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Smartcards \- Namespace of smartcard classes\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAPDUCommand\fP"
+.br
+.RI "This class represents the APDU command\&. "
+.ti -1c
+.RI "class \fBAPDUResponse\fP"
+.br
+.RI "This class represents the APDU response sent by the card\&. "
+.ti -1c
+.RI "class \fBCardEvent\fP"
+.br
+.RI "This class must implement a card detection mechanism\&. When card insertion is detected, it must send signal \fBcardInserted()\fP When card removal is detected, it must send signal \fBcardRemoved()\fP "
+.ti -1c
+.RI "class \fBReadersStates\fP"
+.br
+.RI "Interface class for Smart Card Tracking Functions\&. Contains readers states\&. "
+.ti -1c
+.RI "class \fBSCARD_ATTR_VALUE\fP"
+.br
+.RI "Values for AttrId of SCardGetAttrib\&. "
+.ti -1c
+.RI "class \fBWinSCard\fP"
+.br
+.RI "This class must implement a winscard api\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSCOPE\fP : DWORD { \fBUser\fP, \fBTerminal\fP, \fBSystem\fP }
+.RI "SCOPE context\&. ""
+.br
+.ti -1c
+.RI "enum \fBSHARE\fP : DWORD { \fBExclusive\fP = 1, \fBShared\fP, \fBDirect\fP }
+.RI "SHARE mode enumeration\&. ""
+.br
+.ti -1c
+.RI "enum \fBPROTOCOL\fP : DWORD { \fBUndefined\fP = 0x00000000, \fBT0\fP = 0x00000001, \fBT1\fP = 0x00000002, \fBT0orT1\fP = T0 | T1 }
+.RI "PROTOCOL enumeration\&. ""
+.br
+.ti -1c
+.RI "enum \fBDISCONNECT\fP : DWORD { \fBLeave\fP, \fBReset\fP, \fBUnpower\fP, \fBEject\fP }
+.RI "DISCONNECT action enumeration\&. ""
+.br
+.ti -1c
+.RI "enum \fBCARD_STATUS_STATE\fP : DWORD { \fBUnaware\fP = 0x00000000, \fBIgnore\fP = 0x00000001, \fBChanged\fP = 0x00000002, \fBUnknown\fP = 0x00000004, \fBUnvailable\fP = 0x00000008, \fBEmpty\fP = 0x00000010, \fBPresent\fP = 0x00000020, \fBATRMatch\fP = 0x00000040, \fBExclusiveStatus\fP = 0x00000080, \fBInUse\fP = 0x00000100, \fBMute\fP = 0x00000200, \fBUnpowered\fP = 0x00000400 }
+.RI "Card status enumeration, used by the class ReaderStates\&. ""
+.br
+.ti -1c
+.RI "enum \fBCARD_STATE\fP : DWORD { \fBAbsent\fP = SCARD_ABSENT, \fBPresentState\fP = SCARD_PRESENT, \fBSwallowed\fP = SCARD_SWALLOWED, \fBPowered\fP = SCARD_POWERED, \fBNegotable\fP = SCARD_NEGOTIABLE, \fBSpecific\fP = SCARD_SPECIFIC }
+.RI "Card state enumeration, used by the GetCardStatus function\&. ""
+.br
+.ti -1c
+.RI "enum \fBFACILITY_CODES\fP : DWORD { \fBSYSTEM_FACILITY\fP =FACILITY_NULL, \fBSCARD_FACILITY\fP =FACILITY_SCARD }
+.RI "An enumeration of the source of the error\&. New facilities are occasionally added by Microsoft\&. ""
+.br
+.ti -1c
+.RI "enum \fBERRCODES\fP : long { \fBSUCCESS\fP =SCARD_S_SUCCESS, \fBINTERNAL_ERROR\fP =SCARD_F_INTERNAL_ERROR, \fBCANCELLED\fP =SCARD_E_CANCELLED, \fBINVALID_HANDLE\fP =SCARD_E_INVALID_HANDLE, \fBINVALID_PARAMETER\fP =SCARD_E_INVALID_PARAMETER, \fBINVALID_TARGET\fP =SCARD_E_INVALID_TARGET, \fBNO_MEMORY\fP =SCARD_E_NO_MEMORY, \fBWAITED_TOO_LONG\fP =SCARD_F_WAITED_TOO_LONG, \fBINSUFFICIENT_BUFFER\fP =SCARD_E_INSUFFICIENT_BUFFER, \fBUNKNOWN_READER\fP =SCARD_E_UNKNOWN_READER, \fBTIMEOUT\fP =SCARD_E_TIMEOUT, \fBSHARING_VIOLATION\fP =SCARD_E_SHARING_VIOLATION, \fBNO_SMARTCARD\fP =SCARD_E_NO_SMARTCARD, \fBUNKNOWN_CARD\fP =SCARD_E_UNKNOWN_CARD, \fBCANT_DISPOSE\fP =SCARD_E_CANT_DISPOSE, \fBPROTO_MISMATCH\fP =SCARD_E_PROTO_MISMATCH, \fBNOT_READY\fP =SCARD_E_NOT_READY, \fBINVALID_VALUE\fP =SCARD_E_INVALID_VALUE, \fBSYSTEM_CANCELLED\fP =SCARD_E_SYSTEM_CANCELLED, \fBCOMM_ERROR\fP =SCARD_F_COMM_ERROR, \fBUNKNOWN_ERROR\fP =SCARD_F_UNKNOWN_ERROR, \fBINVALID_ATR\fP =SCARD_E_INVALID_ATR, \fBNOT_TRANSACTED\fP =SCARD_E_NOT_TRANSACTED, \fBREADER_UNAVAILABLE\fP =SCARD_E_READER_UNAVAILABLE, \fBSHUTDOWN\fP =SCARD_P_SHUTDOWN, \fBPCI_TOO_SMALL\fP =SCARD_E_PCI_TOO_SMALL, \fBREADER_UNSUPPORTED\fP =SCARD_E_READER_UNSUPPORTED, \fBDUPLICATE_READER\fP =SCARD_E_DUPLICATE_READER, \fBCARD_UNSUPPORTED\fP =SCARD_E_CARD_UNSUPPORTED, \fBNO_SERVICE\fP =SCARD_E_NO_SERVICE, \fBCARD_SERVICE_STOPPED\fP =SCARD_E_SERVICE_STOPPED, \fBUNEXPECTED\fP =SCARD_E_UNEXPECTED, \fBICC_INSTALLATION\fP =SCARD_E_ICC_INSTALLATION, \fBICC_CREATEORDER\fP =SCARD_E_ICC_CREATEORDER, \fBUNSUPPORTED_FEATURE\fP =SCARD_E_UNSUPPORTED_FEATURE, \fBDIR_NOT_FOUND\fP =SCARD_E_DIR_NOT_FOUND, \fBFILE_NOT_FOUND\fP =SCARD_E_FILE_NOT_FOUND, \fBNO_DIR\fP =SCARD_E_NO_DIR, \fBNO_FILE\fP =SCARD_E_NO_FILE, \fBNO_ACCESS\fP =SCARD_E_NO_ACCESS, \fBWRITE_TOO_MANY\fP =SCARD_E_WRITE_TOO_MANY, \fBBAD_SEEK\fP =SCARD_E_BAD_SEEK, \fBINVALID_CHV\fP =SCARD_E_INVALID_CHV, \fBUNKNOWN_RES_MNG\fP =SCARD_E_UNKNOWN_RES_MNG, \fBNO_SUCH_CERTIFICATE\fP =SCARD_E_NO_SUCH_CERTIFICATE, \fBCERTIFICATE_UNAVAILABLE\fP =SCARD_E_CERTIFICATE_UNAVAILABLE, \fBNO_READERS_AVAILABLE\fP =SCARD_E_NO_READERS_AVAILABLE, \fBCOMM_DATA_LOST\fP =SCARD_E_COMM_DATA_LOST, \fBNO_KEY_CONTAINER\fP =SCARD_E_NO_KEY_CONTAINER, \fBSERVER_TOO_BUSY\fP =SCARD_E_SERVER_TOO_BUSY, \fBUNSUPPORTED_CARD\fP =SCARD_W_UNSUPPORTED_CARD, \fBUNRESPONSIVE_CARD\fP =SCARD_W_UNRESPONSIVE_CARD, \fBUNPOWERED_CARD\fP =SCARD_W_UNPOWERED_CARD, \fBRESET_CARD\fP =SCARD_W_RESET_CARD, \fBREMOVED_CARD\fP =SCARD_W_REMOVED_CARD, \fBSECURITY_VIOLATION\fP =SCARD_W_SECURITY_VIOLATION, \fBWRONG_CHV\fP =SCARD_W_WRONG_CHV, \fBCHV_BLOCKED\fP =SCARD_W_CHV_BLOCKED, \fBCARD_EOF\fP =SCARD_W_EOF, \fBCANCELLED_BY_USER\fP =SCARD_W_CANCELLED_BY_USER, \fBCARD_NOT_AUTHENTICATED\fP =SCARD_W_CARD_NOT_AUTHENTICATED, \fBCACHE_ITEM_NOT_FOUND\fP =SCARD_W_CACHE_ITEM_NOT_FOUND, \fBCACHE_ITEM_STALE\fP =SCARD_W_CACHE_ITEM_STALE, \fBSYSTEM_INVALID_HANDLE\fP = ERROR_INVALID_HANDLE, \fBSYSTEM_NOT_SUPPORTED\fP = ERROR_NOT_SUPPORTED }
+.RI "An enumeration of the winscard error codes\&. ""
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Namespace of smartcard classes\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSmartcards::CARD_STATE\fP : DWORD"
+
+.PP
+Card state enumeration, used by the GetCardStatus function\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAbsent \fP\fP
+There is no card in the reader\&. 
+.TP
+\fB\fIPresentState \fP\fP
+There is a card in the reader, but it has not been moved into position for use\&. 
+.TP
+\fB\fISwallowed \fP\fP
+There is a card in the reader in position for use\&. The card is not powered\&. 
+.TP
+\fB\fIPowered \fP\fP
+Power is being provided to the card, but the reader driver is unaware of the mode of the card\&. 
+.TP
+\fB\fINegotable \fP\fP
+The card has been reset and is awaiting PTS negotiation\&. 
+.TP
+\fB\fISpecific \fP\fP
+The card has been reset and specific communication protocols have been established\&. 
+.SS "enum \fBSmartcards::CARD_STATUS_STATE\fP : DWORD"
+
+.PP
+Card status enumeration, used by the class ReaderStates\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUnaware \fP\fP
+The application is unaware of the current state, and would like to know\&. The use of this value results in an immediate return from state transition monitoring services\&. This is represented by all bits set to zero\&. 
+.TP
+\fB\fIIgnore \fP\fP
+The application is not interested in this reader, and it should not be considered during monitoring operations\&. If this bit value is set, all other bits are ignored\&. 
+.TP
+\fB\fIChanged \fP\fP
+State is changed\&. 
+.TP
+\fB\fIUnknown \fP\fP
+State is unknow\&. 
+.TP
+\fB\fIUnvailable \fP\fP
+The application expects that this reader is not available for use\&. If this bit is set, then all the following bits are ignored\&. 
+.TP
+\fB\fIEmpty \fP\fP
+The application expects that there is no card in the reader\&. If this bit is set, all the following bits are ignored\&. 
+.TP
+\fB\fIPresent \fP\fP
+The application expects that there is a card in the reader\&. 
+.TP
+\fB\fIATRMatch \fP\fP
+The application expects that there is a card in the reader with an ATR that matches one of the target cards\&. If this bit is set, 'Present' is assumed\&. This bit has no meaning to SCardGetStatusChange beyond 'Present'\&. 
+.TP
+\fB\fIExclusiveStatus \fP\fP
+he application expects that the card in the reader is allocated for exclusive use by another application\&. If this bit is set, 'Present' is assumed\&. 
+.TP
+\fB\fIInUse \fP\fP
+The application expects that the card in the reader is in use by one or more other applications, but may be connected to in shared mode\&. If this bit is set, 'Present' is assumed\&. 
+.TP
+\fB\fIMute \fP\fP
+The application expects that there is an unresponsive card in the reader\&. 
+.TP
+\fB\fIUnpowered \fP\fP
+Card is unpowered\&. 
+.SS "enum \fBSmartcards::DISCONNECT\fP : DWORD"
+
+.PP
+DISCONNECT action enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILeave \fP\fP
+Don't do anything special on close\&. 
+.TP
+\fB\fIReset \fP\fP
+Reset the card on close\&. 
+.TP
+\fB\fIUnpower \fP\fP
+Power down the card on close\&. 
+.TP
+\fB\fIEject \fP\fP
+Eject the card on close\&. 
+.SS "enum \fBSmartcards::ERRCODES\fP : long"
+
+.PP
+An enumeration of the winscard error codes\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISUCCESS \fP\fP
+Success or no error\&. 
+.TP
+\fB\fIINTERNAL_ERROR \fP\fP
+Internal error\&.(0x80100001) 
+.TP
+\fB\fICANCELLED \fP\fP
+The action was canceled by an SCardCancel request\&.(0x80100002) 
+.TP
+\fB\fIINVALID_HANDLE \fP\fP
+The supplied handle was not valid\&.(0x80100003) 
+.TP
+\fB\fIINVALID_PARAMETER \fP\fP
+One or more of the supplied parameters could not be properly interpreted\&.(0x80100004) 
+.TP
+\fB\fIINVALID_TARGET \fP\fP
+Registry startup information is missing or not valid\&.(0x80100005) 
+.TP
+\fB\fINO_MEMORY \fP\fP
+Not enough memory available to complete this command\&.(0x80100006) 
+.TP
+\fB\fIWAITED_TOO_LONG \fP\fP
+An internal consistency timer has expired\&.(0x80100007) 
+.TP
+\fB\fIINSUFFICIENT_BUFFER \fP\fP
+The data buffer for returned data is too small for the returned data\&.(0x80100008) 
+.TP
+\fB\fIUNKNOWN_READER \fP\fP
+The specified reader name is not recognized\&.(0x80100009) 
+.TP
+\fB\fITIMEOUT \fP\fP
+The user-specified time-out value has expired\&.(0x8010000A) 
+.TP
+\fB\fISHARING_VIOLATION \fP\fP
+The smart card cannot be accessed because of other outstanding connections\&.(0x8010000B) 
+.TP
+\fB\fINO_SMARTCARD \fP\fP
+The operation requires a smart card, but no smart card is currently in the device\&.(0x8010000C) 
+.TP
+\fB\fIUNKNOWN_CARD \fP\fP
+The specified smart card name is not recognized\&.(0x8010000D) 
+.TP
+\fB\fICANT_DISPOSE \fP\fP
+The system could not dispose of the media in the requested manner\&.(0x8010000E) 
+.TP
+\fB\fIPROTO_MISMATCH \fP\fP
+The requested protocols are incompatible with the protocol currently in use with the card\&.(0x8010000F) 
+.TP
+\fB\fINOT_READY \fP\fP
+The reader or card is not ready to accept commands\&.(0x80100010) 
+.TP
+\fB\fIINVALID_VALUE \fP\fP
+One or more of the supplied parameter values could not be properly interpreted\&.(0x80100011) 
+.TP
+\fB\fISYSTEM_CANCELLED \fP\fP
+The action was canceled by the system, presumably to log off or shut down\&.(0x80100012) 
+.TP
+\fB\fICOMM_ERROR \fP\fP
+An internal communications error has been detected\&.(0x80100013) 
+.TP
+\fB\fIUNKNOWN_ERROR \fP\fP
+An internal error has been detected, but the source is unknown\&.(0x80100014) 
+.TP
+\fB\fIINVALID_ATR \fP\fP
+An ATR string obtained from the registry is not a valid ATR string\&.(0x80100015) 
+.TP
+\fB\fINOT_TRANSACTED \fP\fP
+An attempt was made to end a nonexistent transaction\&.(0x80100016) 
+.TP
+\fB\fIREADER_UNAVAILABLE \fP\fP
+The specified reader is not currently available for use\&.(0x80100017) 
+.TP
+\fB\fISHUTDOWN \fP\fP
+The operation has been aborted to allow the server application to exit\&.(0x80100018) 
+.TP
+\fB\fIPCI_TOO_SMALL \fP\fP
+The PCI receive buffer was too small\&.(0x80100019) 
+.TP
+\fB\fIREADER_UNSUPPORTED \fP\fP
+The reader driver does not meet minimal requirements for support\&.(0x8010001A) 
+.TP
+\fB\fIDUPLICATE_READER \fP\fP
+The reader driver did not produce a unique reader name\&.(0x8010001B) 
+.TP
+\fB\fICARD_UNSUPPORTED \fP\fP
+The smart card does not meet minimal requirements for support\&.(0x8010001C) 
+.TP
+\fB\fINO_SERVICE \fP\fP
+The Smart Card Resource Manager is not running\&.(0x8010001D) 
+.TP
+\fB\fICARD_SERVICE_STOPPED \fP\fP
+The Smart Card Resource Manager has shut down\&.(0x8010001E) 
+.TP
+\fB\fIUNEXPECTED \fP\fP
+An unexpected card error has occurred\&.(0x8010001F) 
+.TP
+\fB\fIICC_INSTALLATION \fP\fP
+No primary provider can be found for the smart card\&.(0x80100020) 
+.TP
+\fB\fIICC_CREATEORDER \fP\fP
+The requested order of object creation is not supported\&.(0x80100021) 
+.TP
+\fB\fIUNSUPPORTED_FEATURE \fP\fP
+This smart card does not support the requested feature\&.(0x80100022) 
+.TP
+\fB\fIDIR_NOT_FOUND \fP\fP
+The specified directory does not exist in the smart card\&.(0x80100023) 
+.TP
+\fB\fIFILE_NOT_FOUND \fP\fP
+The specified file does not exist in the smart card\&.(0x80100024) 
+.TP
+\fB\fINO_DIR \fP\fP
+The supplied path does not represent a smart card directory\&.(0x80100025) 
+.TP
+\fB\fINO_FILE \fP\fP
+The supplied path does not represent a smart card file\&.(0x80100026) 
+.TP
+\fB\fINO_ACCESS \fP\fP
+Access is denied to the file\&.(0x80100027) 
+.TP
+\fB\fIWRITE_TOO_MANY \fP\fP
+An attempt was made to write more data than would fit in the target object\&.(0x80100028) 
+.TP
+\fB\fIBAD_SEEK \fP\fP
+An error occurred in setting the smart card file object pointer\&.(0x80100029) 
+.TP
+\fB\fIINVALID_CHV \fP\fP
+The supplied PIN is incorrect\&.(0x8010002A) 
+.TP
+\fB\fIUNKNOWN_RES_MNG \fP\fP
+An unrecognized error code was returned\&.(0x8010002B) 
+.TP
+\fB\fINO_SUCH_CERTIFICATE \fP\fP
+The requested certificate does not exist\&.(0x8010002C) 
+.TP
+\fB\fICERTIFICATE_UNAVAILABLE \fP\fP
+The requested certificate could not be obtained\&.(0x8010002D) 
+.TP
+\fB\fINO_READERS_AVAILABLE \fP\fP
+Cannot find a smart card reader\&.(0x8010002E) 
+.TP
+\fB\fICOMM_DATA_LOST \fP\fP
+A communications error with the smart card has been detected\&.(0x8010002F) 
+.TP
+\fB\fINO_KEY_CONTAINER \fP\fP
+The requested key container does not exist on the smart card\&.(0x80100030) 
+.TP
+\fB\fISERVER_TOO_BUSY \fP\fP
+The Smart Card Resource Manager is too busy to complete this operation\&.(0x80100031) 
+.TP
+\fB\fIUNSUPPORTED_CARD \fP\fP
+The reader cannot communicate with the card, due to ATR string configuration conflicts\&.(0x80100065) 
+.TP
+\fB\fIUNRESPONSIVE_CARD \fP\fP
+The smart card is not responding to a reset\&.(0x80100066) 
+.TP
+\fB\fIUNPOWERED_CARD \fP\fP
+Power has been removed from the smart card, so that further communication is not possible\&.(0x80100067) 
+.TP
+\fB\fIRESET_CARD \fP\fP
+The smart card was reset\&.(0x80100068) 
+.TP
+\fB\fIREMOVED_CARD \fP\fP
+The smart card has been removed, so further communication is not possible\&.(0x80100069) 
+.TP
+\fB\fISECURITY_VIOLATION \fP\fP
+Access was denied because of a security violation\&.(0x8010006A) 
+.TP
+\fB\fIWRONG_CHV \fP\fP
+The card cannot be accessed because the wrong PIN was presented\&.(0x8010006B) 
+.TP
+\fB\fICHV_BLOCKED \fP\fP
+The card cannot be accessed because the maximum number of PIN entry attempts has been reached\&.(0x8010006C) 
+.TP
+\fB\fICARD_EOF \fP\fP
+The end of the smart card file has been reached\&.(0x8010006D) 
+.TP
+\fB\fICANCELLED_BY_USER \fP\fP
+The action was canceled by the user\&.(0x8010006E) 
+.TP
+\fB\fICARD_NOT_AUTHENTICATED \fP\fP
+No PIN was presented to the smart card\&.(0x8010006F) 
+.TP
+\fB\fICACHE_ITEM_NOT_FOUND \fP\fP
+The requested item could not be found in the cache\&.(0x80100070) 
+.TP
+\fB\fICACHE_ITEM_STALE \fP\fP
+The requested cache item is too old and was deleted from the cache\&.(0x80100071) 
+.TP
+\fB\fISYSTEM_INVALID_HANDLE \fP\fP
+System error\&. Invalid handle\&.(0x6) 
+.TP
+\fB\fISYSTEM_NOT_SUPPORTED \fP\fP
+System error\&. The request is not supported\&.(0x80070032) 
+.SS "enum \fBSmartcards::FACILITY_CODES\fP : DWORD"
+
+.PP
+An enumeration of the source of the error\&. New facilities are occasionally added by Microsoft\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISYSTEM_FACILITY \fP\fP
+Default system facility\&. 
+.TP
+\fB\fISCARD_FACILITY \fP\fP
+Smart card facility\&. 
+.SS "enum \fBSmartcards::PROTOCOL\fP : DWORD"
+
+.PP
+PROTOCOL enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUndefined \fP\fP
+There is no active protocol\&. 
+.TP
+\fB\fIT0 \fP\fP
+T=0 is the active protocol\&. 
+.TP
+\fB\fIT1 \fP\fP
+T=1 is the active protocol\&. 
+.TP
+\fB\fIT0orT1 \fP\fP
+T=1 or T=0 can be the active protocol\&. 
+.SS "enum \fBSmartcards::SCOPE\fP : DWORD"
+
+.PP
+SCOPE context\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUser \fP\fP
+The context is a user context, and any database operations are performed within the domain of the user\&. 
+.TP
+\fB\fITerminal \fP\fP
+The context is that of the current terminal, and any database operations are performed within the domain of that terminal\&. (The calling application must have appropriate access permissions for any database actions\&.) 
+.TP
+\fB\fISystem \fP\fP
+The context is the system context, and any database operations are performed within the domain of the system\&. (The calling application must have appropriate access permissions for any database actions\&.) 
+.SS "enum \fBSmartcards::SHARE\fP : DWORD"
+
+.PP
+SHARE mode enumeration\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIExclusive \fP\fP
+This application is not willing to share this card with other applications\&. 
+.TP
+\fB\fIShared \fP\fP
+This application is willing to share this card with other applications\&. 
+.TP
+\fB\fIDirect \fP\fP
+This application demands direct control of the reader, so it is not available to other applications\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

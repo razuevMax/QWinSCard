@@ -1,0 +1,153 @@
+.TH "scdacs_funcs" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scdacs_funcs \- Direct Card Access Functions
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QByteArray \fBSmartcards::WinSCard::GetAttribute\fP (DWORD AttribId)"
+.br
+.RI "Retrieves the current reader attributes for the given handle\&. It does not affect the state of the reader, driver, or card\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::SetAttribute\fP (DWORD AttribId, const QByteArray &attr)"
+.br
+.RI "Sets the given reader attribute for the given handle\&. It does not affect the state of the reader, reader driver, or smart card\&. Not all attributes are supported by all readers (nor can they be set at all times) as many of the attributes are under direct control of the transport protocol\&. "
+.ti -1c
+.RI "virtual bool \fBSmartcards::WinSCard::CardControl\fP (DWORD controlCode, const QByteArray &inData, QByteArray &outData)"
+.br
+.RI "Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. "
+.ti -1c
+.RI "virtual bool \fBSmartcards::WinSCard::CardControl\fP (DWORD controlCode, const QByteArray &inData)"
+.br
+.RI "Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. Only inData version\&. "
+.ti -1c
+.RI "virtual DWORD \fBSmartcards::WinSCard::CardControl\fP (DWORD controlCode, LPVOID pInData, DWORD cInData, LPVOID pOutData, DWORD cOutData)"
+.br
+.RI "Direct pointer version\&. Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "bool Smartcards::WinSCard::CardControl (DWORD controlCode, const QByteArray & inData, QByteArray & outData)\fC [virtual]\fP"
+
+.PP
+Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontrolCode\fP Control code for the operation\&. This value identifies the specific operation to be performed\&. 
+.br
+\fIinData\fP Byte array that contains the data required to perform the operation\&. Not empty\&. 
+.br
+\fIoutData\fP Byte array that receives the operation's output data\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if it succeeds, false if it fails\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::WinSCard::CardControl (DWORD controlCode, const QByteArray & inData)\fC [virtual]\fP"
+
+.PP
+Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. Only inData version\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontrolCode\fP Control code for the operation\&. This value identifies the specific operation to be performed\&. 
+.br
+\fIinData\fP Byte array that contains the data required to perform the operation\&. Not empty\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if it succeeds, false if it fails\&. 
+.RE
+.PP
+
+.SS "DWORD Smartcards::WinSCard::CardControl (DWORD controlCode, LPVOID pInData, DWORD cInData, LPVOID pOutData, DWORD cOutData)\fC [virtual]\fP"
+
+.PP
+Direct pointer version\&. Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontrolCode\fP Control code for the operation\&. This value identifies the specific operation to be performed\&. 
+.br
+\fIpInData\fP Pointer to a buffer that contains the data required to perform the operation\&. This parameter can be NULL if the controlCode parameter specifies an operation that does not require input data\&. 
+.br
+\fIcInData\fP Size, in bytes, of the buffer pointed to by pInData\&. 
+.br
+\fIpOutData\fP Pointer to a buffer that receives the operation's output data\&. This parameter can be NULL if the controlCode parameter specifies an operation that does not produce output data\&. 
+.br
+\fIcOutData\fP Size, in bytes, of the buffer pointed to by pOutData\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A DWORD that receives the size, in bytes, of the data stored into the buffer pointed to by pOutData\&. 
+.RE
+.PP
+
+.SS "QByteArray Smartcards::WinSCard::GetAttribute (DWORD AttribId)\fC [virtual]\fP"
+
+.PP
+Retrieves the current reader attributes for the given handle\&. It does not affect the state of the reader, driver, or card\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIAttribId\fP Identifier for the attribute\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The byte array of attribute data\&. 
+.RE
+.PP
+
+.SS "void Smartcards::WinSCard::SetAttribute (DWORD AttribId, const QByteArray & attr)\fC [virtual]\fP"
+
+.PP
+Sets the given reader attribute for the given handle\&. It does not affect the state of the reader, reader driver, or smart card\&. Not all attributes are supported by all readers (nor can they be set at all times) as many of the attributes are under direct control of the transport protocol\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIAttribId\fP Identifier for the attribute\&. 
+.br
+\fIattr\fP The byte array of attribute data\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

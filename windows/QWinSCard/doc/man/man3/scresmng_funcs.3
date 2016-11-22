@@ -1,0 +1,87 @@
+.TH "scresmng_funcs" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+scresmng_funcs \- Resource Manager Context Functions
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::EstablishContext\fP (\fBSCOPE\fP Scope)"
+.br
+.RI "Establishes the resource manager context (the scope) within which database operations are performed\&. "
+.ti -1c
+.RI "virtual bool \fBSmartcards::WinSCard::isContextEstablished\fP (void) const"
+.br
+.RI "Check is resource manager context is established\&. "
+.ti -1c
+.RI "virtual bool \fBSmartcards::WinSCard::isContextValid\fP (void)"
+.br
+.RI "Query if resource manager context is valid\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::ReleaseContext\fP (void)"
+.br
+.RI "Closes an established resource manager context, freeing any resources allocated under that context, including SCARDHANDLE objects and memory allocated using the AUTOALLOCATE length designator\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "void Smartcards::WinSCard::EstablishContext (\fBSCOPE\fP Scope)\fC [virtual]\fP"
+
+.PP
+Establishes the resource manager context (the scope) within which database operations are performed\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIScope\fP Scope of the resource manager context\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::WinSCard::isContextEstablished (void) const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Check is resource manager context is established\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+True if it established, false if it not\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::WinSCard::isContextValid (void)\fC [virtual]\fP"
+
+.PP
+Query if resource manager context is valid\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if the context is valid, false if not\&. 
+.RE
+.PP
+
+.SS "void Smartcards::WinSCard::ReleaseContext (void)\fC [virtual]\fP"
+
+.PP
+Closes an established resource manager context, freeing any resources allocated under that context, including SCARDHANDLE objects and memory allocated using the AUTOALLOCATE length designator\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

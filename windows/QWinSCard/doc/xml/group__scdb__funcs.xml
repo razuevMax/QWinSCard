@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__scdb__funcs" kind="group">
+    <compoundname>scdb_funcs</compoundname>
+    <title>Smart Card Database Query Functions</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__scdb__funcs_1gac8e342539bc123a0e6db2dbce9556246" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListReaders</definition>
+        <argsstring>(void)</argsstring>
+        <name>ListReaders</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get list readers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of readers names. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="362" column="1" bodyfile="NativeSCard.cpp" bodystart="209" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1gaaf3ddd48b72571923bc898496708a105" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListReaderGroups</definition>
+        <argsstring>(void)</argsstring>
+        <name>ListReaderGroups</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get list reader groups. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of reader groups. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="367" column="1" bodyfile="NativeSCard.cpp" bodystart="243" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1gad62414ad4962122919e2ee4045499da7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QUuid</type>
+        <definition>QUuid Smartcards::WinSCard::GetProviderId</definition>
+        <argsstring>(const QString &amp;cardName)</argsstring>
+        <name>GetProviderId</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Gets provider GUID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The provider GUID. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="373" column="1" bodyfile="NativeSCard.cpp" bodystart="276" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga3ae8a3c90f341b0e761107ddf895f60c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(const QByteArray &amp;cardAtr, const QVector&lt; QUuid &gt; &amp;guidInterfaces)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. Match ATR an support the interfaces specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier interfaces. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of cards names. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="380" column="1" bodyfile="NativeSCard.cpp" bodystart="292" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1gaac93a4ed5397bd44d3cd38d5bc83ee27" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(const QVector&lt; QUuid &gt; &amp;guidInterfaces)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. Search for interfaces specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier interfaces. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of cards names </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="386" column="1" bodyfile="NativeSCard.cpp" bodystart="328" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga1562b9e4a8c0b9de73dfcd4a81c09f4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(const QByteArray &amp;cardAtr)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. Match for ATR. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card atr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of cards names </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="392" column="1" bodyfile="NativeSCard.cpp" bodystart="340" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga3b6dad8b1127ce71ea9d25ee6d7ac7a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(void)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A list of cards names </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="396" column="1" bodyfile="NativeSCard.cpp" bodystart="352" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga8f2118117ca9e836e6abe082f36360f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QVector&lt; QUuid &gt;</type>
+        <definition>QVector&lt; QUuid &gt; Smartcards::WinSCard::ListInterfaces</definition>
+        <argsstring>(const QString &amp;cardName)</argsstring>
+        <name>ListInterfaces</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Provides a list of interfaces supplied by a given card. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of interfaces supported by the card </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="403" column="1" bodyfile="NativeSCard.cpp" bodystart="357" bodyend="380"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

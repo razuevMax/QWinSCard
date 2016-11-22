@@ -1,0 +1,930 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="_native_s_card_8cpp" kind="file" language="C++">
+    <compoundname>NativeSCard.cpp</compoundname>
+    <includes local="no">QtCore/QVector</includes>
+    <includes local="no">winscard.h</includes>
+    <includes refid="_native_s_card_8h" local="yes">NativeSCard.h</includes>
+    <includes refid="scardexception_8h" local="yes">scardexception.h</includes>
+    <incdepgraph>
+      <node id="85">
+        <label>scardexception.h</label>
+        <link refid="scardexception_8h"/>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>NativeSCard.h</label>
+        <link refid="_native_s_card_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>baseexceptions.h</label>
+        <link refid="baseexceptions_8h"/>
+        <childnode refid="87" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>NativeSCard.cpp</label>
+        <link refid="_native_s_card_8cpp"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>APDUCommand.h</label>
+        <link refid="_a_p_d_u_command_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>QByteArray</label>
+      </node>
+      <node id="77">
+        <label>APDUResponse.h</label>
+        <link refid="_a_p_d_u_response_8h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>QtCore/QVector</label>
+      </node>
+      <node id="75">
+        <label>winscard.h</label>
+      </node>
+      <node id="81">
+        <label>WinSCardErr.h</label>
+        <link refid="winscarderr_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>stdexcpt.h</label>
+      </node>
+      <node id="80">
+        <label>QtCore/QByteArray</label>
+      </node>
+      <node id="82">
+        <label>winerror.h</label>
+      </node>
+      <node id="84">
+        <label>QtCore/quuid.h</label>
+      </node>
+      <node id="83">
+        <label>QtCore/qmap.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;QtCore/QVector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;winscard.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_native_s_card_8h" kindref="compound">NativeSCard.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="scardexception_8h" kindref="compound">scardexception.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smartcards" kindref="compound">Smartcards</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_smartcards_1_1_win_s_card_1a141964f846d48db8b1e7ff23c0b3b827" kindref="member">WinSCard::ALL_READERS</ref><sp/>=<sp/>QString::fromWCharArray(SCARD_ALL_READERS);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_smartcards_1_1_win_s_card_1ae54fa137b9e0037127562b1daea1fa65" kindref="member">WinSCard::DEFAULT_READERS</ref><sp/>=<sp/>QString::fromWCharArray(SCARD_DEFAULT_READERS);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_smartcards_1_1_win_s_card_1aba5d977bdb0ec8960d12f09cc61b8adf" kindref="member">WinSCard::LOCAL_READERS</ref><sp/>=<sp/>QString::fromWCharArray(SCARD_LOCAL_READERS);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_smartcards_1_1_win_s_card_1ab0dfec0369a208d081a41e88de135775" kindref="member">WinSCard::SYSTEM_READERS</ref><sp/>=<sp/>QString::fromWCharArray(SCARD_SYSTEM_READERS);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="class_smartcards_1_1_readers_states_1a8375e1900dfb98d5a4ee03a884eddbed" kindref="member">ReadersStates::ReadersStates</ref>()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="class_smartcards_1_1_readers_states_1a8375e1900dfb98d5a4ee03a884eddbed" kindref="member">ReadersStates::ReadersStates</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::initializer_list&lt;std::pair&lt;QString,<sp/>DWORD&gt;&gt;&amp;<sp/>ilist)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>item<sp/>:<sp/>ilist)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="class_smartcards_1_1_readers_states_1a4c9b55b4a59c76cc751ff1760deeb258" kindref="member">add</ref>(item.first,<sp/>item.second);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="class_smartcards_1_1_readers_states_1a8375e1900dfb98d5a4ee03a884eddbed" kindref="member">ReadersStates::ReadersStates</ref>(PSCARD_READERSTATEW<sp/>pReaderStates,<sp/>DWORD<sp/>cbReaderStates)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(DWORD<sp/>idx<sp/>=<sp/>0;<sp/>idx&lt;cbReaderStates;<sp/>idx++)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>mReaderStates.insert(QString::fromWCharArray(pReaderStates[idx].szReader),pReaderStates[idx]);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="class_smartcards_1_1_readers_states_1a8375e1900dfb98d5a4ee03a884eddbed" kindref="member">ReadersStates::ReadersStates</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMap&lt;QString,<sp/>SCARD_READERSTATEW&gt;&amp;<sp/>readerStates)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/>:mReaderStates(readerStates)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="class_smartcards_1_1_readers_states_1a8375e1900dfb98d5a4ee03a884eddbed" kindref="member">ReadersStates::ReadersStates</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;SCARD_READERSTATEW&gt;&amp;<sp/>readerStates)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>item<sp/>:<sp/>readerStates)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>mReaderStates.insert(QString::fromWCharArray(item.szReader),<sp/>item);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="class_smartcards_1_1_readers_states_1a284f436a28f186d96c116d6fc7b6c011" kindref="member">ReadersStates::~ReadersStates</ref>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/></highlight><highlight class="comment">//Release<sp/>memory<sp/>before<sp/>delete<sp/>map</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>item<sp/>:<sp/>mReaderStates)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>item.szReader;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a5d74d9ffa87a0cd10dd28578f0d21af9" kindref="member">ReadersStates::assign</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;SCARD_READERSTATEW&gt;&amp;<sp/>readerStates)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/>mReaderStates.clear();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>item<sp/>:<sp/>readerStates)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>mReaderStates.insert(QString::fromWCharArray(item.szReader),<sp/>item);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1acc23234f9b515e058f804c076f69bb42" kindref="member">ReadersStates::addNewReader</ref>()</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/>addDefault(</highlight><highlight class="stringliteral">&quot;\\\\?PnP?\\Notification&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a4ba2f063611bd432c1c866c370ac1f86" kindref="member">ReadersStates::removeNewReader</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/></highlight><highlight class="keyword">remove</highlight><highlight class="normal">(</highlight><highlight class="stringliteral">&quot;\\\\?PnP?\\Notification&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">DWORD<sp/><ref refid="class_smartcards_1_1_readers_states_1a11b65458cdc329f9f840d5d74a5e5d23" kindref="member">ReadersStates::currentState</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mReaderStates.value(readerName).dwCurrentState;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">DWORD<sp/><ref refid="class_smartcards_1_1_readers_states_1a3caa18082fa348753f5e4b5b985b8d95" kindref="member">ReadersStates::eventState</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mReaderStates.value(readerName).dwEventState;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">QByteArray<sp/><ref refid="class_smartcards_1_1_readers_states_1a665c077e0a8cc7b107f38e9677306d91" kindref="member">ReadersStates::ATR</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/>LPCBYTE<sp/>pAtr<sp/>=<sp/>mReaderStates.value(readerName).rgbAtr;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/>DWORD<sp/>cbAtr<sp/>=<sp/>mReaderStates.value(readerName).cbAtr;<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QByteArray::fromRawData(reinterpret_cast&lt;const<sp/>char*&gt;(pAtr),static_cast&lt;int&gt;(cbAtr));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">LPVOID<sp/><ref refid="class_smartcards_1_1_readers_states_1ac542d6d98fd5b0d16fd3742d74fd8a2e" kindref="member">ReadersStates::userData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mReaderStates.value(readerName).pvUserData;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a9c4b5c86fb4bba42ebc191acb8e2e6bb" kindref="member">ReadersStates::setCurrentState</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName,<sp/>DWORD<sp/>state)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/>mReaderStates[readerName].dwCurrentState=state;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a318268f9535a0632b9554b3894ac09be" kindref="member">ReadersStates::setEventState</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName,<sp/>DWORD<sp/>state)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/>mReaderStates[readerName].dwEventState<sp/>=<sp/>state;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a7cc48b9fc2bc1d54158fad7b2e081a62" kindref="member">ReadersStates::setATR</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>ATR)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/>mReaderStates[readerName].cbAtr<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ATR.size());</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/>qCopy(ATR.begin(),<sp/>ATR.end(),<sp/>mReaderStates[readerName].rgbAtr);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1afe7cef02934996669682fc85cf21327d" kindref="member">ReadersStates::setUserData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName,<sp/>LPVOID<sp/>userData)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mReaderStates.contains(readerName))</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>addDefault(readerName);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/>mReaderStates[readerName].pvUserData<sp/>=<sp/>userData;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a04e8aacc28b5dadb402ee342620074a8" kindref="member">ReadersStates::readerPresent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="128"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mReaderStates.contains(readerName);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ReadersStates::addDefault(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/>SCARD_READERSTATEW<sp/>stateData;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/>stateData.pvUserData<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/>stateData.dwCurrentState<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/>stateData.dwEventState<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/>stateData.szReader<sp/>=<sp/>toWCharArray(readerName);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/>stateData.cbAtr<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/>mReaderStates.insert(readerName,stateData);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">*<sp/>ReadersStates::toWCharArray(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>str)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>str.size();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*wszReader<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">[</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(size)<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/>size=str.toWCharArray(wszReader);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/>wszReader[size]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>wszReader;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a4c9b55b4a59c76cc751ff1760deeb258" kindref="member">ReadersStates::add</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName,<sp/>DWORD<sp/>currentState,<sp/>LPVOID<sp/>userData</highlight><highlight class="comment">/*=nullptr*/</highlight><highlight class="normal">,<sp/>DWORD<sp/>eventState</highlight><highlight class="comment">/*<sp/>=<sp/>0*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/>add(readerName,<sp/>currentState,<sp/>QByteArray(),<sp/>userData,<sp/>eventState);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a4c9b55b4a59c76cc751ff1760deeb258" kindref="member">ReadersStates::add</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName,<sp/>DWORD<sp/>currentState,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>ATR,<sp/>LPVOID<sp/>userData</highlight><highlight class="comment">/*=nullptr*/</highlight><highlight class="normal">,<sp/>DWORD<sp/>eventState</highlight><highlight class="comment">/*<sp/>=<sp/>0*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/>SCARD_READERSTATEW<sp/>stateData;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/>stateData.pvUserData<sp/>=<sp/>userData;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/>stateData.dwCurrentState<sp/>=<sp/>currentState;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/>stateData.dwEventState<sp/>=<sp/>eventState;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/>stateData.szReader<sp/>=<sp/>toWCharArray(readerName);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/>stateData.cbAtr<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ATR.size());</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/>qCopy(ATR.begin(),<sp/>ATR.end(),<sp/>stateData.rgbAtr);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/>mReaderStates.insert(readerName,stateData);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_readers_states_1a88c648c9c0e7486b85edff22b84da64a" kindref="member">ReadersStates::remove</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mReaderStates.remove(readerName)&gt;0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><ref refid="class_smartcards_1_1_win_s_card_1a9fd7130808a88297531533da3ee945af" kindref="member">WinSCard::WinSCard</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><ref refid="class_smartcards_1_1_win_s_card_1aefe248f13043030e959599763ee722a6" kindref="member">WinSCard::~WinSCard</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/>m_bThrowingErrors=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mContextEstablished)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>ReleaseContext();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal">QByteArray<sp/><ref refid="group__scredacs__funcs_1ga457236c8762d95325491093e49c563eb" kindref="member">WinSCard::GetCardStatus</ref>(DWORD&amp;<sp/>state,<sp/>DWORD&amp;<sp/>protocol)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/>QByteArray<sp/>atr(32,0);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>atr;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/>DWORD<sp/><sp/>pchReaders<sp/>=<sp/>AUTOALLOCATE;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/>DWORD<sp/>cByte<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*szListReaders<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardStatusW(m_hCard,<sp/>szListReaders,<sp/>&amp;pchReaders,<sp/>&amp;state,<sp/>&amp;protocol,<sp/>reinterpret_cast&lt;LPBYTE&gt;(atr.data()),<sp/>&amp;cByte);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>==<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>atr.resize(static_cast&lt;int&gt;(cByte));</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/>SCardFreeMemory(m_hContext,<sp/>szListReaders);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>atr;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal">QStringList<sp/><ref refid="group__scdb__funcs_1gac8e342539bc123a0e6db2dbce9556246" kindref="member">WinSCard::ListReaders</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/>QStringList<sp/>readers;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>readers;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/>QVector&lt;wchar_t&gt;<sp/>readersV;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/>DWORD<sp/><sp/>pchReaders<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*pReader;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/>m_nLastError=SCardListReadersW(m_hContext,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,&amp;pchReaders);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>==m_nLastError)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>readersV.resize(static_cast&lt;int&gt;(pchReaders));</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>m_nLastError=SCardListReadersW(m_hContext,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>readersV.data(),&amp;pchReaders);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>==m_nLastError)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>pReader=readersV.data();</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">!=*pReader)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>readers.append(QString::fromWCharArray(pReader));</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Advance<sp/>to<sp/>the<sp/>next<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pReader<sp/>=<sp/>pReader<sp/>+<sp/>wcslen(pReader)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>!=m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>readers;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal">QStringList<sp/><ref refid="group__scdb__funcs_1gaaf3ddd48b72571923bc898496708a105" kindref="member">WinSCard::ListReaderGroups</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/>QStringList<sp/>result;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/>QVector&lt;wchar_t&gt;<sp/>readerGroupsV;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/>DWORD<sp/><sp/>pchreaderGroups<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*preaderGroup;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardListReaderGroupsW(m_hContext,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>&amp;pchreaderGroups);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>==<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>readerGroupsV.resize(static_cast&lt;int&gt;(pchreaderGroups));</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/>SCardListReaderGroupsW(m_hContext,<sp/>readerGroupsV.data(),<sp/>&amp;pchreaderGroups);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>==<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/>preaderGroup<sp/>=<sp/>readerGroupsV.data();</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>!=<sp/>*preaderGroup)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>result.append(QString::fromWCharArray(preaderGroup));</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>preaderGroup<sp/>=<sp/>preaderGroup<sp/>+<sp/>wcslen(preaderGroup)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal">QUuid<sp/><ref refid="group__scdb__funcs_1gad62414ad4962122919e2ee4045499da7" kindref="member">WinSCard::GetProviderId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>cardName)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QUuid();</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/>GUID<sp/>guidData<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardGetProviderIdW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(cardName.unicode()),<sp/>&amp;guidData);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QUuid(guidData);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal">QStringList<sp/><ref refid="group__scdb__funcs_1ga3b6dad8b1127ce71ea9d25ee6d7ac7a8" kindref="member">WinSCard::ListCards</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;QUuid&gt;&amp;<sp/>guidInterfaces)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/>QStringList<sp/>result;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/>QVector&lt;GUID&gt;<sp/>guidData;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>item<sp/>:<sp/>guidInterfaces)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/>guidData.append(GUID(item));</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/>QVector&lt;wchar_t&gt;<sp/>cardsV;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/>DWORD<sp/><sp/>pchCards<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal"><sp/>*pCardName;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardListCardsW(m_hContext,<sp/>(cardAtr.size()&lt;ATR_LENGTH)<sp/>?<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>:<sp/>reinterpret_cast&lt;LPCBYTE&gt;(cardAtr.data()),<sp/>guidData.isEmpty()<sp/>?<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>:<sp/>guidData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(guidData.size()),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>&amp;pchCards);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>==<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/>cardsV.resize(static_cast&lt;int&gt;(pchCards));</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/>SCardListCardsW(m_hContext,<sp/>(cardAtr.size()&lt;ATR_LENGTH)<sp/>?<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>:<sp/>reinterpret_cast&lt;LPCBYTE&gt;(cardAtr.data()),<sp/>guidData.isEmpty()<sp/>?<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>:<sp/>guidData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(guidData.size()),<sp/>cardsV.data(),<sp/>&amp;pchCards);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>==<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/>pCardName<sp/>=<sp/>cardsV.data();</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>!=<sp/>*pCardName)</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>result.append(QString::fromWCharArray(pCardName));</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>pCardName<sp/>=<sp/>pCardName<sp/>+<sp/>wcslen(pCardName)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal">QStringList<sp/><ref refid="group__scdb__funcs_1ga3b6dad8b1127ce71ea9d25ee6d7ac7a8" kindref="member">WinSCard::ListCards</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;QUuid&gt;&amp;<sp/>guidInterfaces)</highlight></codeline>
+<codeline lineno="329"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(guidInterfaces.isEmpty())</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cad43edd0252e5ab0eed384c3c48de1a86" kindref="member">INVALID_PARAMETER</ref>;</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QStringList();</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ListCards(QByteArray(),<sp/>guidInterfaces);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal">QStringList<sp/><ref refid="group__scdb__funcs_1ga3b6dad8b1127ce71ea9d25ee6d7ac7a8" kindref="member">WinSCard::ListCards</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtr)</highlight></codeline>
+<codeline lineno="341"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cardAtr.size()&lt;ATR_LENGTH)</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca5b809b11313d5ced9d5264d694597b9c" kindref="member">INVALID_ATR</ref>;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QStringList();</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ListCards(cardAtr,<sp/>QVector&lt;QUuid&gt;());</highlight></codeline>
+<codeline lineno="350"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal">QStringList<sp/><ref refid="group__scdb__funcs_1ga3b6dad8b1127ce71ea9d25ee6d7ac7a8" kindref="member">WinSCard::ListCards</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ListCards(QByteArray(),<sp/>QVector&lt;QUuid&gt;());</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal">QVector&lt;QUuid&gt;<sp/><ref refid="group__scdb__funcs_1ga8f2118117ca9e836e6abe082f36360f9" kindref="member">WinSCard::ListInterfaces</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>cardName)</highlight></codeline>
+<codeline lineno="358"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVector&lt;QUuid&gt;();</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/>QVector&lt;GUID&gt;<sp/>guidData;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/>DWORD<sp/>pcQUuidInterfaces<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardListInterfacesW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(cardName.unicode()),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>&amp;pcQUuidInterfaces);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>==<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/>guidData.resize(static_cast&lt;int&gt;(pcQUuidInterfaces));</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/>SCardListInterfacesW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(cardName.unicode()),<sp/>guidData.data(),<sp/>&amp;pcQUuidInterfaces);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/>QVector&lt;QUuid&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>item<sp/>:<sp/>guidData)</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/>result.append(QUuid(item));</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="380"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gaebed438346018a4fbb04aca247720aa0" kindref="member">WinSCard::AddReaderToGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>ReaderName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>GroupName)</highlight></codeline>
+<codeline lineno="383"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardAddReaderToGroupW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(ReaderName.unicode()),<sp/>reinterpret_cast&lt;LPCWSTR&gt;(GroupName.unicode()));</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1ga266f41e727d32feca84c4d92e437e987" kindref="member">WinSCard::ForgetCardType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>cardName)</highlight></codeline>
+<codeline lineno="397"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardForgetCardTypeW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(cardName.unicode()));</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="408"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gadbc99870f524e931bcbbd21fea0308cb" kindref="member">WinSCard::ForgetReader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>ReaderName)</highlight></codeline>
+<codeline lineno="411"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardForgetReaderW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(ReaderName.unicode()));</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="422"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"></highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gac64a3cafbf44d385aad68dbe3e8755aa" kindref="member">WinSCard::ForgetReaderGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>GroupName)</highlight></codeline>
+<codeline lineno="425"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardForgetReaderGroupW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(GroupName.unicode()));</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="436"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"></highlight></codeline>
+<codeline lineno="438"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1ga2ad8a5052d40c206e5e6d1daba3d5dee" kindref="member">WinSCard::IntroduceReader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>ReaderName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>DeviceName)</highlight></codeline>
+<codeline lineno="439"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardIntroduceReaderW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(ReaderName.unicode()),<sp/>reinterpret_cast&lt;LPCWSTR&gt;(DeviceName.unicode()));</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="450"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"></highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gad1ff5c1953354297a30a0814ea84359d" kindref="member">WinSCard::IntroduceReaderGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>GroupName)</highlight></codeline>
+<codeline lineno="453"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardIntroduceReaderGroupW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(GroupName.unicode()));</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="464"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1ga78f4e61de1338eb88653211b719e33bc" kindref="member">WinSCard::RemoveReaderFromGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>ReaderName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>GroupName)</highlight></codeline>
+<codeline lineno="467"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardRemoveReaderFromGroupW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(ReaderName.unicode()),<sp/>reinterpret_cast&lt;LPCWSTR&gt;(GroupName.unicode()));</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"></highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gaae12329492e5eac3d4f4380eb247a5af" kindref="member">WinSCard::IntroduceCardType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>cardName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;QUuid&gt;&amp;<sp/>guidInterfaces,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtrMask,<sp/>QUuid<sp/>*pguidPrimaryProvider)</highlight></codeline>
+<codeline lineno="481"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/>GUID<sp/>guidPrimaryProviderData{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pguidPrimaryProvider!=</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/>guidPrimaryProviderData<sp/>=GUID(*pguidPrimaryProvider);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/>QVector&lt;GUID&gt;<sp/>guidInterfacesData;</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>item<sp/>:<sp/>guidInterfaces)</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/>guidInterfacesData.append(GUID(item));</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardIntroduceCardTypeW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(cardName.unicode()),<sp/>&amp;guidPrimaryProviderData,<sp/>guidInterfacesData.isEmpty()<sp/>?<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>:<sp/>guidInterfacesData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(guidInterfacesData.size()),<sp/>reinterpret_cast&lt;LPCBYTE&gt;(cardAtr.data()),<sp/>cardAtrMask.isEmpty()<sp/>?<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="normal">LPCBYTE</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(cardAtrMask.data()),<sp/>static_cast&lt;DWORD&gt;(cardAtr.size()));</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gaae12329492e5eac3d4f4380eb247a5af" kindref="member">WinSCard::IntroduceCardType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>cardName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;QUuid&gt;&amp;<sp/>guidInterfaces,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtr,<sp/>QUuid<sp/>*pguidPrimaryProvider)</highlight></codeline>
+<codeline lineno="501"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/>IntroduceCardType(cardName,<sp/>guidInterfaces,<sp/>cardAtr,<sp/>QByteArray(),<sp/>pguidPrimaryProvider);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gaae12329492e5eac3d4f4380eb247a5af" kindref="member">WinSCard::IntroduceCardType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>cardName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtrMask,<sp/>QUuid<sp/>*pguidPrimaryProvider)</highlight></codeline>
+<codeline lineno="506"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/>IntroduceCardType(cardName,<sp/>QVector&lt;QUuid&gt;(),<sp/>cardAtr,<sp/>cardAtrMask,<sp/>pguidPrimaryProvider);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"></highlight></codeline>
+<codeline lineno="510"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdbmng__funcs_1gaae12329492e5eac3d4f4380eb247a5af" kindref="member">WinSCard::IntroduceCardType</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>cardName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>cardAtr,<sp/>QUuid<sp/>*pguidPrimaryProvider)</highlight></codeline>
+<codeline lineno="511"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/>IntroduceCardType(cardName,<sp/>QVector&lt;QUuid&gt;(),<sp/>cardAtr,<sp/>QByteArray(),<sp/>pguidPrimaryProvider);</highlight></codeline>
+<codeline lineno="513"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"></highlight></codeline>
+<codeline lineno="515"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scresmng__funcs_1ga42d6fa39463352c1ca9ab89ec7228b40" kindref="member">WinSCard::EstablishContext</ref>(<ref refid="namespace_smartcards_1a58ca156488c781fb42e2cf0a8b6bc34b" kindref="member">SCOPE</ref><sp/>Scope)</highlight></codeline>
+<codeline lineno="516"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mContextEstablished)</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardEstablishContext(Scope,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>&amp;m_hContext);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/>mContextEstablished<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="523"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group__scresmng__funcs_1ga1274ff604a3c2cae84a046bd94fe545c" kindref="member">WinSCard::isContextValid</ref>()</highlight></codeline>
+<codeline lineno="526"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardIsValidContext(m_hContext);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0584d9afcd20e0f4a3c6c1a4a8ca6b1c" kindref="member">SYSTEM_INVALID_HANDLE</ref><sp/>==<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="535"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"></highlight></codeline>
+<codeline lineno="537"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scresmng__funcs_1gae385b71f00634fe32921eb64af1b7b23" kindref="member">WinSCard::ReleaseContext</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="538"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardReleaseContext(m_hContext);</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/>mContextEstablished<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/>mCardConnected<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="546"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"></highlight></codeline>
+<codeline lineno="548"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="group__scredacs__funcs_1ga37740e6a85817709262ff5571e998438" kindref="member">WinSCard::Connect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>Reader,<sp/><ref refid="namespace_smartcards_1a1f007601bac24f0cea5d4fdf7a6f2d70" kindref="member">SHARE</ref><sp/>ShareMode,<sp/><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7a" kindref="member">PROTOCOL</ref><sp/>PreferredProtocols)</highlight></codeline>
+<codeline lineno="549"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mCardConnected)</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/>Disconnect(<ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6aa8dacadb08049329c6eda8db3a5b79a36" kindref="member">Leave</ref>);</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/>m_nLastError=SCardConnectW(m_hContext,<sp/>reinterpret_cast&lt;LPCWSTR&gt;(Reader.unicode()),ShareMode,PreferredProtocols,&amp;m_hCard,&amp;m_nProtocol);</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca1cebac85b1b2f83bf397bb42483b86f9" kindref="member">RESET_CARD</ref>==m_nLastError)</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/>m_nLastError=SCardReconnect(m_hCard,ShareMode,PreferredProtocols,<ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6aa8dacadb08049329c6eda8db3a5b79a36" kindref="member">Smartcards::Leave</ref>,&amp;m_nProtocol);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_nLastError;</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/>mCardConnected<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7a" kindref="member">PROTOCOL</ref><sp/><ref refid="group__scredacs__funcs_1gab1c3fb8473dd41399a5a3743cd0fcc5f" kindref="member">WinSCard::Reconnect</ref>(<ref refid="namespace_smartcards_1a1f007601bac24f0cea5d4fdf7a6f2d70" kindref="member">SHARE</ref><sp/>ShareMode,<sp/><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7a" kindref="member">PROTOCOL</ref><sp/>PreferredProtocols,<sp/><ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6a" kindref="member">DISCONNECT</ref><sp/>Initialization)</highlight></codeline>
+<codeline lineno="575"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected<sp/>||<sp/>!mContextEstablished)</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7aa21a09371000f5134f35719b4763a85fe" kindref="member">Undefined</ref>;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/>DWORD<sp/>retProtocol;</highlight></codeline>
+<codeline lineno="584"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardReconnect(m_hCard,<sp/>ShareMode,<sp/>PreferredProtocols,<sp/>Initialization,<sp/>&amp;retProtocol);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/>mCardConnected<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7a" kindref="member">PROTOCOL</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(retProtocol);</highlight></codeline>
+<codeline lineno="592"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"></highlight></codeline>
+<codeline lineno="594"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scredacs__funcs_1gaa83c57d70f5428df32c3b36f87eeaca3" kindref="member">WinSCard::Disconnect</ref>(<ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6a" kindref="member">DISCONNECT</ref><sp/>Disposition)</highlight></codeline>
+<codeline lineno="595"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardDisconnect(m_hCard,<sp/>Disposition);</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/>mCardConnected<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="609"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"></highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><ref refid="class_smartcards_1_1_a_p_d_u_response" kindref="compound">APDUResponse</ref><sp/><ref refid="group__scredacs__funcs_1ga93b60c5c1df8550e6772b53c2ab0e7af" kindref="member">WinSCard::Transmit</ref>(<ref refid="class_smartcards_1_1_a_p_d_u_command" kindref="compound">APDUCommand</ref><sp/>ApduCmd)</highlight></codeline>
+<codeline lineno="612"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_a_p_d_u_response" kindref="compound">APDUResponse</ref>(0x90,<sp/>0x00);</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/>SCARD_IO_REQUEST<sp/><sp/><sp/>ioRequest;</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/>ioRequest.dwProtocol=m_nProtocol;</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/>ioRequest.cbPciLength=8;</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"><sp/>QByteArray<sp/>commandData,<sp/>retData;</highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/>DWORD<sp/><sp/>RecvLength=RESPONSE_MAX_LENGTH;</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/>QByteArray<sp/>responseData(RESPONSE_MAX_LENGTH,0);</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/>mLastCommand<sp/>=<sp/>ApduCmd;</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/>commandData<sp/>=ApduCmd.<ref refid="class_smartcards_1_1_a_p_d_u_command_1ac1c3fa1c70a14b31391914836c1bd1d8" kindref="member">createCommandVector</ref>();</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/>m_nLastError=SCardTransmit(m_hCard,&amp;ioRequest,reinterpret_cast&lt;LPCBYTE&gt;(commandData.constData()),<sp/>static_cast&lt;DWORD&gt;(commandData.size()),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>reinterpret_cast&lt;LPBYTE&gt;(responseData.data()),<sp/>&amp;RecvLength);</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca1cebac85b1b2f83bf397bb42483b86f9" kindref="member">RESET_CARD</ref>==m_nLastError)</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/>m_nProtocol=Reconnect(<ref refid="namespace_smartcards_1a1f007601bac24f0cea5d4fdf7a6f2d70acaf62733ba56e46fd97c01164cc6c9e8" kindref="member">Shared</ref>,<sp/><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7aada08ad1ace542f0e8ff7bf164ceb0d39" kindref="member">T0orT1</ref>,<sp/><ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6aa8dacadb08049329c6eda8db3a5b79a36" kindref="member">Leave</ref>);</highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>!=m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/>RecvLength=RESPONSE_MAX_LENGTH;</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/>responseData.clear();</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/>m_nLastError=<sp/>SCardTransmit(m_hCard,<sp/>&amp;ioRequest,<sp/>reinterpret_cast&lt;LPCBYTE&gt;(commandData.constData()),<sp/>static_cast&lt;DWORD&gt;(commandData.size()),<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,<sp/>reinterpret_cast&lt;LPBYTE&gt;(responseData.data()),<sp/>&amp;RecvLength);</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>!=m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/>responseData.resize(static_cast&lt;int&gt;(RecvLength));</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_a_p_d_u_response" kindref="compound">APDUResponse</ref><sp/>response(responseData);</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>response;</highlight></codeline>
+<codeline lineno="643"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"></highlight></codeline>
+<codeline lineno="645"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scredacs__funcs_1gac0f9a5c3b9517c82b63c8872f4868ba3" kindref="member">WinSCard::BeginTransaction</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="646"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardBeginTransaction(m_hCard);</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="657"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"></highlight></codeline>
+<codeline lineno="659"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scredacs__funcs_1gace31974514dff31dcc72bd0dd9ba71ba" kindref="member">WinSCard::EndTransaction</ref>(<ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6a" kindref="member">DISCONNECT</ref><sp/>Disposition)</highlight></codeline>
+<codeline lineno="660"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardEndTransaction(m_hCard,<sp/>Disposition);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="671"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"></highlight></codeline>
+<codeline lineno="673"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sctrack__funcs_1ga4dfde1d07cf051f2d582be55129a63fb" kindref="member">WinSCard::GetStatusChange</ref>(DWORD<sp/>dwTimeout,<sp/><ref refid="class_smartcards_1_1_readers_states" kindref="compound">ReadersStates</ref>&amp;<sp/>readerStates)</highlight></codeline>
+<codeline lineno="674"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>readerStatesData<sp/>=<sp/>readerStates.mReaderStates.values().toVector();</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardGetStatusChangeW(m_hContext,<sp/>dwTimeout,<sp/>readerStatesData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readerStatesData.size()));</highlight></codeline>
+<codeline lineno="683"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/>readerStates.<ref refid="class_smartcards_1_1_readers_states_1a5d74d9ffa87a0cd10dd28578f0d21af9" kindref="member">assign</ref>(readerStatesData);</highlight></codeline>
+<codeline lineno="686"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"></highlight></codeline>
+<codeline lineno="688"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sctrack__funcs_1ga2ef692a06c2c62775f1d2b3ff06636d7" kindref="member">WinSCard::LocateCards</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList&amp;<sp/>cards,<sp/><ref refid="class_smartcards_1_1_readers_states" kindref="compound">ReadersStates</ref>&amp;<sp/>readerStates)</highlight></codeline>
+<codeline lineno="689"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="691"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/>QVector&lt;wchar_t&gt;<sp/>mszCards;</highlight></codeline>
+<codeline lineno="698"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>cardName:<sp/>cards)</highlight></codeline>
+<codeline lineno="699"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="700"><highlight class="normal"><sp/><sp/>std::wstring<sp/>cardNameData<sp/>=<sp/>cardName.toStdWString();</highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/>qCopy(cardNameData.begin(),<sp/>cardNameData.end(),<sp/>mszCards.end());</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"><sp/><sp/>mszCards.push_back(0);</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="704"><highlight class="normal"><sp/>mszCards.push_back(0);</highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>readerStatesData<sp/>=<sp/>readerStates.mReaderStates.values().toVector();</highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardLocateCardsW(m_hContext,<sp/>mszCards.data(),<sp/>readerStatesData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readerStatesData.size()));</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="708"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/>readerStates.<ref refid="class_smartcards_1_1_readers_states_1a5d74d9ffa87a0cd10dd28578f0d21af9" kindref="member">assign</ref>(readerStatesData);</highlight></codeline>
+<codeline lineno="710"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="711"><highlight class="normal"></highlight></codeline>
+<codeline lineno="712"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sctrack__funcs_1gaa7b56e2f09d069e77eeb5186a3d363c6" kindref="member">WinSCard::LocateCardsByATR</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;QPair&lt;QByteArray,<sp/>QByteArray&gt;&gt;&amp;<sp/>atrMask,<sp/><ref refid="class_smartcards_1_1_readers_states" kindref="compound">ReadersStates</ref>&amp;<sp/>readerStates)</highlight></codeline>
+<codeline lineno="713"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="721"><highlight class="normal"><sp/>QVector&lt;_SCARD_ATRMASK&gt;<sp/>atrMaskVector;</highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>item<sp/>:<sp/>atrMask)</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="724"><highlight class="normal"><sp/><sp/>_SCARD_ATRMASK<sp/>atrMaskData;</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/>atrMaskData.cbAtr<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(item.first.size());</highlight></codeline>
+<codeline lineno="726"><highlight class="normal"><sp/><sp/>qCopy(item.first.begin(),<sp/>item.first.end(),<sp/>atrMaskData.rgbAtr);</highlight></codeline>
+<codeline lineno="727"><highlight class="normal"><sp/><sp/>qCopy(item.second.begin(),<sp/>item.second.end(),<sp/>atrMaskData.rgbMask);</highlight></codeline>
+<codeline lineno="728"><highlight class="normal"><sp/><sp/>atrMaskVector.push_back(atrMaskData);</highlight></codeline>
+<codeline lineno="729"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="730"><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>readerStatesData<sp/>=<sp/>readerStates.mReaderStates.values().toVector();</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardLocateCardsByATRW(m_hContext,<sp/>atrMaskVector.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(atrMaskVector.size()),<sp/>readerStatesData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(readerStatesData.size()));</highlight></codeline>
+<codeline lineno="732"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="733"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="734"><highlight class="normal"><sp/>readerStates.<ref refid="class_smartcards_1_1_readers_states_1a5d74d9ffa87a0cd10dd28578f0d21af9" kindref="member">assign</ref>(readerStatesData);</highlight></codeline>
+<codeline lineno="735"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="736"><highlight class="normal"></highlight></codeline>
+<codeline lineno="737"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__sctrack__funcs_1ga2ce7dc614b5315d65ec642603cd7cee3" kindref="member">WinSCard::CardCancel</ref>()</highlight></codeline>
+<codeline lineno="738"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="739"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mContextEstablished)</highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="741"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>;</highlight></codeline>
+<codeline lineno="742"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="745"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="746"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardCancel(m_hContext);</highlight></codeline>
+<codeline lineno="747"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="749"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="750"><highlight class="normal"></highlight></codeline>
+<codeline lineno="751"><highlight class="normal">QByteArray<sp/><ref refid="group__scdacs__funcs_1ga187b1c36689591da2c8ac0b3b1e7e95d" kindref="member">WinSCard::GetAttribute</ref>(DWORD<sp/>AttribId)</highlight></codeline>
+<codeline lineno="752"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="753"><highlight class="normal"><sp/>QByteArray<sp/>attr;</highlight></codeline>
+<codeline lineno="754"><highlight class="normal"><sp/>DWORD<sp/>attrLen<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="755"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="756"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="760"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>attr;</highlight></codeline>
+<codeline lineno="761"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="762"><highlight class="normal"><sp/>m_nLastError=SCardGetAttrib(m_hCard,AttribId,</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,&amp;attrLen);</highlight></codeline>
+<codeline lineno="763"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>==m_nLastError<sp/>&amp;&amp;<sp/>0!=attrLen)</highlight></codeline>
+<codeline lineno="764"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/>attr.resize(static_cast&lt;int&gt;(attrLen));</highlight></codeline>
+<codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/>m_nLastError<sp/>=<sp/>SCardGetAttrib(m_hCard,AttribId,reinterpret_cast&lt;LPBYTE&gt;(attr.data()),&amp;attrLen);</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="768"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>!=m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="769"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="770"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>attr;</highlight></codeline>
+<codeline lineno="771"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="772"><highlight class="normal"></highlight></codeline>
+<codeline lineno="773"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__scdacs__funcs_1ga442c84421b38f4b3dab7b85f9be8cc5a" kindref="member">WinSCard::SetAttribute</ref>(DWORD<sp/>AttribId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>attr)</highlight></codeline>
+<codeline lineno="774"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="776"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="777"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="778"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="779"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="780"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="781"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="782"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardSetAttrib(m_hCard,<sp/>AttribId,<sp/>reinterpret_cast&lt;const<sp/>BYTE*&gt;(attr.data()),<sp/>static_cast&lt;DWORD&gt;(attr.size()));</highlight></codeline>
+<codeline lineno="783"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="784"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="785"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"></highlight></codeline>
+<codeline lineno="787"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group__scdacs__funcs_1ga16dd963ea05534b92bdbfb97c0a6eb3b" kindref="member">WinSCard::CardControl</ref>(DWORD<sp/>controlCode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>inData,<sp/>QByteArray&amp;<sp/>outData)</highlight></codeline>
+<codeline lineno="788"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="789"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="791"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="792"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="794"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="795"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"><sp/>DWORD<sp/>retBytesCount<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(outData.size());</highlight></codeline>
+<codeline lineno="797"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardControl(m_hCard,<sp/>controlCode,<sp/>inData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(inData.size()),<sp/>outData.data(),<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(outData.size()),<sp/>&amp;retBytesCount);</highlight></codeline>
+<codeline lineno="798"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError)</highlight></codeline>
+<codeline lineno="799"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="800"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="802"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="803"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="804"><highlight class="normal"><sp/>outData.resize(static_cast&lt;int&gt;(retBytesCount));</highlight></codeline>
+<codeline lineno="805"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="806"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="807"><highlight class="normal"></highlight></codeline>
+<codeline lineno="808"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="group__scdacs__funcs_1ga16dd963ea05534b92bdbfb97c0a6eb3b" kindref="member">WinSCard::CardControl</ref>(DWORD<sp/>controlCode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>inData)</highlight></codeline>
+<codeline lineno="809"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="810"><highlight class="normal"><sp/>QByteArray<sp/>outData;</highlight></codeline>
+<codeline lineno="811"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CardControl(controlCode,<sp/>inData,<sp/>outData);</highlight></codeline>
+<codeline lineno="812"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="813"><highlight class="normal"></highlight></codeline>
+<codeline lineno="814"><highlight class="normal">DWORD<sp/><ref refid="group__scdacs__funcs_1ga16dd963ea05534b92bdbfb97c0a6eb3b" kindref="member">WinSCard::CardControl</ref>(DWORD<sp/>controlCode,<sp/>LPVOID<sp/>pInData,<sp/>DWORD<sp/>cInData,<sp/>LPVOID<sp/>pOutData,<sp/>DWORD<sp/>cOutData)</highlight></codeline>
+<codeline lineno="815"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="816"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!mCardConnected)</highlight></codeline>
+<codeline lineno="817"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="818"><highlight class="normal"><sp/><sp/>m_nLastError<sp/>=<sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>;</highlight></codeline>
+<codeline lineno="819"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="821"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="822"><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/>DWORD<sp/>retBytesCount<sp/>=<sp/>cOutData;</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/>m_nLastError<sp/>=<sp/>SCardControl(m_hCard,<sp/>controlCode,<sp/>pInData,<sp/>cInData,<sp/>pOutData,<sp/>cOutData,<sp/>&amp;retBytesCount);</highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref><sp/>!=<sp/>m_nLastError<sp/>&amp;&amp;<sp/>m_bThrowingErrors)</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="class_s_card_exception" kindref="compound">SCardException</ref>(m_nLastError);</highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>retBytesCount;</highlight></codeline>
+<codeline lineno="828"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="NativeSCard.cpp"/>
+  </compounddef>
+</doxygen>

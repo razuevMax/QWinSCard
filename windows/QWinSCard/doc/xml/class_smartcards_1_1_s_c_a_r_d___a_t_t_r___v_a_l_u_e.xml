@@ -1,0 +1,873 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e" kind="class" language="C++" prot="public">
+    <compoundname>Smartcards::SCARD_ATTR_VALUE</compoundname>
+    <includes refid="_native_s_card_8h" local="no">NativeSCard.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a624b9f96c857b8193676c7eb704ead05" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_VENDOR_INFO_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_VENDOR_INFO_CONST</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Vendor information definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="55" column="1" bodyfile="NativeSCard.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a67cbdff5bab137494c8b16f637a84a3e" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_POWER_MGMT_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_POWER_MGMT_CONST</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Power Management definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="56" column="1" bodyfile="NativeSCard.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a33838a44cc82c11d8791109300b21160" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_SECURITY_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_SECURITY_CONST</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Security Assurance definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="57" column="1" bodyfile="NativeSCard.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae305cd1f60c26f063e7f18dd8063006c" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_PERF_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_PERF_CONST</name>
+        <initializer>= 0x7ffe</initializer>
+        <briefdescription>
+<para>performace counters </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="58" column="1" bodyfile="NativeSCard.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a7c38ecd97bc4df6363443fa2e12075d8" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_COMMUNICATIONS_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_COMMUNICATIONS_CONST</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Communications attribute. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="59" column="1" bodyfile="NativeSCard.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad51b67fb617367c64748b8fbc09e64e2" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_PROTOCOL_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_PROTOCOL_CONST</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Communication definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="60" column="1" bodyfile="NativeSCard.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a02a910060a647b7a8394bbd8d3a9c93b" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_MECHANICAL_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_MECHANICAL_CONST</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>Mechanical characteristic definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="61" column="1" bodyfile="NativeSCard.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1abd3d35f3df78fc64d730db4aceb29231" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_VENDOR_DEFINED_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_VENDOR_DEFINED_CONST</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+<para>Vendor specific definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="62" column="1" bodyfile="NativeSCard.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a1f0afb576fbfe46804e3d4842c0a192e" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_IFD_PROTOCOL_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_IFD_PROTOCOL_CONST</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Interface Device Protocol options. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="63" column="1" bodyfile="NativeSCard.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1abf0076b5624727acb008e2c9544c0594" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_ICC_STATE_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_ICC_STATE_CONST</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+<para>ICC State specific definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="64" column="1" bodyfile="NativeSCard.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1af4b9b49260efbc90b2b2b8a6d1904f06" prot="private" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SCARD_CLASS_SYSTEM_CONST</definition>
+        <argsstring></argsstring>
+        <name>SCARD_CLASS_SYSTEM_CONST</name>
+        <initializer>= 0x7fff</initializer>
+        <briefdescription>
+<para>System-specific definitions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="65" column="1" bodyfile="NativeSCard.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ac37394d7aef6f261e8f401c4a28ee9f4" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::VENDOR_NAME</definition>
+        <argsstring></argsstring>
+        <name>VENDOR_NAME</name>
+        <initializer>= SCARD_CLASS_VENDOR_INFO_CONST &lt;&lt; 16 | 0x0100</initializer>
+        <briefdescription>
+<para>Vendor name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="67" column="1" bodyfile="NativeSCard.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a42a1959b1034e14847c8bc73107a6398" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::VENDOR_IFD_TYPE</definition>
+        <argsstring></argsstring>
+        <name>VENDOR_IFD_TYPE</name>
+        <initializer>= SCARD_CLASS_VENDOR_INFO_CONST &lt;&lt; 16 | 0x0101</initializer>
+        <briefdescription>
+<para>Vendor-supplied interface device type (model designation of reader). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="68" column="1" bodyfile="NativeSCard.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1af2580c61c4bd78b825f58d34ddd8a958" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::VENDOR_IFD_VERSION</definition>
+        <argsstring></argsstring>
+        <name>VENDOR_IFD_VERSION</name>
+        <initializer>= SCARD_CLASS_VENDOR_INFO_CONST &lt;&lt; 16 | 0x0102</initializer>
+        <briefdescription>
+<para>Vendor-supplied interface device version (in the form 0xMMmmbbbb where MM = major version, mm = minor version, and bbbb = build number). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="69" column="1" bodyfile="NativeSCard.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae059ccaab623dad6c7a0096684660a99" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::VENDOR_IFD_SERIAL_NO</definition>
+        <argsstring></argsstring>
+        <name>VENDOR_IFD_SERIAL_NO</name>
+        <initializer>= SCARD_CLASS_VENDOR_INFO_CONST &lt;&lt; 16 | 0x0103</initializer>
+        <briefdescription>
+<para>Vendor-supplied interface device serial number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="70" column="1" bodyfile="NativeSCard.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a96b35cddcc5bdfea5efb3e732d68a7c9" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CHANNEL_ID</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_ID</name>
+        <initializer>= SCARD_CLASS_COMMUNICATIONS_CONST &lt;&lt; 16 | 0x0110</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Channel identifier Encoded as 0xDDDDCCCC, where DDDD = data channel type and CCCC = channel number: The following encodings are defined for DDDD: 0x01 serial I/O; CCCC is a port number. 0x02 parallel I/O; CCCC is a port number. 0x04 PS/2 keyboard port; CCCC is zero. 0x08 SCSI; CCCC is SCSI ID number. 0x10 IDE; CCCC is device number. 0x20 USB; CCCC is device number. 0xFy vendor-defined interface with y in the range zero through 15; CCCC is vendor defined. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="71" column="1" bodyfile="NativeSCard.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad1503e291261d66a7a4d7fcc0fd58898" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::PROTOCOL_TYPES</definition>
+        <argsstring></argsstring>
+        <name>PROTOCOL_TYPES</name>
+        <initializer>= SCARD_CLASS_PROTOCOL_CONST &lt;&lt; 16 | 0x0120</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Protocol types Encoded as 0x0rrrpppp where rrr is RFU and should be 0x000. pppp encodes the supported protocol types. A &apos;1&apos; in a given bit position indicates support for the associated ISO protocol, so if bits zero and one are set, both T=0 and T=1 protocols are supported. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="83" column="1" bodyfile="NativeSCard.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae5062823b715d2aa2e8780c7aefeeeb9" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEFAULT_CLK</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_CLK</name>
+        <initializer>= SCARD_CLASS_PROTOCOL_CONST &lt;&lt; 16 | 0x0121</initializer>
+        <briefdescription>
+<para>Default clock rate, in kHz. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="90" column="1" bodyfile="NativeSCard.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a9b6d0322e48b047e37d8475c119a9fc8" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::MAX_CLK</definition>
+        <argsstring></argsstring>
+        <name>MAX_CLK</name>
+        <initializer>= SCARD_CLASS_PROTOCOL_CONST &lt;&lt; 16 | 0x0122</initializer>
+        <briefdescription>
+<para>Maxinum clock rate, in kHz. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="91" column="1" bodyfile="NativeSCard.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ac114fd9690aeade88851cba83c54b6f2" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEFAULT_DATA_RATE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_DATA_RATE</name>
+        <initializer>= SCARD_CLASS_PROTOCOL_CONST &lt;&lt; 16 | 0x0123</initializer>
+        <briefdescription>
+<para>Default data rate, in bps. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="92" column="1" bodyfile="NativeSCard.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a5a4296bfd64a8eeff6258784234c0e78" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::MAX_DATA_RATE</definition>
+        <argsstring></argsstring>
+        <name>MAX_DATA_RATE</name>
+        <initializer>= SCARD_CLASS_PROTOCOL_CONST &lt;&lt; 16 | 0x0124</initializer>
+        <briefdescription>
+<para>Maximum data rate, in bps. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="93" column="1" bodyfile="NativeSCard.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a6b3ff1d302a612df5e2ff1285180cfc0" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::MAX_IFSD</definition>
+        <argsstring></argsstring>
+        <name>MAX_IFSD</name>
+        <initializer>= SCARD_CLASS_PROTOCOL_CONST &lt;&lt; 16 | 0x0125</initializer>
+        <briefdescription>
+<para>Maximum bytes for information file size device. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="94" column="1" bodyfile="NativeSCard.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a67045eac943fa5328e1757b810ccf37d" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::POWER_MGMT_SUPPORT</definition>
+        <argsstring></argsstring>
+        <name>POWER_MGMT_SUPPORT</name>
+        <initializer>= SCARD_CLASS_POWER_MGMT_CONST &lt;&lt; 16 | 0x0131</initializer>
+        <briefdescription>
+<para>Zero if device does not support power down while smart card is inserted. Nonzero otherwise. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="95" column="1" bodyfile="NativeSCard.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a61bf58b8fa16931ebce60d39503fb988" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::USER_TO_CARD_AUTH_DEVICE</definition>
+        <argsstring></argsstring>
+        <name>USER_TO_CARD_AUTH_DEVICE</name>
+        <initializer>= SCARD_CLASS_SECURITY_CONST &lt;&lt; 16 | 0x0140</initializer>
+        <briefdescription>
+<para>User to card authetication device. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="96" column="1" bodyfile="NativeSCard.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae926365dc04f12ecff53c1b46930fbba" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::USER_AUTH_INPUT_DEVICE</definition>
+        <argsstring></argsstring>
+        <name>USER_AUTH_INPUT_DEVICE</name>
+        <initializer>= SCARD_CLASS_SECURITY_CONST &lt;&lt; 16 | 0x0142</initializer>
+        <briefdescription>
+<para>User authetication input device. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="97" column="1" bodyfile="NativeSCard.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a062db79636125a5951b13b6ca36c8d9a" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CHARACTERISTICS</definition>
+        <argsstring></argsstring>
+        <name>CHARACTERISTICS</name>
+        <initializer>= SCARD_CLASS_MECHANICAL_CONST &lt;&lt; 16 | 0x0150</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Indicating which mechanical characteristics are supported. If zero, no special characteristics are supported. Note that multiple bits can be set: 0x00000001 Card swallowing mechanism 0x00000002 Card ejection mechanism 0x00000004 Card capture mechanism All other values are reserved for future use (RFU). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="98" column="1" bodyfile="NativeSCard.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aa156eefb70bca3f86394e9ede61abe58" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_PROTOCOL_TYPE</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_PROTOCOL_TYPE</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0201</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Current protocol type Encoded as 0x0rrrpppp where rrr is RFU and should be 0x000. pppp encodes the current protocol type. Whichever bit has been set indicates which ISO protocol is currently in use. (For example, if bit zero is set, T=0 protocol is in effect.) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="106" column="1" bodyfile="NativeSCard.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae24983f2aa2894b4f301ad84ca0f088c" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_CLK</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_CLK</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0202</initializer>
+        <briefdescription>
+<para>Current clock rate, in kHz. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="113" column="1" bodyfile="NativeSCard.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad17ee71aaaf044d82614bab949c61f5d" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_F</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_F</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0203</initializer>
+        <briefdescription>
+<para>Current clock conversion factor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="114" column="1" bodyfile="NativeSCard.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a562689e04ab6b07dc96caceeec33c5e2" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_D</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_D</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0204</initializer>
+        <briefdescription>
+<para>Current bit rate conversion factor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="115" column="1" bodyfile="NativeSCard.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab37d557126bb8dbd93dbc7d959f7c288" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_N</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_N</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0205</initializer>
+        <briefdescription>
+<para>Current guard time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="116" column="1" bodyfile="NativeSCard.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a55e2fe84bf041249c8fe98bd86472439" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_W</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_W</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0206</initializer>
+        <briefdescription>
+<para>Current work waiting time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="117" column="1" bodyfile="NativeSCard.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a9ec99962b0062a0fce474988f99d6608" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_IFSC</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_IFSC</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0207</initializer>
+        <briefdescription>
+<para>Current byte size for information field size card. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="118" column="1" bodyfile="NativeSCard.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a2f1032c0974e46099832de6f43940212" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_IFSD</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_IFSD</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0208</initializer>
+        <briefdescription>
+<para>Current Current byte size for information field size device. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="119" column="1" bodyfile="NativeSCard.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a1e9d5a74f9b794c2317dc53e119b5f4f" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_BWT</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_BWT</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x0209</initializer>
+        <briefdescription>
+<para>Current block waiting time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="120" column="1" bodyfile="NativeSCard.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab44d2f9fb413da53d63d7a90c921cfd6" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_CWT</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_CWT</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x020a</initializer>
+        <briefdescription>
+<para>Current character waiting time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="121" column="1" bodyfile="NativeSCard.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aaf4a1e0bfea6821af468257d8f4ca3bf" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_EBC_ENCODING</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_EBC_ENCODING</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x020b</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Current error block control encoding. 0 = longitudinal redundancy check (LRC) 1 = cyclical redundancy check (CRC) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="122" column="1" bodyfile="NativeSCard.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ade2db674f0db7ae4caea6db6d6a01a89" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::EXTENDED_BWT</definition>
+        <argsstring></argsstring>
+        <name>EXTENDED_BWT</name>
+        <initializer>= SCARD_CLASS_IFD_PROTOCOL_CONST &lt;&lt; 16 | 0x020c</initializer>
+        <briefdescription>
+<para>Extended BWT. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="127" column="1" bodyfile="NativeSCard.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a911f1a19663fec18ae75244351defdb3" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::ICC_PRESENCE</definition>
+        <argsstring></argsstring>
+        <name>ICC_PRESENCE</name>
+        <initializer>= SCARD_CLASS_ICC_STATE_CONST &lt;&lt; 16 | 0x0300</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Single byte indicating smart card presence. 0 = not present 1 = card present but not swallowed (applies only if reader supports smart card swallowing) 2 = card present (and swallowed if reader supports smart card swallowing) 4 = card confiscated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="128" column="1" bodyfile="NativeSCard.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a245f9d6128bd0558238fe6eac1f346e4" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::ICC_INTERFACE_STATUS</definition>
+        <argsstring></argsstring>
+        <name>ICC_INTERFACE_STATUS</name>
+        <initializer>= SCARD_CLASS_ICC_STATE_CONST &lt;&lt; 16 | 0x0301</initializer>
+        <briefdescription>
+<para>Single byte. Zero if smart card electrical contact is not active; nonzero if contact is active. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="135" column="1" bodyfile="NativeSCard.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a123ef730e9310ec3840598bd4bd2c202" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::CURRENT_IO_STATE</definition>
+        <argsstring></argsstring>
+        <name>CURRENT_IO_STATE</name>
+        <initializer>= SCARD_CLASS_ICC_STATE_CONST &lt;&lt; 16 | 0x0302</initializer>
+        <briefdescription>
+<para>Current IO state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="136" column="1" bodyfile="NativeSCard.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a272d8e5a0527b6fe32ff8c09ac27d0dd" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::ATR_STRING</definition>
+        <argsstring></argsstring>
+        <name>ATR_STRING</name>
+        <initializer>= SCARD_CLASS_ICC_STATE_CONST &lt;&lt; 16 | 0x0303</initializer>
+        <briefdescription>
+<para>ATR string. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="137" column="1" bodyfile="NativeSCard.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1afaca5684f4257cf0d75773a18fc7d9a2" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::ICC_TYPE_PER_ATR</definition>
+        <argsstring></argsstring>
+        <name>ICC_TYPE_PER_ATR</name>
+        <initializer>= SCARD_CLASS_ICC_STATE_CONST &lt;&lt; 16 | 0x0304</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Single byte indicating smart card type. 0 = unknown type 1 = 7816 Asynchronous 2 = 7816 Synchronous Other values RFU. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="138" column="1" bodyfile="NativeSCard.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a58e12db3aa6ec36bc25a731942bb3264" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::ESC_RESET</definition>
+        <argsstring></argsstring>
+        <name>ESC_RESET</name>
+        <initializer>= SCARD_CLASS_VENDOR_DEFINED_CONST &lt;&lt; 16 | 0xA000</initializer>
+        <briefdescription>
+<para>ESC reset. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="145" column="1" bodyfile="NativeSCard.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab663b94da76962e32eaef5a1010252c7" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::ESC_CANCEL</definition>
+        <argsstring></argsstring>
+        <name>ESC_CANCEL</name>
+        <initializer>= SCARD_CLASS_VENDOR_DEFINED_CONST &lt;&lt; 16 | 0xA003</initializer>
+        <briefdescription>
+<para>ESC cancel. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="146" column="1" bodyfile="NativeSCard.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aa4b690e5a8e92b1f2a5bff0599a5fb18" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::ESC_AUTHREQUEST</definition>
+        <argsstring></argsstring>
+        <name>ESC_AUTHREQUEST</name>
+        <initializer>= SCARD_CLASS_VENDOR_DEFINED_CONST &lt;&lt; 16 | 0xA005</initializer>
+        <briefdescription>
+<para>ESC authetication reques. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="147" column="1" bodyfile="NativeSCard.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a3908ac3fa0ae3f3c3da8ffc87a6c6139" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::MAXINPUT</definition>
+        <argsstring></argsstring>
+        <name>MAXINPUT</name>
+        <initializer>= SCARD_CLASS_VENDOR_DEFINED_CONST &lt;&lt; 16 | 0xA007</initializer>
+        <briefdescription>
+<para>Maximum input. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="148" column="1" bodyfile="NativeSCard.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aefeb0b2c892fcf9c5c44166b55c82b1a" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEVICE_UNIT</definition>
+        <argsstring></argsstring>
+        <name>DEVICE_UNIT</name>
+        <initializer>= SCARD_CLASS_SYSTEM_CONST &lt;&lt; 16 | 0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Instance of this vendor&apos;s reader attached to the computer. The first instance will be device unit 0, the next will be unit 1 (if it is the same brand of reader) and so on. Two different brands of readers will both have zero for this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="149" column="1" bodyfile="NativeSCard.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a7318ec89ac0cb8cd249eca50345d555e" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEVICE_IN_USE</definition>
+        <argsstring></argsstring>
+        <name>DEVICE_IN_USE</name>
+        <initializer>= SCARD_CLASS_SYSTEM_CONST &lt;&lt; 16 | 0x0002</initializer>
+        <briefdescription>
+<para>Reserved for future use. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="154" column="1" bodyfile="NativeSCard.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a349680de0626b1b697cfd7c5e09c4766" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEVICE_FRIENDLY_NAME_ASCII</definition>
+        <argsstring></argsstring>
+        <name>DEVICE_FRIENDLY_NAME_ASCII</name>
+        <initializer>= SCARD_CLASS_SYSTEM_CONST &lt;&lt; 16 | 0x0003</initializer>
+        <briefdescription>
+<para>Device friendly name in ASCII. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="155" column="1" bodyfile="NativeSCard.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab9900b62bd71922ea31621d8068c3d7a" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEVICE_SYSTEM_NAME_A_ASCII</definition>
+        <argsstring></argsstring>
+        <name>DEVICE_SYSTEM_NAME_A_ASCII</name>
+        <initializer>= SCARD_CLASS_SYSTEM_CONST &lt;&lt; 16 | 0x0004</initializer>
+        <briefdescription>
+<para>Device sysyem name in ASCII. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="156" column="1" bodyfile="NativeSCard.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab11f9c5b4f48f6ae66dae24e74fde366" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEVICE_FRIENDLY_NAME</definition>
+        <argsstring></argsstring>
+        <name>DEVICE_FRIENDLY_NAME</name>
+        <initializer>= SCARD_CLASS_SYSTEM_CONST &lt;&lt; 16 | 0x0005</initializer>
+        <briefdescription>
+<para>Device friendly name in Unicode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="157" column="1" bodyfile="NativeSCard.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aba8a6802d0be5381900d97a0ea232028" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::DEVICE_SYSTEM_NAME</definition>
+        <argsstring></argsstring>
+        <name>DEVICE_SYSTEM_NAME</name>
+        <initializer>= SCARD_CLASS_SYSTEM_CONST &lt;&lt; 16 | 0x0006</initializer>
+        <briefdescription>
+<para>Device sysyem name in Unicode. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="158" column="1" bodyfile="NativeSCard.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab9b659783de09481d3589ccf159c899f" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::SUPRESS_T1_IFS_REQUEST</definition>
+        <argsstring></argsstring>
+        <name>SUPRESS_T1_IFS_REQUEST</name>
+        <initializer>= SCARD_CLASS_SYSTEM_CONST &lt;&lt; 16 | 0x0007</initializer>
+        <briefdescription>
+<para>Suppress sending of T=1 IFSD packet from the reader to the card. (Can be used if the currently inserted card does not support an IFSD request.) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="159" column="1" bodyfile="NativeSCard.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ac9c0fb07860b270b42bfeb56fb352e26" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::PERF_NUM_TRANSMISSIONS</definition>
+        <argsstring></argsstring>
+        <name>PERF_NUM_TRANSMISSIONS</name>
+        <initializer>= SCARD_CLASS_PERF_CONST &lt;&lt; 16 | 0x0001</initializer>
+        <briefdescription>
+<para>Perfomance number transmissions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="160" column="1" bodyfile="NativeSCard.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad182d934593bc3c0d0b23dd82ccb759b" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::PERF_BYTES_TRANSMITTED</definition>
+        <argsstring></argsstring>
+        <name>PERF_BYTES_TRANSMITTED</name>
+        <initializer>= SCARD_CLASS_PERF_CONST &lt;&lt; 16 | 0x0002</initializer>
+        <briefdescription>
+<para>Perfomance bytes transmitted. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="161" column="1" bodyfile="NativeSCard.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a5d7d2864076321acc6306ed61520896c" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::SCARD_ATTR_VALUE::PERF_TRANSMISSION_TIME</definition>
+        <argsstring></argsstring>
+        <name>PERF_TRANSMISSION_TIME</name>
+        <initializer>= SCARD_CLASS_PERF_CONST &lt;&lt; 16 | 0x0003</initializer>
+        <briefdescription>
+<para>Perfomance transmission time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="162" column="1" bodyfile="NativeSCard.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Values for AttrId of SCardGetAttrib. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NativeSCard.h" line="54" column="1" bodyfile="NativeSCard.h" bodystart="53" bodyend="163"/>
+    <listofallmembers>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a272d8e5a0527b6fe32ff8c09ac27d0dd" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>ATR_STRING</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a96b35cddcc5bdfea5efb3e732d68a7c9" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CHANNEL_ID</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a062db79636125a5951b13b6ca36c8d9a" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CHARACTERISTICS</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a1e9d5a74f9b794c2317dc53e119b5f4f" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_BWT</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae24983f2aa2894b4f301ad84ca0f088c" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_CLK</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab44d2f9fb413da53d63d7a90c921cfd6" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_CWT</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a562689e04ab6b07dc96caceeec33c5e2" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_D</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aaf4a1e0bfea6821af468257d8f4ca3bf" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_EBC_ENCODING</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad17ee71aaaf044d82614bab949c61f5d" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_F</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a9ec99962b0062a0fce474988f99d6608" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_IFSC</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a2f1032c0974e46099832de6f43940212" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_IFSD</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a123ef730e9310ec3840598bd4bd2c202" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_IO_STATE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab37d557126bb8dbd93dbc7d959f7c288" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_N</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aa156eefb70bca3f86394e9ede61abe58" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_PROTOCOL_TYPE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a55e2fe84bf041249c8fe98bd86472439" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>CURRENT_W</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae5062823b715d2aa2e8780c7aefeeeb9" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEFAULT_CLK</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ac114fd9690aeade88851cba83c54b6f2" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEFAULT_DATA_RATE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab11f9c5b4f48f6ae66dae24e74fde366" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEVICE_FRIENDLY_NAME</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a349680de0626b1b697cfd7c5e09c4766" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEVICE_FRIENDLY_NAME_ASCII</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a7318ec89ac0cb8cd249eca50345d555e" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEVICE_IN_USE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aba8a6802d0be5381900d97a0ea232028" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEVICE_SYSTEM_NAME</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab9900b62bd71922ea31621d8068c3d7a" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEVICE_SYSTEM_NAME_A_ASCII</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aefeb0b2c892fcf9c5c44166b55c82b1a" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>DEVICE_UNIT</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1aa4b690e5a8e92b1f2a5bff0599a5fb18" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>ESC_AUTHREQUEST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab663b94da76962e32eaef5a1010252c7" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>ESC_CANCEL</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a58e12db3aa6ec36bc25a731942bb3264" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>ESC_RESET</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ade2db674f0db7ae4caea6db6d6a01a89" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>EXTENDED_BWT</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a245f9d6128bd0558238fe6eac1f346e4" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>ICC_INTERFACE_STATUS</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a911f1a19663fec18ae75244351defdb3" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>ICC_PRESENCE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1afaca5684f4257cf0d75773a18fc7d9a2" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>ICC_TYPE_PER_ATR</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a9b6d0322e48b047e37d8475c119a9fc8" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>MAX_CLK</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a5a4296bfd64a8eeff6258784234c0e78" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>MAX_DATA_RATE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a6b3ff1d302a612df5e2ff1285180cfc0" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>MAX_IFSD</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a3908ac3fa0ae3f3c3da8ffc87a6c6139" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>MAXINPUT</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad182d934593bc3c0d0b23dd82ccb759b" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>PERF_BYTES_TRANSMITTED</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ac9c0fb07860b270b42bfeb56fb352e26" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>PERF_NUM_TRANSMISSIONS</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a5d7d2864076321acc6306ed61520896c" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>PERF_TRANSMISSION_TIME</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a67045eac943fa5328e1757b810ccf37d" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>POWER_MGMT_SUPPORT</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad1503e291261d66a7a4d7fcc0fd58898" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>PROTOCOL_TYPES</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a7c38ecd97bc4df6363443fa2e12075d8" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_COMMUNICATIONS_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1abf0076b5624727acb008e2c9544c0594" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_ICC_STATE_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a1f0afb576fbfe46804e3d4842c0a192e" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_IFD_PROTOCOL_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a02a910060a647b7a8394bbd8d3a9c93b" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_MECHANICAL_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae305cd1f60c26f063e7f18dd8063006c" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_PERF_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a67cbdff5bab137494c8b16f637a84a3e" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_POWER_MGMT_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ad51b67fb617367c64748b8fbc09e64e2" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_PROTOCOL_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a33838a44cc82c11d8791109300b21160" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_SECURITY_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1af4b9b49260efbc90b2b2b8a6d1904f06" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_SYSTEM_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1abd3d35f3df78fc64d730db4aceb29231" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_VENDOR_DEFINED_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a624b9f96c857b8193676c7eb704ead05" prot="private" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SCARD_CLASS_VENDOR_INFO_CONST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ab9b659783de09481d3589ccf159c899f" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>SUPRESS_T1_IFS_REQUEST</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae926365dc04f12ecff53c1b46930fbba" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>USER_AUTH_INPUT_DEVICE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a61bf58b8fa16931ebce60d39503fb988" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>USER_TO_CARD_AUTH_DEVICE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ae059ccaab623dad6c7a0096684660a99" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>VENDOR_IFD_SERIAL_NO</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1a42a1959b1034e14847c8bc73107a6398" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>VENDOR_IFD_TYPE</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1af2580c61c4bd78b825f58d34ddd8a958" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>VENDOR_IFD_VERSION</name></member>
+      <member refid="class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e_1ac37394d7aef6f261e8f401c4a28ee9f4" prot="public" virt="non-virtual"><scope>Smartcards::SCARD_ATTR_VALUE</scope><name>VENDOR_NAME</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

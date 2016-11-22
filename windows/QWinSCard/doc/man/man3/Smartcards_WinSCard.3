@@ -1,0 +1,367 @@
+.TH "Smartcards::WinSCard" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Smartcards::WinSCard \- This class must implement a winscard api\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NativeSCard\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWinSCard\fP (void)"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "virtual \fB~WinSCard\fP (void)"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "SCARDCONTEXT \fBcontext\fP (void) const"
+.br
+.RI "Get current resource manager context\&. "
+.ti -1c
+.RI "SCARDHANDLE \fBhandle\fP (void) const"
+.br
+.RI "Get current card handle\&. "
+.ti -1c
+.RI "void \fBthrowErrors\fP (bool \fBisThrowingErrors\fP)"
+.br
+.RI "Set the flag of throwing exception on errors\&. "
+.ti -1c
+.RI "bool \fBisThrowingErrors\fP (void) const"
+.br
+.RI "Get flag of throwing exception on errors\&. "
+.ti -1c
+.RI "long \fBlastError\fP (void) const"
+.br
+.RI "Get last error code\&. "
+.ti -1c
+.RI "bool \fBisError\fP (void) const"
+.br
+.RI "Check is last error present\&. "
+.ti -1c
+.RI "virtual QStringList \fBListReaders\fP (void)"
+.br
+.RI "Get list readers\&. "
+.ti -1c
+.RI "virtual QStringList \fBListReaderGroups\fP (void)"
+.br
+.RI "Get list reader groups\&. "
+.ti -1c
+.RI "virtual QUuid \fBGetProviderId\fP (const QString &cardName)"
+.br
+.RI "Gets provider GUID\&. "
+.ti -1c
+.RI "virtual QStringList \fBListCards\fP (const QByteArray &cardAtr, const QVector< QUuid > &guidInterfaces)"
+.br
+.RI "Searches the smart card database and provides a list of named cards previously introduced to the system by the user\&. Match ATR an support the interfaces specified\&. "
+.ti -1c
+.RI "virtual QStringList \fBListCards\fP (const QVector< QUuid > &guidInterfaces)"
+.br
+.RI "Searches the smart card database and provides a list of named cards previously introduced to the system by the user\&. Search for interfaces specified\&. "
+.ti -1c
+.RI "virtual QStringList \fBListCards\fP (const QByteArray &cardAtr)"
+.br
+.RI "Searches the smart card database and provides a list of named cards previously introduced to the system by the user\&. Match for ATR\&. "
+.ti -1c
+.RI "virtual QStringList \fBListCards\fP (void)"
+.br
+.RI "Searches the smart card database and provides a list of named cards previously introduced to the system by the user\&. "
+.ti -1c
+.RI "virtual QVector< QUuid > \fBListInterfaces\fP (const QString &cardName)"
+.br
+.RI "Provides a list of interfaces supplied by a given card\&. "
+.ti -1c
+.RI "virtual void \fBAddReaderToGroup\fP (const QString &ReaderName, const QString &GroupName)"
+.br
+.RI "Adds a reader to group to 'GroupName'\&. "
+.ti -1c
+.RI "virtual void \fBForgetCardType\fP (const QString &cardName)"
+.br
+.RI "Removes an introduced smart card from the smart card subsystem\&. "
+.ti -1c
+.RI "virtual void \fBForgetReader\fP (const QString &ReaderName)"
+.br
+.RI "removes a previously introduced reader from control by the smart card subsystem\&. It is removed from the smart card database, including from any reader group that it may have been added to\&. "
+.ti -1c
+.RI "virtual void \fBForgetReaderGroup\fP (const QString &GroupName)"
+.br
+.RI "Removes a previously introduced smart card reader group from the smart card subsystem\&. Although this function automatically clears all readers from the group, it does not affect the existence of the individual readers in the database\&. "
+.ti -1c
+.RI "virtual void \fBIntroduceReader\fP (const QString &ReaderName, const QString &DeviceName)"
+.br
+.RI "Introduces a new name for an existing smart card reader\&. "
+.ti -1c
+.RI "virtual void \fBIntroduceReaderGroup\fP (const QString &GroupName)"
+.br
+.RI "Introduces a reader group to the smart card subsystem\&. However, the reader group is not created until the group is specified when adding a reader to the smart card database\&. "
+.ti -1c
+.RI "virtual void \fBRemoveReaderFromGroup\fP (const QString &ReaderName, const QString &GroupName)"
+.br
+.RI "Removes a reader from an existing reader group\&. This function has no effect on the reader\&. "
+.ti -1c
+.RI "virtual void \fBIntroduceCardType\fP (const QString &cardName, const QVector< QUuid > &guidInterfaces, const QByteArray &cardAtr, const QByteArray &cardAtrMask, QUuid *pguidPrimaryProvider=nullptr)"
+.br
+.RI "Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database\&. "
+.ti -1c
+.RI "virtual void \fBIntroduceCardType\fP (const QString &cardName, const QVector< QUuid > &guidInterfaces, const QByteArray &cardAtr, QUuid *pguidPrimaryProvider=nullptr)"
+.br
+.RI "Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database\&. Match by ATR and interfaces specified\&. "
+.ti -1c
+.RI "virtual void \fBIntroduceCardType\fP (const QString &cardName, const QByteArray &cardAtr, const QByteArray &cardAtrMask, QUuid *pguidPrimaryProvider=nullptr)"
+.br
+.RI "Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database\&. Match by ATR and ATR mask\&. "
+.ti -1c
+.RI "virtual void \fBIntroduceCardType\fP (const QString &cardName, const QByteArray &cardAtr, QUuid *pguidPrimaryProvider=nullptr)"
+.br
+.RI "Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database\&. Match by ATR\&. "
+.ti -1c
+.RI "virtual void \fBEstablishContext\fP (\fBSCOPE\fP Scope)"
+.br
+.RI "Establishes the resource manager context (the scope) within which database operations are performed\&. "
+.ti -1c
+.RI "virtual bool \fBisContextEstablished\fP (void) const"
+.br
+.RI "Check is resource manager context is established\&. "
+.ti -1c
+.RI "virtual bool \fBisContextValid\fP (void)"
+.br
+.RI "Query if resource manager context is valid\&. "
+.ti -1c
+.RI "virtual void \fBReleaseContext\fP (void)"
+.br
+.RI "Closes an established resource manager context, freeing any resources allocated under that context, including SCARDHANDLE objects and memory allocated using the AUTOALLOCATE length designator\&. "
+.ti -1c
+.RI "virtual long \fBConnect\fP (const QString &Reader, \fBSHARE\fP ShareMode, \fBPROTOCOL\fP PreferredProtocols)"
+.br
+.RI "Establishes a connection between the calling application and a smart card contained by a specific reader\&. If no card exists in the specified reader, an exception is throwed else return SUCCESS\&. "
+.ti -1c
+.RI "virtual \fBPROTOCOL\fP \fBReconnect\fP (\fBSHARE\fP ShareMode, \fBPROTOCOL\fP PreferredProtocols, \fBDISCONNECT\fP Initialization)"
+.br
+.RI "reestablishes an existing connection between the calling application and a smart card\&. This function moves a card handle from direct access to general access, or acknowledges and clears an error condition that is preventing further access to the card\&. "
+.ti -1c
+.RI "virtual void \fBDisconnect\fP (\fBDISCONNECT\fP Disposition)"
+.br
+.RI "Terminates a connection previously opened between the calling application and a smart card in the target reader\&. "
+.ti -1c
+.RI "virtual bool \fBisConnected\fP (void) const"
+.br
+.RI "Check is card connected\&. "
+.ti -1c
+.RI "virtual \fBAPDUResponse\fP \fBTransmit\fP (\fBAPDUCommand\fP ApduCmd)"
+.br
+.RI "Sends a service request to the smart card and expects to receive data back from the card\&. "
+.ti -1c
+.RI "virtual QByteArray \fBGetCardStatus\fP (DWORD &state, DWORD &protocol)"
+.br
+.RI "Gets card status(card state, card protocol and card ATR)\&. "
+.ti -1c
+.RI "virtual void \fBBeginTransaction\fP (void)"
+.br
+.RI "Begins a transaction\&. The function waits for the completion of all other transactions before it begins\&. After the transaction starts, all other applications are blocked from accessing the smart card while the transaction is in progress\&. "
+.ti -1c
+.RI "virtual void \fBEndTransaction\fP (\fBDISCONNECT\fP Disposition)"
+.br
+.RI "Completes a previously declared transaction, allowing other applications to resume interactions with the card\&. "
+.ti -1c
+.RI "virtual QByteArray \fBGetAttribute\fP (DWORD AttribId)"
+.br
+.RI "Retrieves the current reader attributes for the given handle\&. It does not affect the state of the reader, driver, or card\&. "
+.ti -1c
+.RI "virtual void \fBSetAttribute\fP (DWORD AttribId, const QByteArray &attr)"
+.br
+.RI "Sets the given reader attribute for the given handle\&. It does not affect the state of the reader, reader driver, or smart card\&. Not all attributes are supported by all readers (nor can they be set at all times) as many of the attributes are under direct control of the transport protocol\&. "
+.ti -1c
+.RI "virtual bool \fBCardControl\fP (DWORD controlCode, const QByteArray &inData, QByteArray &outData)"
+.br
+.RI "Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. "
+.ti -1c
+.RI "virtual bool \fBCardControl\fP (DWORD controlCode, const QByteArray &inData)"
+.br
+.RI "Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. Only inData version\&. "
+.ti -1c
+.RI "virtual DWORD \fBCardControl\fP (DWORD controlCode, LPVOID pInData, DWORD cInData, LPVOID pOutData, DWORD cOutData)"
+.br
+.RI "Direct pointer version\&. Gives you direct control of the reader\&. You can call it any time after a successful call to Connect and before a successful call to Disconnect\&. The effect on the state of the reader depends on the control code\&. "
+.ti -1c
+.RI "virtual void \fBGetStatusChange\fP (DWORD dwTimeout, \fBReadersStates\fP &readerStates)"
+.br
+.RI "Blocks execution until the current availability of the cards in a specific set of readers changes\&. "
+.ti -1c
+.RI "virtual void \fBLocateCards\fP (const QStringList &cards, \fBReadersStates\fP &readerStates)"
+.br
+.RI "Searches the readers listed in the readerStates parameter for a card with an ATR string that matches one of the card names specified in cards, returning immediately with the result\&. "
+.ti -1c
+.RI "virtual void \fBLocateCardsByATR\fP (const QVector< QPair< QByteArray, QByteArray >> &atrMask, \fBReadersStates\fP &readerStates)"
+.br
+.RI "Searches the readers listed in the readerStates parameter for a card with a name that matches one of the card names contained in one of the pair ATR and ATRMask specified by the atrMask parameter\&. "
+.ti -1c
+.RI "virtual void \fBCardCancel\fP (void)"
+.br
+.RI "Terminates all outstanding actions within a specific resource manager context\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const DWORD \fBATR_LENGTH\fP = SCARD_ATR_LENGTH"
+.br
+.RI "Maximim ATR length\&. "
+.ti -1c
+.RI "static const DWORD \fBAUTOALLOCATE\fP = SCARD_AUTOALLOCATE"
+.br
+.RI "Constant indicating auto allocate memory in winscard functions\&. "
+.ti -1c
+.RI "static const DWORD \fBRESPONSE_MAX_LENGTH\fP =0x0200"
+.br
+.RI "Maximum length of card response in bytes\&. "
+.ti -1c
+.RI "static const DWORD \fBCCID_READER_PRESENT_STATE\fP = CARD_STATUS_STATE::Unknown | CARD_STATUS_STATE::Ignore | CARD_STATUS_STATE::Changed"
+.br
+.RI "Reader present state\&. "
+.ti -1c
+.RI "static const DWORD \fBCCID_READER_EMPTY_STATE\fP = CARD_STATUS_STATE::Unvailable | CARD_STATUS_STATE::Ignore | CARD_STATUS_STATE::Changed"
+.br
+.RI "Reader empty state\&. "
+.ti -1c
+.RI "static const QString \fBALL_READERS\fP = QString::fromWCharArray(SCARD_ALL_READERS)"
+.br
+.RI "Default winscard name for all readers group\&. "
+.ti -1c
+.RI "static const QString \fBDEFAULT_READERS\fP = QString::fromWCharArray(SCARD_DEFAULT_READERS)"
+.br
+.RI "Default winscard name for default readers group\&. "
+.ti -1c
+.RI "static const QString \fBLOCAL_READERS\fP = QString::fromWCharArray(SCARD_LOCAL_READERS)"
+.br
+.RI "Default winscard name for local readers group\&. "
+.ti -1c
+.RI "static const QString \fBSYSTEM_READERS\fP = QString::fromWCharArray(SCARD_SYSTEM_READERS)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class must implement a winscard api\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Smartcards::WinSCard::WinSCard (void)"
+
+.PP
+Default constructor\&. 
+.SS "Smartcards::WinSCard::~WinSCard (void)\fC [virtual]\fP"
+
+.PP
+Destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "SCARDCONTEXT Smartcards::WinSCard::context (void) const\fC [inline]\fP"
+
+.PP
+Get current resource manager context\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A current resource manager context\&. 
+.RE
+.PP
+
+.SS "SCARDHANDLE Smartcards::WinSCard::handle (void) const\fC [inline]\fP"
+
+.PP
+Get current card handle\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A current card handle\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::WinSCard::isError (void) const\fC [inline]\fP"
+
+.PP
+Check is last error present\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true if error present, else false\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::WinSCard::isThrowingErrors (void) const\fC [inline]\fP"
+
+.PP
+Get flag of throwing exception on errors\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+If true - throwing exceptions on errros, else stores errors in lastError\&. 
+.RE
+.PP
+
+.SS "long Smartcards::WinSCard::lastError (void) const\fC [inline]\fP"
+
+.PP
+Get last error code\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Last error code\&. SUCCESS if no error\&. 
+.RE
+.PP
+
+.SS "Smartcards::WinSCard::throwErrors (bool isThrowingErrors)\fC [inline]\fP"
+
+.PP
+Set the flag of throwing exception on errors\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIisThrowingErrors\fP If true - throwing exceptions on errros, else stores errors in lastError\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const QString WinSCard::ALL_READERS = QString::fromWCharArray(SCARD_ALL_READERS)\fC [static]\fP"
+
+.PP
+Default winscard name for all readers group\&. 
+.SS "const DWORD Smartcards::WinSCard::ATR_LENGTH = SCARD_ATR_LENGTH\fC [static]\fP"
+
+.PP
+Maximim ATR length\&. 
+.SS "const DWORD Smartcards::WinSCard::AUTOALLOCATE = SCARD_AUTOALLOCATE\fC [static]\fP"
+
+.PP
+Constant indicating auto allocate memory in winscard functions\&. 
+.SS "const DWORD Smartcards::WinSCard::CCID_READER_EMPTY_STATE = CARD_STATUS_STATE::Unvailable | CARD_STATUS_STATE::Ignore | CARD_STATUS_STATE::Changed\fC [static]\fP"
+
+.PP
+Reader empty state\&. 
+.SS "const DWORD Smartcards::WinSCard::CCID_READER_PRESENT_STATE = CARD_STATUS_STATE::Unknown | CARD_STATUS_STATE::Ignore | CARD_STATUS_STATE::Changed\fC [static]\fP"
+
+.PP
+Reader present state\&. 
+.SS "const QString WinSCard::DEFAULT_READERS = QString::fromWCharArray(SCARD_DEFAULT_READERS)\fC [static]\fP"
+
+.PP
+Default winscard name for default readers group\&. 
+.SS "const QString WinSCard::LOCAL_READERS = QString::fromWCharArray(SCARD_LOCAL_READERS)\fC [static]\fP"
+
+.PP
+Default winscard name for local readers group\&. 
+.SS "const DWORD Smartcards::WinSCard::RESPONSE_MAX_LENGTH =0x0200\fC [static]\fP"
+
+.PP
+Maximum length of card response in bytes\&. 
+.SS "const QString WinSCard::SYSTEM_READERS = QString::fromWCharArray(SCARD_SYSTEM_READERS)\fC [static]\fP"
+Default winscard name for system readers group 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

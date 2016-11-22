@@ -1,0 +1,217 @@
+.TH "BaseExceptions" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BaseExceptions \- This class must implement a std::exception in Qt-style class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <baseexceptions\&.h>\fP
+.PP
+Inherits exception\&.
+.PP
+Inherited by \fBSCardException\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBUNRESOLVED_EXCEPTION\fP =-10 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBaseExceptions\fP () noexcept"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "\fBBaseExceptions\fP (const \fBBaseExceptions\fP &) noexcept"
+.br
+.RI "copy constructor\&. "
+.ti -1c
+.RI "\fBBaseExceptions\fP (const char *const &) noexcept"
+.br
+.RI "c-string constructor\&. "
+.ti -1c
+.RI "\fBBaseExceptions\fP (const QString &) noexcept"
+.br
+.RI "Qt-string constructor\&. "
+.ti -1c
+.RI "\fBBaseExceptions\fP (long code) noexcept"
+.br
+.RI "error code constructor\&. "
+.ti -1c
+.RI "\fBBaseExceptions\fP & \fBoperator=\fP (const \fBBaseExceptions\fP &)"
+.br
+.RI "Assignment operator\&. "
+.ti -1c
+.RI "virtual \fB~BaseExceptions\fP () noexcept"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "const char * \fBwhat\fP () const noexcept"
+.br
+.RI "override std::exception function what\&. Get c-string exception message "
+.ti -1c
+.RI "QString \fBerrorString\fP (void) const"
+.br
+.RI "Get Qt-string exception message\&. "
+.ti -1c
+.RI "void \fBsetErrorString\fP (const QString &)"
+.br
+.RI "Sets exception message Qt-string\&. "
+.ti -1c
+.RI "long \fBerrorCode\fP (void) const"
+.br
+.RI "Get error code\&. "
+.ti -1c
+.RI "void \fBsetErrorCode\fP (long code)"
+.br
+.RI "Sets error code\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class must implement a std::exception in Qt-style class\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "anonymous enum"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUNRESOLVED_EXCEPTION \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "BaseExceptions::BaseExceptions ()\fC [noexcept]\fP"
+
+.PP
+Default constructor\&. 
+.SS "BaseExceptions::BaseExceptions (const \fBBaseExceptions\fP & _That)\fC [noexcept]\fP"
+
+.PP
+copy constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_That\fP The other \fBBaseExceptions\fP object\&. 
+.RE
+.PP
+
+.SS "BaseExceptions::BaseExceptions (const char *const & _What)\fC [explicit]\fP, \fC [noexcept]\fP"
+
+.PP
+c-string constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_What\fP c-string exception message 
+.RE
+.PP
+
+.SS "BaseExceptions::BaseExceptions (const QString & _What)\fC [explicit]\fP, \fC [noexcept]\fP"
+
+.PP
+Qt-string constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_What\fP Qt-string exception message 
+.RE
+.PP
+
+.SS "BaseExceptions::BaseExceptions (long code)\fC [explicit]\fP, \fC [noexcept]\fP"
+
+.PP
+error code constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode\fP long error code 
+.RE
+.PP
+
+.SS "BaseExceptions::~BaseExceptions ()\fC [virtual]\fP, \fC [noexcept]\fP"
+
+.PP
+Destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "long BaseExceptions::errorCode (void) const"
+
+.PP
+Get error code\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A long error code 
+.RE
+.PP
+
+.SS "QString BaseExceptions::errorString (void) const"
+
+.PP
+Get Qt-string exception message\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+'Unknown exception' if it fails, else a Qt-string exception message 
+.RE
+.PP
+
+.SS "\fBBaseExceptions\fP & BaseExceptions::operator= (const \fBBaseExceptions\fP & _That)"
+
+.PP
+Assignment operator\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI_That\fP The other \fBBaseExceptions\fP object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A shallow copy of this object\&. 
+.RE
+.PP
+
+.SS "void BaseExceptions::setErrorCode (long code)"
+
+.PP
+Sets error code\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode\fP The long error code 
+.RE
+.PP
+
+.SS "void BaseExceptions::setErrorString (const QString & errStr)"
+
+.PP
+Sets exception message Qt-string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIerrStr\fP The exception message Qt-string 
+.RE
+.PP
+
+.SS "const char * BaseExceptions::what () const\fC [noexcept]\fP"
+
+.PP
+override std::exception function what\&. Get c-string exception message 
+.PP
+\fBReturns:\fP
+.RS 4
+'Unknown exception' if it fails, else a pointer to a c-string exception message 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

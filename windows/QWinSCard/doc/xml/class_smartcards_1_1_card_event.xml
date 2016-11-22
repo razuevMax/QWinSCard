@@ -1,0 +1,431 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_smartcards_1_1_card_event" kind="class" language="C++" prot="public">
+    <compoundname>Smartcards::CardEvent</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="cardevent_8h" local="no">cardevent.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1a72dfc75ac5c134000b0279ed055f583b" prot="private" static="no" mutable="no">
+        <type>QScopedPointer&lt; <ref refid="class_smartcards_1_1_win_s_card" kindref="compound">Smartcards::WinSCard</ref> &gt;</type>
+        <definition>QScopedPointer&lt;Smartcards::WinSCard&gt; Smartcards::CardEvent::m_sCard</definition>
+        <argsstring></argsstring>
+        <name>m_sCard</name>
+        <initializer>{ new <ref refid="class_smartcards_1_1_win_s_card" kindref="compound">Smartcards::WinSCard</ref> }</initializer>
+        <briefdescription>
+<para>Pointer to <ref refid="class_smartcards_1_1_win_s_card" kindref="compound">WinSCard</ref> interface. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="73" column="1" bodyfile="cardevent.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1a9f9c5a472ae00257032361ecd3d9e538" prot="private" static="no" mutable="no">
+        <type>QThread *</type>
+        <definition>QThread* Smartcards::CardEvent::m_Thread</definition>
+        <argsstring></argsstring>
+        <name>m_Thread</name>
+        <initializer>{ nullptr }</initializer>
+        <briefdescription>
+<para>Pointer to QThread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="74" column="1" bodyfile="cardevent.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1a0f2540c6c893d9e864844f4a3e63eadc" prot="private" static="no" mutable="no">
+        <type>QMutex</type>
+        <definition>QMutex Smartcards::CardEvent::mMutex</definition>
+        <argsstring></argsstring>
+        <name>mMutex</name>
+        <briefdescription>
+<para>mutex for thread working </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="75" column="1" bodyfile="cardevent.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1aeea41eb640e727256095afea35b6e0a9" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Smartcards::CardEvent::mLastReader</definition>
+        <argsstring></argsstring>
+        <name>mLastReader</name>
+        <briefdescription>
+<para>last connected reader name </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="76" column="1" bodyfile="cardevent.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1a7587fccf470fe0f816021ebc1220f57e" prot="private" static="no" mutable="no">
+        <type>QByteArray</type>
+        <definition>QByteArray Smartcards::CardEvent::mLastATR</definition>
+        <argsstring></argsstring>
+        <name>mLastATR</name>
+        <briefdescription>
+<para>last connected card ATR. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="77" column="1" bodyfile="cardevent.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1aac769998bad5feb9b280278b4fabca06" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Smartcards::CardEvent::tId</definition>
+        <argsstring></argsstring>
+        <name>tId</name>
+        <initializer>{ 0 }</initializer>
+        <briefdescription>
+<para>inner Qt timer id </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="78" column="1" bodyfile="cardevent.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1a76188fa91769a45f97c3392b690fd0a7" prot="private" static="no" mutable="no">
+        <type>QHash&lt; QString, bool &gt;</type>
+        <definition>QHash&lt;QString, bool&gt; Smartcards::CardEvent::m_Readers</definition>
+        <argsstring></argsstring>
+        <name>m_Readers</name>
+        <briefdescription>
+<para>container for tracking readers </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="79" column="1" bodyfile="cardevent.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_card_event_1a77edecf633cea328eea7bae6a3d2da05" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Smartcards::CardEvent::m_bRunCardDetection</definition>
+        <argsstring></argsstring>
+        <name>m_bRunCardDetection</name>
+        <initializer>{ false }</initializer>
+        <briefdescription>
+<para>card detection running flag </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="80" column="1" bodyfile="cardevent.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smartcards_1_1_card_event_1acd98536af5d07f06d825042fb2034a5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::CardEvent::CardEvent</definition>
+        <argsstring>(void)</argsstring>
+        <name>CardEvent</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="24" column="1" bodyfile="cardevent.cpp" bodystart="13" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_card_event_1af6b75f44b9abb4a30691cd82b08496ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::CardEvent::~CardEvent</definition>
+        <argsstring>()</argsstring>
+        <name>~CardEvent</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="27" column="1" bodyfile="cardevent.cpp" bodystart="20" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_card_event_1a0a9f442764a0bafa6e69baae9e03f512" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Smartcards::CardEvent::lastReader</definition>
+        <argsstring>(void) const</argsstring>
+        <name>lastReader</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get last connected reader name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reader name connected last </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="31" column="1" bodyfile="cardevent.h" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_card_event_1a80421ddc9ba99705db837308e4a9a9ef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray Smartcards::CardEvent::lastATR</definition>
+        <argsstring>(void) const</argsstring>
+        <name>lastATR</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get last connected card ATR. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Byte array contains ATR last connected card </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="35" column="1" bodyfile="cardevent.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_smartcards_1_1_card_event_1ab12c3f088bea09d80d7a969d17511bb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Smartcards::CardEvent::setCardDetection</definition>
+        <argsstring>(bool isDetect)</argsstring>
+        <name>setCardDetection</name>
+        <param>
+          <type>bool</type>
+          <declname>isDetect</declname>
+        </param>
+        <briefdescription>
+<para>Enable/Disable detection mechanism Qt-slot. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">isDetect</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Detect or undetect cards </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="40" column="1" bodyfile="cardevent.cpp" bodystart="90" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_smartcards_1_1_card_event_1aeacc345b09da39552435a4fb94e1c7ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Smartcards::CardEvent::stop</definition>
+        <argsstring>(void)</argsstring>
+        <name>stop</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>stop detection mechanism Qt-slot </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="43" column="1" bodyfile="cardevent.cpp" bodystart="98" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_smartcards_1_1_card_event_1a83c0930c96f193e23c0d59bcc9836969" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Smartcards::CardEvent::run</definition>
+        <argsstring>(void)</argsstring>
+        <name>run</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Run detection mechanism Qt-slot. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="46" column="1" bodyfile="cardevent.cpp" bodystart="52" bodyend="88"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_smartcards_1_1_card_event_1a9e5fcfa2e538e4d25df0571769c5f0df" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>Smartcards::CardEvent::timerEvent</definition>
+        <argsstring>(QTimerEvent *e)</argsstring>
+        <name>timerEvent</name>
+        <param>
+          <type>QTimerEvent *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Qt timer event function. </para>        </briefdescription>
+        <detaileddescription>
+<para>Contains main cycle of detection mechanism <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to Qt timer event class, ignored. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="52" column="1" bodyfile="cardevent.cpp" bodystart="104" bodyend="182"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_smartcards_1_1_card_event_1a6a2f9b5b090a064c009f3717238ca7c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::CardEvent::cardInserted</definition>
+        <argsstring>(const QString &amp;readerName, const QByteArray &amp;ATR)</argsstring>
+        <name>cardInserted</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>ATR</declname>
+        </param>
+        <briefdescription>
+<para>Qt-signal transmitted when card inserted. </para>        </briefdescription>
+        <detaileddescription>
+<para>Qt-signal transmitted before stopping card detection mechanism.</para><para>Qt-signal transmitted when card removed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reader name where inserted card </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ATR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte array contains ATR inserted card</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reader name where removed card </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_smartcards_1_1_card_event_1a22fd5a6d91ca6aff4cfb31a1651b9d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::CardEvent::cardRemoved</definition>
+        <argsstring>(const QString &amp;readerName)</argsstring>
+        <name>cardRemoved</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_smartcards_1_1_card_event_1a49e048da421d6969008120b5c15b1d70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::CardEvent::onStopCardEvents</definition>
+        <argsstring>(void)</argsstring>
+        <name>onStopCardEvents</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="65" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_smartcards_1_1_card_event_1a27a803654c4b6717ac0fa65f36f70497" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Smartcards::CardEvent::initStartTokenWatchThread</definition>
+        <argsstring>(void)</argsstring>
+        <name>initStartTokenWatchThread</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>internal function for initialize card detection mechanism </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="69" column="1" bodyfile="cardevent.cpp" bodystart="26" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_card_event_1ae116099830ea68a310b724f3072e9560" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Smartcards::CardEvent::terminateStopSCardWatchThread</definition>
+        <argsstring>(void)</argsstring>
+        <name>terminateStopSCardWatchThread</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>internal function for terminate card detection mechanism </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="cardevent.h" line="72" column="1" bodyfile="cardevent.cpp" bodystart="38" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class must implement a card detection mechanism. When card insertion is detected, it must send signal <ref refid="class_smartcards_1_1_card_event_1a6a2f9b5b090a064c009f3717238ca7c0" kindref="member">cardInserted()</ref> When card removal is detected, it must send signal <ref refid="class_smartcards_1_1_card_event_1a22fd5a6d91ca6aff4cfb31a1651b9d8f" kindref="member">cardRemoved()</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>QObject</label>
+      </node>
+      <node id="9">
+        <label>Smartcards::CardEvent</label>
+        <link refid="class_smartcards_1_1_card_event"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>QObject</label>
+      </node>
+      <node id="11">
+        <label>Smartcards::CardEvent</label>
+        <link refid="class_smartcards_1_1_card_event"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="cardevent.h" line="19" column="1" bodyfile="cardevent.h" bodystart="18" bodyend="81"/>
+    <listofallmembers>
+      <member refid="class_smartcards_1_1_card_event_1acd98536af5d07f06d825042fb2034a5a" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>CardEvent</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a6a2f9b5b090a064c009f3717238ca7c0" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>cardInserted</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a22fd5a6d91ca6aff4cfb31a1651b9d8f" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>cardRemoved</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a27a803654c4b6717ac0fa65f36f70497" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>initStartTokenWatchThread</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a80421ddc9ba99705db837308e4a9a9ef" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>lastATR</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a0a9f442764a0bafa6e69baae9e03f512" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>lastReader</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a77edecf633cea328eea7bae6a3d2da05" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>m_bRunCardDetection</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a76188fa91769a45f97c3392b690fd0a7" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>m_Readers</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a72dfc75ac5c134000b0279ed055f583b" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>m_sCard</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a9f9c5a472ae00257032361ecd3d9e538" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>m_Thread</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a7587fccf470fe0f816021ebc1220f57e" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>mLastATR</name></member>
+      <member refid="class_smartcards_1_1_card_event_1aeea41eb640e727256095afea35b6e0a9" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>mLastReader</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a0f2540c6c893d9e864844f4a3e63eadc" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>mMutex</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a49e048da421d6969008120b5c15b1d70" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>onStopCardEvents</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a83c0930c96f193e23c0d59bcc9836969" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>run</name></member>
+      <member refid="class_smartcards_1_1_card_event_1ab12c3f088bea09d80d7a969d17511bb1" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>setCardDetection</name></member>
+      <member refid="class_smartcards_1_1_card_event_1aeacc345b09da39552435a4fb94e1c7ad" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>stop</name></member>
+      <member refid="class_smartcards_1_1_card_event_1ae116099830ea68a310b724f3072e9560" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>terminateStopSCardWatchThread</name></member>
+      <member refid="class_smartcards_1_1_card_event_1aac769998bad5feb9b280278b4fabca06" prot="private" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>tId</name></member>
+      <member refid="class_smartcards_1_1_card_event_1a9e5fcfa2e538e4d25df0571769c5f0df" prot="protected" virt="virtual"><scope>Smartcards::CardEvent</scope><name>timerEvent</name></member>
+      <member refid="class_smartcards_1_1_card_event_1af6b75f44b9abb4a30691cd82b08496ae" prot="public" virt="non-virtual"><scope>Smartcards::CardEvent</scope><name>~CardEvent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

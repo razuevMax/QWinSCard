@@ -1,0 +1,163 @@
+.TH "Smartcards::CardEvent" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Smartcards::CardEvent \- This class must implement a card detection mechanism\&. When card insertion is detected, it must send signal \fBcardInserted()\fP When card removal is detected, it must send signal \fBcardRemoved()\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cardevent\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetCardDetection\fP (bool isDetect)"
+.br
+.RI "Enable/Disable detection mechanism Qt-slot\&. "
+.ti -1c
+.RI "void \fBstop\fP (void)"
+.br
+.RI "stop detection mechanism Qt-slot "
+.ti -1c
+.RI "void \fBrun\fP (void)"
+.br
+.RI "Run detection mechanism Qt-slot\&. "
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBcardInserted\fP (const QString &readerName, const QByteArray &ATR)"
+.br
+.RI "Qt-signal transmitted when card inserted\&. "
+.ti -1c
+.RI "void \fBcardRemoved\fP (const QString &readerName)"
+.br
+.ti -1c
+.RI "void \fBonStopCardEvents\fP (void)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCardEvent\fP (void)"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "\fB~CardEvent\fP ()"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "QString \fBlastReader\fP (void) const"
+.br
+.RI "Get last connected reader name\&. "
+.ti -1c
+.RI "QByteArray \fBlastATR\fP (void) const"
+.br
+.RI "Get last connected card ATR\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBtimerEvent\fP (QTimerEvent *e)"
+.br
+.RI "Qt timer event function\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class must implement a card detection mechanism\&. When card insertion is detected, it must send signal \fBcardInserted()\fP When card removal is detected, it must send signal \fBcardRemoved()\fP 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Smartcards::CardEvent::CardEvent (void)"
+
+.PP
+Default constructor\&. 
+.SS "Smartcards::CardEvent::~CardEvent ()"
+
+.PP
+Destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Smartcards::CardEvent::cardInserted (const QString & readerName, const QByteArray & ATR)\fC [signal]\fP"
+
+.PP
+Qt-signal transmitted when card inserted\&. Qt-signal transmitted before stopping card detection mechanism\&.
+.PP
+Qt-signal transmitted when card removed\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Reader name where inserted card 
+.br
+\fIATR\fP Byte array contains ATR inserted card
+.br
+\fIreaderName\fP Reader name where removed card 
+.RE
+.PP
+
+.SS "void Smartcards::CardEvent::cardRemoved (const QString & readerName)\fC [signal]\fP"
+
+.SS "QByteArray Smartcards::CardEvent::lastATR (void) const\fC [inline]\fP"
+
+.PP
+Get last connected card ATR\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Byte array contains ATR last connected card 
+.RE
+.PP
+
+.SS "QString Smartcards::CardEvent::lastReader (void) const\fC [inline]\fP"
+
+.PP
+Get last connected reader name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Reader name connected last 
+.RE
+.PP
+
+.SS "void Smartcards::CardEvent::onStopCardEvents (void)\fC [signal]\fP"
+
+.SS "Smartcards::CardEvent::run (void)\fC [slot]\fP"
+
+.PP
+Run detection mechanism Qt-slot\&. 
+.SS "Smartcards::CardEvent::setCardDetection (bool isDetect)\fC [slot]\fP"
+
+.PP
+Enable/Disable detection mechanism Qt-slot\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIisDetect\fP Detect or undetect cards 
+.RE
+.PP
+
+.SS "Smartcards::CardEvent::stop (void)\fC [slot]\fP"
+
+.PP
+stop detection mechanism Qt-slot 
+.SS "Smartcards::CardEvent::timerEvent (QTimerEvent * e)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Qt timer event function\&. Contains main cycle of detection mechanism 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP pointer to Qt timer event class, ignored\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

@@ -1,0 +1,2073 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_smartcards_1_1_win_s_card" kind="class" language="C++" prot="public">
+    <compoundname>Smartcards::WinSCard</compoundname>
+    <includes refid="_native_s_card_8h" local="no">NativeSCard.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1aba8b91adf974f3fbc7671bc227117a5d" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::WinSCard::ATR_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>ATR_LENGTH</name>
+        <initializer>= SCARD_ATR_LENGTH</initializer>
+        <briefdescription>
+<para>Maximim ATR length. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="317" column="1" bodyfile="NativeSCard.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a58d1b0163d65aa5b534ec2603587a97f" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::WinSCard::AUTOALLOCATE</definition>
+        <argsstring></argsstring>
+        <name>AUTOALLOCATE</name>
+        <initializer>= SCARD_AUTOALLOCATE</initializer>
+        <briefdescription>
+<para>Constant indicating auto allocate memory in winscard functions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="318" column="1" bodyfile="NativeSCard.h" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a45d5597c9869ea50501e07ca8f616c5b" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::WinSCard::RESPONSE_MAX_LENGTH</definition>
+        <argsstring></argsstring>
+        <name>RESPONSE_MAX_LENGTH</name>
+        <initializer>=0x0200</initializer>
+        <briefdescription>
+<para>Maximum length of card response in bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="319" column="1" bodyfile="NativeSCard.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a89ba38a5b378d2a27b16970d2e707215" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::WinSCard::CCID_READER_PRESENT_STATE</definition>
+        <argsstring></argsstring>
+        <name>CCID_READER_PRESENT_STATE</name>
+        <initializer>= CARD_STATUS_STATE::Unknown | CARD_STATUS_STATE::Ignore | CARD_STATUS_STATE::Changed</initializer>
+        <briefdescription>
+<para>Reader present state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="320" column="1" bodyfile="NativeSCard.h" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a6621ccf2278841285455315894a329fd" prot="public" static="yes" mutable="no">
+        <type>const DWORD</type>
+        <definition>const DWORD Smartcards::WinSCard::CCID_READER_EMPTY_STATE</definition>
+        <argsstring></argsstring>
+        <name>CCID_READER_EMPTY_STATE</name>
+        <initializer>= CARD_STATUS_STATE::Unvailable | CARD_STATUS_STATE::Ignore | CARD_STATUS_STATE::Changed</initializer>
+        <briefdescription>
+<para>Reader empty state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="321" column="1" bodyfile="NativeSCard.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a141964f846d48db8b1e7ff23c0b3b827" prot="public" static="yes" mutable="no">
+        <type>const QString</type>
+        <definition>const QString WinSCard::ALL_READERS</definition>
+        <argsstring></argsstring>
+        <name>ALL_READERS</name>
+        <initializer>= QString::fromWCharArray(SCARD_ALL_READERS)</initializer>
+        <briefdescription>
+<para>Default winscard name for all readers group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="322" column="1" bodyfile="NativeSCard.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1ae54fa137b9e0037127562b1daea1fa65" prot="public" static="yes" mutable="no">
+        <type>const QString</type>
+        <definition>const QString WinSCard::DEFAULT_READERS</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_READERS</name>
+        <initializer>= QString::fromWCharArray(SCARD_DEFAULT_READERS)</initializer>
+        <briefdescription>
+<para>Default winscard name for default readers group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="323" column="1" bodyfile="NativeSCard.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1aba5d977bdb0ec8960d12f09cc61b8adf" prot="public" static="yes" mutable="no">
+        <type>const QString</type>
+        <definition>const QString WinSCard::LOCAL_READERS</definition>
+        <argsstring></argsstring>
+        <name>LOCAL_READERS</name>
+        <initializer>= QString::fromWCharArray(SCARD_LOCAL_READERS)</initializer>
+        <briefdescription>
+<para>Default winscard name for local readers group. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="324" column="1" bodyfile="NativeSCard.h" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1ab0dfec0369a208d081a41e88de135775" prot="public" static="yes" mutable="no">
+        <type>const QString</type>
+        <definition>const QString WinSCard::SYSTEM_READERS</definition>
+        <argsstring></argsstring>
+        <name>SYSTEM_READERS</name>
+        <initializer>= QString::fromWCharArray(SCARD_SYSTEM_READERS)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default winscard name for system readers group </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="325" column="1" bodyfile="NativeSCard.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a2aecb6553d5573abfbf4ede3484aed21" prot="private" static="no" mutable="no">
+        <type>SCARDCONTEXT</type>
+        <definition>SCARDCONTEXT Smartcards::WinSCard::m_hContext</definition>
+        <argsstring></argsstring>
+        <name>m_hContext</name>
+        <initializer>{ 0 }</initializer>
+        <briefdescription>
+<para>Stores a handle that identifies the resource manager context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="623" column="1" bodyfile="NativeSCard.h" bodystart="623" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a2728c1fdee319c4ce4bb62fcad376bf4" prot="private" static="no" mutable="no">
+        <type>SCARDHANDLE</type>
+        <definition>SCARDHANDLE Smartcards::WinSCard::m_hCard</definition>
+        <argsstring></argsstring>
+        <name>m_hCard</name>
+        <initializer>{ 0 }</initializer>
+        <briefdescription>
+<para>Stores a handle that identifies the connection to the smart card in the designated reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="624" column="1" bodyfile="NativeSCard.h" bodystart="624" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1ac7200058631750b15400eb876feec8ae" prot="private" static="no" mutable="no">
+        <type>DWORD</type>
+        <definition>DWORD Smartcards::WinSCard::m_nProtocol</definition>
+        <argsstring></argsstring>
+        <name>m_nProtocol</name>
+        <initializer>{ <ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7aaf67736ff5241ab4b9680386ddc04531d" kindref="member">T0</ref> }</initializer>
+        <briefdescription>
+<para>Stores a protocol of connected card. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="625" column="1" bodyfile="NativeSCard.h" bodystart="625" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a92651238090e6209f2878c7649b00fd0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::mContextEstablished</definition>
+        <argsstring></argsstring>
+        <name>mContextEstablished</name>
+        <initializer>{ false }</initializer>
+        <briefdescription>
+<para>Flag of control establish resource manager context. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="626" column="1" bodyfile="NativeSCard.h" bodystart="626" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a3dec7f471590c529732384222d957cbd" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::mCardConnected</definition>
+        <argsstring></argsstring>
+        <name>mCardConnected</name>
+        <initializer>{ false }</initializer>
+        <briefdescription>
+<para>Flag of control connecting card. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="627" column="1" bodyfile="NativeSCard.h" bodystart="627" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a735f70911f3d5c24716587871a8725e3" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long Smartcards::WinSCard::m_nLastError</definition>
+        <argsstring></argsstring>
+        <name>m_nLastError</name>
+        <initializer>{ <ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref> }</initializer>
+        <briefdescription>
+<para>Stores last error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="628" column="1" bodyfile="NativeSCard.h" bodystart="628" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1a11f83385624a726bdf13c666037514b0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smartcards_1_1_a_p_d_u_command" kindref="compound">APDUCommand</ref></type>
+        <definition>APDUCommand Smartcards::WinSCard::mLastCommand</definition>
+        <argsstring></argsstring>
+        <name>mLastCommand</name>
+        <initializer>{ 0,0,0,0 }</initializer>
+        <briefdescription>
+<para>Stores last transmit command. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="629" column="1" bodyfile="NativeSCard.h" bodystart="629" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1af6a3dc744f5bf4676ba4e9ed3d441055" prot="private" static="no" mutable="no">
+        <type><ref refid="class_smartcards_1_1_a_p_d_u_response" kindref="compound">APDUResponse</ref></type>
+        <definition>APDUResponse Smartcards::WinSCard::mLastResponse</definition>
+        <argsstring></argsstring>
+        <name>mLastResponse</name>
+        <initializer>{ 0,0 }</initializer>
+        <briefdescription>
+<para>Stores last response from transit command. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="630" column="1" bodyfile="NativeSCard.h" bodystart="630" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_smartcards_1_1_win_s_card_1aea63a50a4810912e2263d949f5237ba1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::m_bThrowingErrors</definition>
+        <argsstring></argsstring>
+        <name>m_bThrowingErrors</name>
+        <initializer>{ true }</initializer>
+        <briefdescription>
+<para>Flag of control throwing exceptions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="631" column="1" bodyfile="NativeSCard.h" bodystart="631" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1a9fd7130808a88297531533da3ee945af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::WinSCard::WinSCard</definition>
+        <argsstring>(void)</argsstring>
+        <name>WinSCard</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="328" column="1" bodyfile="NativeSCard.cpp" bodystart="174" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1aefe248f13043030e959599763ee722a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Smartcards::WinSCard::~WinSCard</definition>
+        <argsstring>(void)</argsstring>
+        <name>~WinSCard</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="331" column="1" bodyfile="NativeSCard.cpp" bodystart="178" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1a6039ae592ce26bf7c4041f06a3c5550e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>SCARDCONTEXT</type>
+        <definition>SCARDCONTEXT Smartcards::WinSCard::context</definition>
+        <argsstring>(void) const</argsstring>
+        <name>context</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get current resource manager context. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A current resource manager context. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="335" column="1" bodyfile="NativeSCard.h" bodystart="335" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1acced1451b7c08146d626af62281bdc2e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>SCARDHANDLE</type>
+        <definition>SCARDHANDLE Smartcards::WinSCard::handle</definition>
+        <argsstring>(void) const</argsstring>
+        <name>handle</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get current card handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A current card handle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="339" column="1" bodyfile="NativeSCard.h" bodystart="339" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1a21c95690ffc55975119c3e415777284c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Smartcards::WinSCard::throwErrors</definition>
+        <argsstring>(bool isThrowingErrors)</argsstring>
+        <name>throwErrors</name>
+        <param>
+          <type>bool</type>
+          <declname>isThrowingErrors</declname>
+        </param>
+        <briefdescription>
+<para>Set the flag of throwing exception on errors. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">isThrowingErrors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true - throwing exceptions on errros, else stores errors in lastError. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="343" column="1" bodyfile="NativeSCard.h" bodystart="343" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1a0c7c232e82e5c50fcccf15eb1073d04d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::isThrowingErrors</definition>
+        <argsstring>(void) const</argsstring>
+        <name>isThrowingErrors</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get flag of throwing exception on errors. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>If true - throwing exceptions on errros, else stores errors in lastError. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="347" column="1" bodyfile="NativeSCard.h" bodystart="347" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1a937a80d259754e641dfd374184ad2a70" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long Smartcards::WinSCard::lastError</definition>
+        <argsstring>(void) const</argsstring>
+        <name>lastError</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get last error code. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Last error code. SUCCESS if no error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="351" column="1" bodyfile="NativeSCard.h" bodystart="351" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_win_s_card_1aa6042d83d0eaaf5e0229d8b2e7d83b57" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::isError</definition>
+        <argsstring>(void) const</argsstring>
+        <name>isError</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check is last error present. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if error present, else false. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="355" column="1" bodyfile="NativeSCard.h" bodystart="355" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1gac8e342539bc123a0e6db2dbce9556246" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListReaders</definition>
+        <argsstring>(void)</argsstring>
+        <name>ListReaders</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get list readers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of readers names. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="362" column="1" bodyfile="NativeSCard.cpp" bodystart="209" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1gaaf3ddd48b72571923bc898496708a105" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListReaderGroups</definition>
+        <argsstring>(void)</argsstring>
+        <name>ListReaderGroups</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get list reader groups. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of reader groups. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="367" column="1" bodyfile="NativeSCard.cpp" bodystart="243" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1gad62414ad4962122919e2ee4045499da7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QUuid</type>
+        <definition>QUuid Smartcards::WinSCard::GetProviderId</definition>
+        <argsstring>(const QString &amp;cardName)</argsstring>
+        <name>GetProviderId</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Gets provider GUID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The provider GUID. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="373" column="1" bodyfile="NativeSCard.cpp" bodystart="276" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga3ae8a3c90f341b0e761107ddf895f60c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(const QByteArray &amp;cardAtr, const QVector&lt; QUuid &gt; &amp;guidInterfaces)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. Match ATR an support the interfaces specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier interfaces. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of cards names. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="380" column="1" bodyfile="NativeSCard.cpp" bodystart="292" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1gaac93a4ed5397bd44d3cd38d5bc83ee27" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(const QVector&lt; QUuid &gt; &amp;guidInterfaces)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. Search for interfaces specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique identifier interfaces. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of cards names </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="386" column="1" bodyfile="NativeSCard.cpp" bodystart="328" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga1562b9e4a8c0b9de73dfcd4a81c09f4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(const QByteArray &amp;cardAtr)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. Match for ATR. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card atr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of cards names </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="392" column="1" bodyfile="NativeSCard.cpp" bodystart="340" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga3b6dad8b1127ce71ea9d25ee6d7ac7a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QStringList</type>
+        <definition>QStringList Smartcards::WinSCard::ListCards</definition>
+        <argsstring>(void)</argsstring>
+        <name>ListCards</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Searches the smart card database and provides a list of named cards previously introduced to the system by the user. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A list of cards names </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="396" column="1" bodyfile="NativeSCard.cpp" bodystart="352" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdb__funcs_1ga8f2118117ca9e836e6abe082f36360f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QVector&lt; QUuid &gt;</type>
+        <definition>QVector&lt; QUuid &gt; Smartcards::WinSCard::ListInterfaces</definition>
+        <argsstring>(const QString &amp;cardName)</argsstring>
+        <name>ListInterfaces</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Provides a list of interfaces supplied by a given card. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of interfaces supported by the card </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="403" column="1" bodyfile="NativeSCard.cpp" bodystart="357" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gaebed438346018a4fbb04aca247720aa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::AddReaderToGroup</definition>
+        <argsstring>(const QString &amp;ReaderName, const QString &amp;GroupName)</argsstring>
+        <name>AddReaderToGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Adds a reader to group to &apos;GroupName&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="411" column="1" bodyfile="NativeSCard.cpp" bodystart="382" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga266f41e727d32feca84c4d92e437e987" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ForgetCardType</definition>
+        <argsstring>(const QString &amp;cardName)</argsstring>
+        <name>ForgetCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Removes an introduced smart card from the smart card subsystem. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="416" column="1" bodyfile="NativeSCard.cpp" bodystart="396" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gadbc99870f524e931bcbbd21fea0308cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ForgetReader</definition>
+        <argsstring>(const QString &amp;ReaderName)</argsstring>
+        <name>ForgetReader</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <briefdescription>
+<para>removes a previously introduced reader from control by the smart card subsystem. It is removed from the smart card database, including from any reader group that it may have been added to. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="421" column="1" bodyfile="NativeSCard.cpp" bodystart="410" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gac64a3cafbf44d385aad68dbe3e8755aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ForgetReaderGroup</definition>
+        <argsstring>(const QString &amp;GroupName)</argsstring>
+        <name>ForgetReaderGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Removes a previously introduced smart card reader group from the smart card subsystem. Although this function automatically clears all readers from the group, it does not affect the existence of the individual readers in the database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="426" column="1" bodyfile="NativeSCard.cpp" bodystart="424" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga2ad8a5052d40c206e5e6d1daba3d5dee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceReader</definition>
+        <argsstring>(const QString &amp;ReaderName, const QString &amp;DeviceName)</argsstring>
+        <name>IntroduceReader</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>DeviceName</declname>
+        </param>
+        <briefdescription>
+<para>Introduces a new name for an existing smart card reader. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Smart card readers are automatically introduced to the system; a smart card reader vendor&apos;s setup program can also introduce a smart card reader to the system. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">DeviceName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the device. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="433" column="1" bodyfile="NativeSCard.cpp" bodystart="438" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gad1ff5c1953354297a30a0814ea84359d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceReaderGroup</definition>
+        <argsstring>(const QString &amp;GroupName)</argsstring>
+        <name>IntroduceReaderGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Introduces a reader group to the smart card subsystem. However, the reader group is not created until the group is specified when adding a reader to the smart card database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="438" column="1" bodyfile="NativeSCard.cpp" bodystart="452" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga78f4e61de1338eb88653211b719e33bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::RemoveReaderFromGroup</definition>
+        <argsstring>(const QString &amp;ReaderName, const QString &amp;GroupName)</argsstring>
+        <name>RemoveReaderFromGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Removes a reader from an existing reader group. This function has no effect on the reader. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="444" column="1" bodyfile="NativeSCard.cpp" bodystart="466" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gaae12329492e5eac3d4f4380eb247a5af" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QVector&lt; QUuid &gt; &amp;guidInterfaces, const QByteArray &amp;cardAtr, const QByteArray &amp;cardAtrMask, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtrMask</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of identifiers (GUIDs) that identify the interfaces supported by the smart card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtrMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR mask. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="453" column="1" bodyfile="NativeSCard.cpp" bodystart="480" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga2f6bc81d9c913abb3b97f4cdbd0bff3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QVector&lt; QUuid &gt; &amp;guidInterfaces, const QByteArray &amp;cardAtr, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. Match by ATR and interfaces specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of identifiers (GUIDs) that identify the interfaces supported by the smart card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="461" column="1" bodyfile="NativeSCard.cpp" bodystart="500" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga0f7c3472da9823a4d1e9b3b82b9436f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QByteArray &amp;cardAtr, const QByteArray &amp;cardAtrMask, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtrMask</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. Match by ATR and ATR mask. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtrMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR mask. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="469" column="1" bodyfile="NativeSCard.cpp" bodystart="505" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gaec4c90719847e58d63b326b32629492f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QByteArray &amp;cardAtr, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. Match by ATR. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="477" column="1" bodyfile="NativeSCard.cpp" bodystart="510" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scresmng__funcs_1ga42d6fa39463352c1ca9ab89ec7228b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::EstablishContext</definition>
+        <argsstring>(SCOPE Scope)</argsstring>
+        <name>EstablishContext</name>
+        <param>
+          <type><ref refid="namespace_smartcards_1a58ca156488c781fb42e2cf0a8b6bc34b" kindref="member">SCOPE</ref></type>
+          <declname>Scope</declname>
+        </param>
+        <briefdescription>
+<para>Establishes the resource manager context (the scope) within which database operations are performed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Scope</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scope of the resource manager context. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="484" column="1" bodyfile="NativeSCard.cpp" bodystart="515" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scresmng__funcs_1ga571ec5becfb8bbe104127c4337cc1262" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::isContextEstablished</definition>
+        <argsstring>(void) const</argsstring>
+        <name>isContextEstablished</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check is resource manager context is established. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if it established, false if it not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="488" column="1" bodyfile="NativeSCard.h" bodystart="488" bodyend="488"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scresmng__funcs_1ga1274ff604a3c2cae84a046bd94fe545c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::isContextValid</definition>
+        <argsstring>(void)</argsstring>
+        <name>isContextValid</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Query if resource manager context is valid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the context is valid, false if not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="493" column="1" bodyfile="NativeSCard.cpp" bodystart="525" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scresmng__funcs_1gae385b71f00634fe32921eb64af1b7b23" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ReleaseContext</definition>
+        <argsstring>(void)</argsstring>
+        <name>ReleaseContext</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Closes an established resource manager context, freeing any resources allocated under that context, including SCARDHANDLE objects and memory allocated using the AUTOALLOCATE length designator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="498" column="1" bodyfile="NativeSCard.cpp" bodystart="537" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1ga37740e6a85817709262ff5571e998438" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>long</type>
+        <definition>long Smartcards::WinSCard::Connect</definition>
+        <argsstring>(const QString &amp;Reader, SHARE ShareMode, PROTOCOL PreferredProtocols)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>Reader</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smartcards_1a1f007601bac24f0cea5d4fdf7a6f2d70" kindref="member">SHARE</ref></type>
+          <declname>ShareMode</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7a" kindref="member">PROTOCOL</ref></type>
+          <declname>PreferredProtocols</declname>
+        </param>
+        <briefdescription>
+<para>Establishes a connection between the calling application and a smart card contained by a specific reader. If no card exists in the specified reader, an exception is throwed else return SUCCESS. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Reader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reader name. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ShareMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The share mode. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PreferredProtocols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The preferred protocols. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A SUCCESS if successful. NO_SERVICE if context not valid. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="508" column="1" bodyfile="NativeSCard.cpp" bodystart="548" bodyend="572"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1gab1c3fb8473dd41399a5a3743cd0fcc5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7a" kindref="member">PROTOCOL</ref></type>
+        <definition>PROTOCOL Smartcards::WinSCard::Reconnect</definition>
+        <argsstring>(SHARE ShareMode, PROTOCOL PreferredProtocols, DISCONNECT Initialization)</argsstring>
+        <name>Reconnect</name>
+        <param>
+          <type><ref refid="namespace_smartcards_1a1f007601bac24f0cea5d4fdf7a6f2d70" kindref="member">SHARE</ref></type>
+          <declname>ShareMode</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smartcards_1ac11dd7126337a5bd53934318fff2fd7a" kindref="member">PROTOCOL</ref></type>
+          <declname>PreferredProtocols</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6a" kindref="member">DISCONNECT</ref></type>
+          <declname>Initialization</declname>
+        </param>
+        <briefdescription>
+<para>reestablishes an existing connection between the calling application and a smart card. This function moves a card handle from direct access to general access, or acknowledges and clears an error condition that is preventing further access to the card. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ShareMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Flag that indicates whether other applications may form connections to this card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PreferredProtocols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bitmask of acceptable protocols for this connection. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Initialization</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of initialization that should be performed on the card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Flag that indicates the established active protocol. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="516" column="1" bodyfile="NativeSCard.cpp" bodystart="574" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1gaa83c57d70f5428df32c3b36f87eeaca3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::Disconnect</definition>
+        <argsstring>(DISCONNECT Disposition)</argsstring>
+        <name>Disconnect</name>
+        <param>
+          <type><ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6a" kindref="member">DISCONNECT</ref></type>
+          <declname>Disposition</declname>
+        </param>
+        <briefdescription>
+<para>Terminates a connection previously opened between the calling application and a smart card in the target reader. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>It requires that the context has been established </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Disposition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action to take on the card in the connected reader on close. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="522" column="1" bodyfile="NativeSCard.cpp" bodystart="594" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1ga56062f0add774804384f945f151388f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::isConnected</definition>
+        <argsstring>(void) const</argsstring>
+        <name>isConnected</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check is card connected. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if it connected, false if it not. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="526" column="1" bodyfile="NativeSCard.h" bodystart="526" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1ga93b60c5c1df8550e6772b53c2ab0e7af" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_smartcards_1_1_a_p_d_u_response" kindref="compound">APDUResponse</ref></type>
+        <definition>APDUResponse Smartcards::WinSCard::Transmit</definition>
+        <argsstring>(APDUCommand ApduCmd)</argsstring>
+        <name>Transmit</name>
+        <param>
+          <type><ref refid="class_smartcards_1_1_a_p_d_u_command" kindref="compound">APDUCommand</ref></type>
+          <declname>ApduCmd</declname>
+        </param>
+        <briefdescription>
+<para>Sends a service request to the smart card and expects to receive data back from the card. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ApduCmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The apdu command. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An <ref refid="class_smartcards_1_1_a_p_d_u_response" kindref="compound">APDUResponse</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="532" column="1" bodyfile="NativeSCard.cpp" bodystart="611" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1ga457236c8762d95325491093e49c563eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray Smartcards::WinSCard::GetCardStatus</definition>
+        <argsstring>(DWORD &amp;state, DWORD &amp;protocol)</argsstring>
+        <name>GetCardStatus</name>
+        <param>
+          <type>DWORD &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>DWORD &amp;</type>
+          <declname>protocol</declname>
+        </param>
+        <briefdescription>
+<para>Gets card status(card state, card protocol and card ATR). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>It requires that the card has been connected </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card state. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">protocol</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card protocol. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The card ATR. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="540" column="1" bodyfile="NativeSCard.cpp" bodystart="185" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1gac0f9a5c3b9517c82b63c8872f4868ba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::BeginTransaction</definition>
+        <argsstring>(void)</argsstring>
+        <name>BeginTransaction</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Begins a transaction. The function waits for the completion of all other transactions before it begins. After the transaction starts, all other applications are blocked from accessing the smart card while the transaction is in progress. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="544" column="1" bodyfile="NativeSCard.cpp" bodystart="645" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scredacs__funcs_1gace31974514dff31dcc72bd0dd9ba71ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::EndTransaction</definition>
+        <argsstring>(DISCONNECT Disposition)</argsstring>
+        <name>EndTransaction</name>
+        <param>
+          <type><ref refid="namespace_smartcards_1a3fe0be63db3b2bc984dda304809dbe6a" kindref="member">DISCONNECT</ref></type>
+          <declname>Disposition</declname>
+        </param>
+        <briefdescription>
+<para>Completes a previously declared transaction, allowing other applications to resume interactions with the card. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Disposition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Action to take on the card in the connected reader on close. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="550" column="1" bodyfile="NativeSCard.cpp" bodystart="659" bodyend="671"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdacs__funcs_1ga187b1c36689591da2c8ac0b3b1e7e95d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray Smartcards::WinSCard::GetAttribute</definition>
+        <argsstring>(DWORD AttribId)</argsstring>
+        <name>GetAttribute</name>
+        <param>
+          <type>DWORD</type>
+          <declname>AttribId</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the current reader attributes for the given handle. It does not affect the state of the reader, driver, or card. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">AttribId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier for the attribute. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The byte array of attribute data. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="558" column="1" bodyfile="NativeSCard.cpp" bodystart="751" bodyend="771"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdacs__funcs_1ga442c84421b38f4b3dab7b85f9be8cc5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::SetAttribute</definition>
+        <argsstring>(DWORD AttribId, const QByteArray &amp;attr)</argsstring>
+        <name>SetAttribute</name>
+        <param>
+          <type>DWORD</type>
+          <declname>AttribId</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>attr</declname>
+        </param>
+        <briefdescription>
+<para>Sets the given reader attribute for the given handle. It does not affect the state of the reader, reader driver, or smart card. Not all attributes are supported by all readers (nor can they be set at all times) as many of the attributes are under direct control of the transport protocol. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">AttribId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identifier for the attribute. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">attr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte array of attribute data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="564" column="1" bodyfile="NativeSCard.cpp" bodystart="773" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdacs__funcs_1ga16dd963ea05534b92bdbfb97c0a6eb3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::CardControl</definition>
+        <argsstring>(DWORD controlCode, const QByteArray &amp;inData, QByteArray &amp;outData)</argsstring>
+        <name>CardControl</name>
+        <param>
+          <type>DWORD</type>
+          <declname>controlCode</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>inData</declname>
+        </param>
+        <param>
+          <type>QByteArray &amp;</type>
+          <declname>outData</declname>
+        </param>
+        <briefdescription>
+<para>Gives you direct control of the reader. You can call it any time after a successful call to Connect and before a successful call to Disconnect. The effect on the state of the reader depends on the control code. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">controlCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Control code for the operation. This value identifies the specific operation to be performed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte array that contains the data required to perform the operation. Not empty. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">outData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte array that receives the operation&apos;s output data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="572" column="1" bodyfile="NativeSCard.cpp" bodystart="787" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdacs__funcs_1ga9e1a70c7665901ab0aad8ec01dca6d0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::WinSCard::CardControl</definition>
+        <argsstring>(DWORD controlCode, const QByteArray &amp;inData)</argsstring>
+        <name>CardControl</name>
+        <param>
+          <type>DWORD</type>
+          <declname>controlCode</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>inData</declname>
+        </param>
+        <briefdescription>
+<para>Gives you direct control of the reader. You can call it any time after a successful call to Connect and before a successful call to Disconnect. The effect on the state of the reader depends on the control code. Only inData version. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">controlCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Control code for the operation. This value identifies the specific operation to be performed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte array that contains the data required to perform the operation. Not empty. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="579" column="1" bodyfile="NativeSCard.cpp" bodystart="808" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdacs__funcs_1gaad3607efde318a7a6aa6ff59144df4f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>DWORD</type>
+        <definition>DWORD Smartcards::WinSCard::CardControl</definition>
+        <argsstring>(DWORD controlCode, LPVOID pInData, DWORD cInData, LPVOID pOutData, DWORD cOutData)</argsstring>
+        <name>CardControl</name>
+        <param>
+          <type>DWORD</type>
+          <declname>controlCode</declname>
+        </param>
+        <param>
+          <type>LPVOID</type>
+          <declname>pInData</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>cInData</declname>
+        </param>
+        <param>
+          <type>LPVOID</type>
+          <declname>pOutData</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>cOutData</declname>
+        </param>
+        <briefdescription>
+<para>Direct pointer version. Gives you direct control of the reader. You can call it any time after a successful call to Connect and before a successful call to Disconnect. The effect on the state of the reader depends on the control code. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">controlCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Control code for the operation. This value identifies the specific operation to be performed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pInData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer that contains the data required to perform the operation. This parameter can be NULL if the controlCode parameter specifies an operation that does not require input data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cInData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size, in bytes, of the buffer pointed to by pInData. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pOutData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer that receives the operation&apos;s output data. This parameter can be NULL if the controlCode parameter specifies an operation that does not produce output data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cOutData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size, in bytes, of the buffer pointed to by pOutData. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A DWORD that receives the size, in bytes, of the data stored into the buffer pointed to by pOutData. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="590" column="1" bodyfile="NativeSCard.cpp" bodystart="814" bodyend="828"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sctrack__funcs_1ga4dfde1d07cf051f2d582be55129a63fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::GetStatusChange</definition>
+        <argsstring>(DWORD dwTimeout, ReadersStates &amp;readerStates)</argsstring>
+        <name>GetStatusChange</name>
+        <param>
+          <type>DWORD</type>
+          <declname>dwTimeout</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smartcards_1_1_readers_states" kindref="compound">ReadersStates</ref> &amp;</type>
+          <declname>readerStates</declname>
+        </param>
+        <briefdescription>
+<para>Blocks execution until the current availability of the cards in a specific set of readers changes. </para>        </briefdescription>
+        <detaileddescription>
+<para>The caller supplies a list of readers to be monitored by an <ref refid="class_smartcards_1_1_readers_states" kindref="compound">ReadersStates</ref> and the maximum amount of time (in milliseconds) that it is willing to wait for an action to occur on one of the listed readers.</para><para>Note that GetStatusChange uses the user-supplied value in the CurrentState members of the ReaderStates as the definition of the current state of the readers.</para><para>The function returns when there is a change in availability, having filled in the EventState members of ReaderStates appropriately. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dwTimeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum amount of time, in milliseconds, to wait for an action. A value of zero causes the function to return immediately. A value of INFINITE causes this function never to time out. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">readerStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Class contains states of the readers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="601" column="1" bodyfile="NativeSCard.cpp" bodystart="673" bodyend="686"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sctrack__funcs_1ga2ef692a06c2c62775f1d2b3ff06636d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::LocateCards</definition>
+        <argsstring>(const QStringList &amp;cards, ReadersStates &amp;readerStates)</argsstring>
+        <name>LocateCards</name>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>cards</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smartcards_1_1_readers_states" kindref="compound">ReadersStates</ref> &amp;</type>
+          <declname>readerStates</declname>
+        </param>
+        <briefdescription>
+<para>Searches the readers listed in the readerStates parameter for a card with an ATR string that matches one of the card names specified in cards, returning immediately with the result. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cards</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The cards names list. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">readerStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Class contains states of the readers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="607" column="1" bodyfile="NativeSCard.cpp" bodystart="688" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sctrack__funcs_1gaa7b56e2f09d069e77eeb5186a3d363c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::LocateCardsByATR</definition>
+        <argsstring>(const QVector&lt; QPair&lt; QByteArray, QByteArray &gt;&gt; &amp;atrMask, ReadersStates &amp;readerStates)</argsstring>
+        <name>LocateCardsByATR</name>
+        <param>
+          <type>const QVector&lt; QPair&lt; QByteArray, QByteArray &gt;&gt; &amp;</type>
+          <declname>atrMask</declname>
+        </param>
+        <param>
+          <type><ref refid="class_smartcards_1_1_readers_states" kindref="compound">ReadersStates</ref> &amp;</type>
+          <declname>readerStates</declname>
+        </param>
+        <briefdescription>
+<para>Searches the readers listed in the readerStates parameter for a card with a name that matches one of the card names contained in one of the pair ATR and ATRMask specified by the atrMask parameter. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">atrMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of pairs - ATR and ATRMask. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">readerStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Class contains states of the readers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="613" column="1" bodyfile="NativeSCard.cpp" bodystart="712" bodyend="735"/>
+      </memberdef>
+      <memberdef kind="function" id="group__sctrack__funcs_1ga2ce7dc614b5315d65ec642603cd7cee3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::CardCancel</definition>
+        <argsstring>(void)</argsstring>
+        <name>CardCancel</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Terminates all outstanding actions within a specific resource manager context. </para>        </briefdescription>
+        <detaileddescription>
+<para>The only requests that you can cancel are those that require waiting for external action by the smart card or user.</para><para>Any such outstanding action requests will terminate with a status indication that the action was canceled.</para><para>This is especially useful to force outstanding GetStatusChange calls to terminate. <parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="621" column="1" bodyfile="NativeSCard.cpp" bodystart="737" bodyend="749"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class must implement a winscard api. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NativeSCard.h" line="315" column="1" bodyfile="NativeSCard.h" bodystart="314" bodyend="632"/>
+    <listofallmembers>
+      <member refid="group__scdbmng__funcs_1gaebed438346018a4fbb04aca247720aa0" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>AddReaderToGroup</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a141964f846d48db8b1e7ff23c0b3b827" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>ALL_READERS</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1aba8b91adf974f3fbc7671bc227117a5d" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>ATR_LENGTH</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a58d1b0163d65aa5b534ec2603587a97f" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>AUTOALLOCATE</name></member>
+      <member refid="group__scredacs__funcs_1gac0f9a5c3b9517c82b63c8872f4868ba3" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>BeginTransaction</name></member>
+      <member refid="group__sctrack__funcs_1ga2ce7dc614b5315d65ec642603cd7cee3" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>CardCancel</name></member>
+      <member refid="group__scdacs__funcs_1ga16dd963ea05534b92bdbfb97c0a6eb3b" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>CardControl</name></member>
+      <member refid="group__scdacs__funcs_1ga9e1a70c7665901ab0aad8ec01dca6d0a" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>CardControl</name></member>
+      <member refid="group__scdacs__funcs_1gaad3607efde318a7a6aa6ff59144df4f3" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>CardControl</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a6621ccf2278841285455315894a329fd" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>CCID_READER_EMPTY_STATE</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a89ba38a5b378d2a27b16970d2e707215" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>CCID_READER_PRESENT_STATE</name></member>
+      <member refid="group__scredacs__funcs_1ga37740e6a85817709262ff5571e998438" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>Connect</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a6039ae592ce26bf7c4041f06a3c5550e" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>context</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1ae54fa137b9e0037127562b1daea1fa65" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>DEFAULT_READERS</name></member>
+      <member refid="group__scredacs__funcs_1gaa83c57d70f5428df32c3b36f87eeaca3" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>Disconnect</name></member>
+      <member refid="group__scredacs__funcs_1gace31974514dff31dcc72bd0dd9ba71ba" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>EndTransaction</name></member>
+      <member refid="group__scresmng__funcs_1ga42d6fa39463352c1ca9ab89ec7228b40" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>EstablishContext</name></member>
+      <member refid="group__scdbmng__funcs_1ga266f41e727d32feca84c4d92e437e987" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ForgetCardType</name></member>
+      <member refid="group__scdbmng__funcs_1gadbc99870f524e931bcbbd21fea0308cb" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ForgetReader</name></member>
+      <member refid="group__scdbmng__funcs_1gac64a3cafbf44d385aad68dbe3e8755aa" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ForgetReaderGroup</name></member>
+      <member refid="group__scdacs__funcs_1ga187b1c36689591da2c8ac0b3b1e7e95d" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>GetAttribute</name></member>
+      <member refid="group__scredacs__funcs_1ga457236c8762d95325491093e49c563eb" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>GetCardStatus</name></member>
+      <member refid="group__scdb__funcs_1gad62414ad4962122919e2ee4045499da7" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>GetProviderId</name></member>
+      <member refid="group__sctrack__funcs_1ga4dfde1d07cf051f2d582be55129a63fb" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>GetStatusChange</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1acced1451b7c08146d626af62281bdc2e" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>handle</name></member>
+      <member refid="group__scdbmng__funcs_1gaae12329492e5eac3d4f4380eb247a5af" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>IntroduceCardType</name></member>
+      <member refid="group__scdbmng__funcs_1ga2f6bc81d9c913abb3b97f4cdbd0bff3e" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>IntroduceCardType</name></member>
+      <member refid="group__scdbmng__funcs_1ga0f7c3472da9823a4d1e9b3b82b9436f5" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>IntroduceCardType</name></member>
+      <member refid="group__scdbmng__funcs_1gaec4c90719847e58d63b326b32629492f" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>IntroduceCardType</name></member>
+      <member refid="group__scdbmng__funcs_1ga2ad8a5052d40c206e5e6d1daba3d5dee" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>IntroduceReader</name></member>
+      <member refid="group__scdbmng__funcs_1gad1ff5c1953354297a30a0814ea84359d" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>IntroduceReaderGroup</name></member>
+      <member refid="group__scredacs__funcs_1ga56062f0add774804384f945f151388f1" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>isConnected</name></member>
+      <member refid="group__scresmng__funcs_1ga571ec5becfb8bbe104127c4337cc1262" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>isContextEstablished</name></member>
+      <member refid="group__scresmng__funcs_1ga1274ff604a3c2cae84a046bd94fe545c" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>isContextValid</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1aa6042d83d0eaaf5e0229d8b2e7d83b57" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>isError</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a0c7c232e82e5c50fcccf15eb1073d04d" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>isThrowingErrors</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a937a80d259754e641dfd374184ad2a70" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>lastError</name></member>
+      <member refid="group__scdb__funcs_1ga3ae8a3c90f341b0e761107ddf895f60c" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ListCards</name></member>
+      <member refid="group__scdb__funcs_1gaac93a4ed5397bd44d3cd38d5bc83ee27" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ListCards</name></member>
+      <member refid="group__scdb__funcs_1ga1562b9e4a8c0b9de73dfcd4a81c09f4b" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ListCards</name></member>
+      <member refid="group__scdb__funcs_1ga3b6dad8b1127ce71ea9d25ee6d7ac7a8" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ListCards</name></member>
+      <member refid="group__scdb__funcs_1ga8f2118117ca9e836e6abe082f36360f9" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ListInterfaces</name></member>
+      <member refid="group__scdb__funcs_1gaaf3ddd48b72571923bc898496708a105" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ListReaderGroups</name></member>
+      <member refid="group__scdb__funcs_1gac8e342539bc123a0e6db2dbce9556246" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ListReaders</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1aba5d977bdb0ec8960d12f09cc61b8adf" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>LOCAL_READERS</name></member>
+      <member refid="group__sctrack__funcs_1ga2ef692a06c2c62775f1d2b3ff06636d7" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>LocateCards</name></member>
+      <member refid="group__sctrack__funcs_1gaa7b56e2f09d069e77eeb5186a3d363c6" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>LocateCardsByATR</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1aea63a50a4810912e2263d949f5237ba1" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>m_bThrowingErrors</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a2728c1fdee319c4ce4bb62fcad376bf4" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>m_hCard</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a2aecb6553d5573abfbf4ede3484aed21" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>m_hContext</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a735f70911f3d5c24716587871a8725e3" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>m_nLastError</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1ac7200058631750b15400eb876feec8ae" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>m_nProtocol</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a3dec7f471590c529732384222d957cbd" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>mCardConnected</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a92651238090e6209f2878c7649b00fd0" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>mContextEstablished</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a11f83385624a726bdf13c666037514b0" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>mLastCommand</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1af6a3dc744f5bf4676ba4e9ed3d441055" prot="private" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>mLastResponse</name></member>
+      <member refid="group__scredacs__funcs_1gab1c3fb8473dd41399a5a3743cd0fcc5f" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>Reconnect</name></member>
+      <member refid="group__scresmng__funcs_1gae385b71f00634fe32921eb64af1b7b23" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>ReleaseContext</name></member>
+      <member refid="group__scdbmng__funcs_1ga78f4e61de1338eb88653211b719e33bc" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>RemoveReaderFromGroup</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a45d5597c9869ea50501e07ca8f616c5b" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>RESPONSE_MAX_LENGTH</name></member>
+      <member refid="group__scdacs__funcs_1ga442c84421b38f4b3dab7b85f9be8cc5a" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>SetAttribute</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1ab0dfec0369a208d081a41e88de135775" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>SYSTEM_READERS</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a21c95690ffc55975119c3e415777284c" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>throwErrors</name></member>
+      <member refid="group__scredacs__funcs_1ga93b60c5c1df8550e6772b53c2ab0e7af" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>Transmit</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1a9fd7130808a88297531533da3ee945af" prot="public" virt="non-virtual"><scope>Smartcards::WinSCard</scope><name>WinSCard</name></member>
+      <member refid="class_smartcards_1_1_win_s_card_1aefe248f13043030e959599763ee722a6" prot="public" virt="virtual"><scope>Smartcards::WinSCard</scope><name>~WinSCard</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

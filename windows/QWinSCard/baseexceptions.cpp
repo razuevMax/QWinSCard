@@ -1,3 +1,6 @@
+//! \file baseexceptions.cpp
+//! \brief Implements the baseexceptions class.
+//! \details File is contains implements the class BaseExceptions, must implement a std::exception in Qt-style class
 #include <QString>
 #include "baseexceptions.h"
 
@@ -6,7 +9,6 @@ BaseExceptions::BaseExceptions() noexcept
 {
 
 }
-
 BaseExceptions::BaseExceptions( const char * const & _What) noexcept
  :m_errorString(_What), m_errorCode(UNRESOLVED_EXCEPTION)
 {

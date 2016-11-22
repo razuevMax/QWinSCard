@@ -1,25 +1,29 @@
+//! \file cardevent.cpp
+//! \brief Implements the CardEvent class.
+//! \details File is contains source of class CardEvent must implement a card detection mechanism.
 #include <QtCore/QThread>
 #include <QtCore/QMutex>
 #include <QtCore/QHash>
 #include <winscard.h>
 
 #include "cardevent.h"
-#include "NativeSCard.h"
 
-Smartcards::CardEvent::CardEvent(void)
+using namespace Smartcards;
+
+CardEvent::CardEvent(void)
  : QObject()
 {
- m_sCard->EstablishContext(Smartcards::User);
+ m_sCard->EstablishContext(User);
  initStartTokenWatchThread();
 }
 
-Smartcards::CardEvent::~CardEvent()
+CardEvent::~CardEvent()
 {
  terminateStopSCardWatchThread();
  m_sCard->ReleaseContext();
 }
 
-void Smartcards::CardEvent::initStartTokenWatchThread()
+void CardEvent::initStartTokenWatchThread()
 {
  connect(this, SIGNAL(onStopCardEvents()), this, SLOT(stop()), Qt::DirectConnection);
  m_Thread = new QThread;
@@ -31,7 +35,7 @@ void Smartcards::CardEvent::initStartTokenWatchThread()
  m_bRunCardDetection = true;
 }
 
-void Smartcards::CardEvent::terminateStopSCardWatchThread()
+void CardEvent::terminateStopSCardWatchThread()
 {
  if (true == m_bRunCardDetection) {
   return;
@@ -45,8 +49,7 @@ void Smartcards::CardEvent::terminateStopSCardWatchThread()
  m_Thread = nullptr;
 }
 
-
-void Smartcards::CardEvent::run(void)
+void CardEvent::run(void)
 {
  DWORD state;
  QByteArray ATR;
@@ -62,12 +65,12 @@ void Smartcards::CardEvent::run(void)
   for (int i = 0; i < count; i++)
   {
    QString readerName = readersList.at(i);
-   m_sCard->Connect(readerName, Smartcards::Shared, Smartcards::T0orT1);
+   m_sCard->Connect(readerName, Shared, T0orT1);
    if (!m_sCard->isError())
    {
     ATR = m_sCard->GetCardStatus(state, nProtocol);
     m_sCard->Disconnect(Leave);
-    if (state == Smartcards::Specific)
+    if (state == Specific)
     {
      m_Readers.insert(readerName, true);
      emit cardInserted(readerName, ATR);
@@ -84,7 +87,7 @@ void Smartcards::CardEvent::run(void)
  tId=startTimer(500);
 }
 
-void Smartcards::CardEvent::setCardDetection(bool isDetect)
+void CardEvent::setCardDetection(bool isDetect)
 {
  QMutex mutex;
  mutex.lock();
@@ -92,13 +95,13 @@ void Smartcards::CardEvent::setCardDetection(bool isDetect)
  mutex.unlock();
 }
 
-void Smartcards::CardEvent::stop( void )
+void CardEvent::stop( void )
 {
  setCardDetection(false);
  thread()->quit();
 }
 
-void Smartcards::CardEvent::timerEvent( QTimerEvent* e )
+void CardEvent::timerEvent( QTimerEvent* e )
 {
  Q_UNUSED(e)
  if(m_sCard.isNull() || !m_bRunCardDetection)
@@ -110,7 +113,7 @@ void Smartcards::CardEvent::timerEvent( QTimerEvent* e )
   QByteArray ATR;
   DWORD	nProtocol;
   QStringList readers;
-  m_sCard->EstablishContext(Smartcards::User);
+  m_sCard->EstablishContext(User);
   readers=m_sCard->ListReaders();
   if (m_sCard->isError())
    return;
@@ -120,14 +123,14 @@ void Smartcards::CardEvent::timerEvent( QTimerEvent* e )
    QString readerName = readers.at(i);
    if (m_Readers.contains(readerName))
    {
-    m_sCard->Connect(readerName, Smartcards::Shared, Smartcards::T0orT1);
+    m_sCard->Connect(readerName, Shared, T0orT1);
     if(!m_sCard->isError())
     {
      ATR = m_sCard->GetCardStatus(state, nProtocol);
-     if (state == Smartcards::Specific && !m_Readers[readerName])
+     if (state == Specific && !m_Readers[readerName])
      {
       m_Readers[readerName] = true;
-      m_sCard->Disconnect(Smartcards::Leave);
+      m_sCard->Disconnect(Leave);
       emit cardInserted(readerName, ATR);
      }
     }
@@ -142,14 +145,14 @@ void Smartcards::CardEvent::timerEvent( QTimerEvent* e )
    }
    else
    {
-    m_sCard->Connect(readerName, Smartcards::Shared, Smartcards::T0orT1);
+    m_sCard->Connect(readerName, Shared, T0orT1);
     if (!m_sCard->isError())
     {
      ATR = m_sCard->GetCardStatus(state, nProtocol);
-     if (state == Smartcards::Specific)
+     if (state == Specific)
      {
       m_Readers[readerName] = true;
-      m_sCard->Disconnect(Smartcards::Leave);
+      m_sCard->Disconnect(Leave);
       m_sCard->ReleaseContext();
       emit cardInserted(readerName, ATR);
      }

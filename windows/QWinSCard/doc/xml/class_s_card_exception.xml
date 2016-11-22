@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_s_card_exception" kind="class" language="C++" prot="public">
+    <compoundname>SCardException</compoundname>
+    <basecompoundref refid="class_base_exceptions" prot="public" virt="non-virtual">BaseExceptions</basecompoundref>
+    <includes refid="scardexception_8h" local="no">scardexception.h</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_s_card_exception_1aee36801d861f488f22f4e1f99eb5f77f" prot="private" static="yes" mutable="no">
+        <type>QMap&lt; long, QLatin1String &gt;</type>
+        <definition>QMap&lt; long, QLatin1String &gt; SCardException::errorMessages</definition>
+        <argsstring></argsstring>
+        <name>errorMessages</name>
+        <briefdescription>
+<para>map contains error messages to winscard codes </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scardexception.h" line="25" column="1" bodyfile="scardexception.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_s_card_exception_1a4b4df95ff2b89a680d37962f1204641b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SCardException::SCardException</definition>
+        <argsstring>(long code) noexcept</argsstring>
+        <name>SCardException</name>
+        <param>
+          <type>long</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+<para>error code constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>long error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scardexception.h" line="15" column="1" bodyfile="scardexception.cpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_card_exception_1a353165718995d85043ff273d70ebfe7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>SCardException::~SCardException</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>~SCardException</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scardexception.h" line="18" column="1" bodyfile="scardexception.cpp" bodystart="89" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_s_card_exception_1a68e4b4acc127abb334c9f201022970d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString SCardException::getMessage</definition>
+        <argsstring>(long code)</argsstring>
+        <name>getMessage</name>
+        <param>
+          <type>long</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+<para>static function returns Qt-String message from winscard long error code </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>long error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Qt-string error message from errorMessages map or message from winAPI FormatMessage function </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scardexception.h" line="23" column="1" bodyfile="scardexception.cpp" bodystart="94" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class must implement a card exception based on WinSCard errors. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>SCardException</label>
+        <link refid="class_s_card_exception"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>BaseExceptions</label>
+        <link refid="class_base_exceptions"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>SCardException</label>
+        <link refid="class_s_card_exception"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>BaseExceptions</label>
+        <link refid="class_base_exceptions"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="scardexception.h" line="10" column="1" bodyfile="scardexception.h" bodystart="9" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_base_exceptions_1aa774c51bcf2f8eee36cfbd7ee6fa4082" prot="public" virt="non-virtual"><scope>SCardException</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1ad245548c1d2c7a73e38eb6f851bf35f4" prot="public" virt="non-virtual"><scope>SCardException</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1a592f8f049432839dd3702f98a53db37d" prot="public" virt="non-virtual"><scope>SCardException</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1a309d510a2b0102932300d2a3a91065e2" prot="public" virt="non-virtual"><scope>SCardException</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1a0b69d611f20ddc2cae3ba2f2498a4062" prot="public" virt="non-virtual"><scope>SCardException</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1aff7e9733d9187facb91f3d10d72fe54d" prot="public" virt="non-virtual"><scope>SCardException</scope><name>errorCode</name></member>
+      <member refid="class_s_card_exception_1aee36801d861f488f22f4e1f99eb5f77f" prot="private" virt="non-virtual"><scope>SCardException</scope><name>errorMessages</name></member>
+      <member refid="class_base_exceptions_1aee9fb2b470e820af7886edfe7a52e333" prot="public" virt="non-virtual"><scope>SCardException</scope><name>errorString</name></member>
+      <member refid="class_s_card_exception_1a68e4b4acc127abb334c9f201022970d4" prot="public" virt="non-virtual"><scope>SCardException</scope><name>getMessage</name></member>
+      <member refid="class_base_exceptions_1a5f92aa2277ba66874a128160a04a7356" prot="public" virt="non-virtual"><scope>SCardException</scope><name>operator=</name></member>
+      <member refid="class_s_card_exception_1a4b4df95ff2b89a680d37962f1204641b" prot="public" virt="non-virtual"><scope>SCardException</scope><name>SCardException</name></member>
+      <member refid="class_base_exceptions_1aa7fbde1d16b3ab5030424e909042c0dd" prot="public" virt="non-virtual"><scope>SCardException</scope><name>setErrorCode</name></member>
+      <member refid="class_base_exceptions_1a757657cdb19292f7b3b5b8eedde8f688" prot="public" virt="non-virtual"><scope>SCardException</scope><name>setErrorString</name></member>
+      <member refid="class_base_exceptions_1a291bc9f98189b94aa1b49474c622e21baf75cfbb38113e56646c72d7c763ccc18" prot="public" virt="non-virtual"><scope>SCardException</scope><name>UNRESOLVED_EXCEPTION</name></member>
+      <member refid="class_base_exceptions_1a88813e74a780773bab20fb43ae0d52e9" prot="public" virt="non-virtual"><scope>SCardException</scope><name>what</name></member>
+      <member refid="class_base_exceptions_1a1a7857c450ea0ad4e77426cfd428a979" prot="public" virt="virtual"><scope>SCardException</scope><name>~BaseExceptions</name></member>
+      <member refid="class_s_card_exception_1a353165718995d85043ff273d70ebfe7b" prot="public" virt="virtual"><scope>SCardException</scope><name>~SCardException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

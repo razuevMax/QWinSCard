@@ -1,0 +1,758 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_smartcards_1_1_readers_states" kind="class" language="C++" prot="public">
+    <compoundname>Smartcards::ReadersStates</compoundname>
+    <includes refid="_native_s_card_8h" local="no">NativeSCard.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_smartcards_1_1_readers_states_1a39e4a4b1b27f8c75dc888881e4ecd761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class WinSCard</definition>
+        <argsstring></argsstring>
+        <name>WinSCard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="200" column="1" bodyfile="NativeSCard.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_smartcards_1_1_readers_states_1ac4cd97b6eabaae91a072316ec83b7bf2" prot="private" static="no" mutable="no">
+        <type>QMap&lt; QString, SCARD_READERSTATEW &gt;</type>
+        <definition>QMap&lt;QString, SCARD_READERSTATEW&gt; Smartcards::ReadersStates::mReaderStates</definition>
+        <argsstring></argsstring>
+        <name>mReaderStates</name>
+        <briefdescription>
+<para>QMap contains reader states by reader name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="310" column="1" bodyfile="NativeSCard.h" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a8375e1900dfb98d5a4ee03a884eddbed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::ReadersStates::ReadersStates</definition>
+        <argsstring>(void)</argsstring>
+        <name>ReadersStates</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="203" column="1" bodyfile="NativeSCard.cpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a7ddf5c5eb08144e09421fc629312aa44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::ReadersStates::ReadersStates</definition>
+        <argsstring>(const std::initializer_list&lt; std::pair&lt; QString, DWORD &gt;&gt; &amp;ilist)</argsstring>
+        <name>ReadersStates</name>
+        <param>
+          <type>const std::initializer_list&lt; std::pair&lt; QString, DWORD &gt;&gt; &amp;</type>
+          <declname>ilist</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from initializer list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ilist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of pair {&quot;ReaderName&quot;, ReaderState}. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="207" column="1" bodyfile="NativeSCard.cpp" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1acdf22efe72119069182806734c952e0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::ReadersStates::ReadersStates</definition>
+        <argsstring>(PSCARD_READERSTATEW pReaderStates, DWORD cbReaderStates)</argsstring>
+        <name>ReadersStates</name>
+        <param>
+          <type>PSCARD_READERSTATEW</type>
+          <declname>pReaderStates</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>cbReaderStates</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from array of Winscard structures SCARD_READERSTATE. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pReaderStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to array of states of the readers. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cbReaderStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size array of states of the readers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="212" column="1" bodyfile="NativeSCard.cpp" bodystart="27" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1aad2afa7ee83aba9c81116cc79215d3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::ReadersStates::ReadersStates</definition>
+        <argsstring>(const QMap&lt; QString, SCARD_READERSTATEW &gt; &amp;readerStates)</argsstring>
+        <name>ReadersStates</name>
+        <param>
+          <type>const QMap&lt; QString, SCARD_READERSTATEW &gt; &amp;</type>
+          <declname>readerStates</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from QMap contains pairs {&quot;ReaderName&quot;, SCARD_READERSTATE}. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Map of states of the readers by reader name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="216" column="1" bodyfile="NativeSCard.cpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1afb919520320cb560cf83552e142bb63d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::ReadersStates::ReadersStates</definition>
+        <argsstring>(const QVector&lt; SCARD_READERSTATEW &gt; &amp;readerStates)</argsstring>
+        <name>ReadersStates</name>
+        <param>
+          <type>const QVector&lt; SCARD_READERSTATEW &gt; &amp;</type>
+          <declname>readerStates</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from QVector contains Winscard structures SCARD_READERSTATE. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of Winscard structures SCARD_READERSTATE. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="220" column="1" bodyfile="NativeSCard.cpp" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a284f436a28f186d96c116d6fc7b6c011" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Smartcards::ReadersStates::~ReadersStates</definition>
+        <argsstring>(void)</argsstring>
+        <name>~ReadersStates</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="223" column="1" bodyfile="NativeSCard.cpp" bodystart="44" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a5d74d9ffa87a0cd10dd28578f0d21af9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::assign</definition>
+        <argsstring>(const QVector&lt; SCARD_READERSTATEW &gt; &amp;readerStates)</argsstring>
+        <name>assign</name>
+        <param>
+          <type>const QVector&lt; SCARD_READERSTATEW &gt; &amp;</type>
+          <declname>readerStates</declname>
+        </param>
+        <briefdescription>
+<para>Assigns the given reader states. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerStates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of Winscard structures SCARD_READERSTATE. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="227" column="1" bodyfile="NativeSCard.cpp" bodystart="51" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1acc23234f9b515e058f804c076f69bb42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::addNewReader</definition>
+        <argsstring>(void)</argsstring>
+        <name>addNewReader</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Adds default winscard reader name for search new reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="230" column="1" bodyfile="NativeSCard.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a4ba2f063611bd432c1c866c370ac1f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::removeNewReader</definition>
+        <argsstring>(void)</argsstring>
+        <name>removeNewReader</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Removes default winscard reader name for new reader. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="233" column="1" bodyfile="NativeSCard.cpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a4c9b55b4a59c76cc751ff1760deeb258" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::add</definition>
+        <argsstring>(const QString &amp;readerName, DWORD currentState, LPVOID userData=nullptr, DWORD eventState=0)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>currentState</declname>
+        </param>
+        <param>
+          <type>LPVOID</type>
+          <declname>userData</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>eventState</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Adds reader state in map. ATR not present. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">currentState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current state. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User defined data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eventState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event state. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="240" column="1" bodyfile="NativeSCard.cpp" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a689dac88634bca60382cd4a8a8cc2e27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::add</definition>
+        <argsstring>(const QString &amp;readerName, DWORD currentState, const QByteArray &amp;ATR, LPVOID userData=nullptr, DWORD eventState=0)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>currentState</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>ATR</declname>
+        </param>
+        <param>
+          <type>LPVOID</type>
+          <declname>userData</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>eventState</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Adds reader state in map. ATR present. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">currentState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current state. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ATR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ATR of card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User defined data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">eventState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event state. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="248" column="1" bodyfile="NativeSCard.cpp" bodystart="157" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a88c648c9c0e7486b85edff22b84da64a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::ReadersStates::remove</definition>
+        <argsstring>(const QString &amp;readerName)</argsstring>
+        <name>remove</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+<para>Removes the given reader state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The reader name to remove. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if reader realy removed, false if reader not present in map. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="253" column="1" bodyfile="NativeSCard.cpp" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a11b65458cdc329f9f840d5d74a5e5d23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD</type>
+        <definition>DWORD Smartcards::ReadersStates::currentState</definition>
+        <argsstring>(const QString &amp;readerName)</argsstring>
+        <name>currentState</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+<para>Current state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a current state of reader. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="258" column="1" bodyfile="NativeSCard.cpp" bodystart="68" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a3caa18082fa348753f5e4b5b985b8d95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DWORD</type>
+        <definition>DWORD Smartcards::ReadersStates::eventState</definition>
+        <argsstring>(const QString &amp;readerName)</argsstring>
+        <name>eventState</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+<para>Event state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a event state of reader. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="263" column="1" bodyfile="NativeSCard.cpp" bodystart="75" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a665c077e0a8cc7b107f38e9677306d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray Smartcards::ReadersStates::ATR</definition>
+        <argsstring>(const QString &amp;readerName)</argsstring>
+        <name>ATR</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+<para>Atrs the given reader name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A QByteArray contains ATR of card in reader. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="268" column="1" bodyfile="NativeSCard.cpp" bodystart="82" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1ac542d6d98fd5b0d16fd3742d74fd8a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LPVOID</type>
+        <definition>LPVOID Smartcards::ReadersStates::userData</definition>
+        <argsstring>(const QString &amp;readerName)</argsstring>
+        <name>userData</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+<para>User data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to user defined data associate by reader. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="273" column="1" bodyfile="NativeSCard.cpp" bodystart="91" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a9c4b5c86fb4bba42ebc191acb8e2e6bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::setCurrentState</definition>
+        <argsstring>(const QString &amp;readerName, DWORD state)</argsstring>
+        <name>setCurrentState</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets current state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current state. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="278" column="1" bodyfile="NativeSCard.cpp" bodystart="98" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a318268f9535a0632b9554b3894ac09be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::setEventState</definition>
+        <argsstring>(const QString &amp;readerName, DWORD state)</argsstring>
+        <name>setEventState</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <param>
+          <type>DWORD</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets event state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event state. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="283" column="1" bodyfile="NativeSCard.cpp" bodystart="105" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a7cc48b9fc2bc1d54158fad7b2e081a62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::setATR</definition>
+        <argsstring>(const QString &amp;readerName, const QByteArray &amp;ATR)</argsstring>
+        <name>setATR</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>ATR</declname>
+        </param>
+        <briefdescription>
+<para>Sets ATR of card. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ATR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The QByteArray contains ATR of card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="288" column="1" bodyfile="NativeSCard.cpp" bodystart="112" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1afe7cef02934996669682fc85cf21327d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::setUserData</definition>
+        <argsstring>(const QString &amp;readerName, LPVOID userData)</argsstring>
+        <name>setUserData</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <param>
+          <type>LPVOID</type>
+          <declname>userData</declname>
+        </param>
+        <briefdescription>
+<para>Sets user data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">userData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User defined data pointer. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="293" column="1" bodyfile="NativeSCard.cpp" bodystart="120" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a04e8aacc28b5dadb402ee342620074a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Smartcards::ReadersStates::readerPresent</definition>
+        <argsstring>(const QString &amp;readerName) const</argsstring>
+        <name>readerPresent</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+<para>Check present Reader in readerStates. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if it succeeds, false if it fails. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="298" column="1" bodyfile="NativeSCard.cpp" bodystart="127" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a4091bd493e293970025df640b4c27e12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Smartcards::ReadersStates::addDefault</definition>
+        <argsstring>(const QString &amp;readerName)</argsstring>
+        <name>addDefault</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>readerName</declname>
+        </param>
+        <briefdescription>
+<para>Adds a default reader state in inner map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">readerName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="303" column="1" bodyfile="NativeSCard.cpp" bodystart="132" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_smartcards_1_1_readers_states_1a181de63b53f1e35cde9a65859c46ebf9" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wchar_t *</type>
+        <definition>wchar_t * Smartcards::ReadersStates::toWCharArray</definition>
+        <argsstring>(const QString &amp;str)</argsstring>
+        <name>toWCharArray</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Converts a Qt-string str to a wchar_t array. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>wchar_t array allocates inner function. Deallocate responsibility lies caller. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Qt-string. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Str as a wchar_t*. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="309" column="1" bodyfile="NativeSCard.cpp" bodystart="143" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface class for Smart Card Tracking Functions. Contains readers states. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NativeSCard.h" line="198" column="1" bodyfile="NativeSCard.h" bodystart="197" bodyend="311"/>
+    <listofallmembers>
+      <member refid="class_smartcards_1_1_readers_states_1a4c9b55b4a59c76cc751ff1760deeb258" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>add</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a689dac88634bca60382cd4a8a8cc2e27" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>add</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a4091bd493e293970025df640b4c27e12" prot="private" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>addDefault</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1acc23234f9b515e058f804c076f69bb42" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>addNewReader</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a5d74d9ffa87a0cd10dd28578f0d21af9" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>assign</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a665c077e0a8cc7b107f38e9677306d91" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>ATR</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a11b65458cdc329f9f840d5d74a5e5d23" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>currentState</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a3caa18082fa348753f5e4b5b985b8d95" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>eventState</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1ac4cd97b6eabaae91a072316ec83b7bf2" prot="private" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>mReaderStates</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a04e8aacc28b5dadb402ee342620074a8" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>readerPresent</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a8375e1900dfb98d5a4ee03a884eddbed" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>ReadersStates</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a7ddf5c5eb08144e09421fc629312aa44" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>ReadersStates</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1acdf22efe72119069182806734c952e0a" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>ReadersStates</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1aad2afa7ee83aba9c81116cc79215d3eb" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>ReadersStates</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1afb919520320cb560cf83552e142bb63d" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>ReadersStates</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a88c648c9c0e7486b85edff22b84da64a" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>remove</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a4ba2f063611bd432c1c866c370ac1f86" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>removeNewReader</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a7cc48b9fc2bc1d54158fad7b2e081a62" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>setATR</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a9c4b5c86fb4bba42ebc191acb8e2e6bb" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>setCurrentState</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a318268f9535a0632b9554b3894ac09be" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>setEventState</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1afe7cef02934996669682fc85cf21327d" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>setUserData</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a181de63b53f1e35cde9a65859c46ebf9" prot="private" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>toWCharArray</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1ac542d6d98fd5b0d16fd3742d74fd8a2e" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>userData</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a39e4a4b1b27f8c75dc888881e4ecd761" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>WinSCard</name></member>
+      <member refid="class_smartcards_1_1_readers_states_1a284f436a28f186d96c116d6fc7b6c011" prot="public" virt="non-virtual"><scope>Smartcards::ReadersStates</scope><name>~ReadersStates</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="cardevent_8h" kind="file" language="C++">
+    <compoundname>cardevent.h</compoundname>
+    <includes refid="_native_s_card_8h" local="yes">NativeSCard.h</includes>
+    <includedby refid="cardevent_8cpp" local="yes">cardevent.cpp</includedby>
+    <incdepgraph>
+      <node id="61">
+        <label>NativeSCard.h</label>
+        <link refid="_native_s_card_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>APDUCommand.h</label>
+        <link refid="_a_p_d_u_command_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>QByteArray</label>
+      </node>
+      <node id="62">
+        <label>APDUResponse.h</label>
+        <link refid="_a_p_d_u_response_8h"/>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>winscard.h</label>
+      </node>
+      <node id="67">
+        <label>WinSCardErr.h</label>
+        <link refid="winscarderr_8h"/>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>QtCore/QByteArray</label>
+      </node>
+      <node id="68">
+        <label>winerror.h</label>
+      </node>
+      <node id="70">
+        <label>QtCore/quuid.h</label>
+      </node>
+      <node id="69">
+        <label>QtCore/qmap.h</label>
+      </node>
+      <node id="60">
+        <label>cardevent.h</label>
+        <link refid="cardevent_8h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="72">
+        <label>cardevent.cpp</label>
+        <link refid="cardevent_8cpp"/>
+      </node>
+      <node id="71">
+        <label>cardevent.h</label>
+        <link refid="cardevent_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_smartcards_1_1_card_event" prot="public">Smartcards::CardEvent</innerclass>
+    <innernamespace refid="namespace_smartcards">Smartcards</innernamespace>
+    <briefdescription>
+<para>Header file for CardEvent class. </para>    </briefdescription>
+    <detaileddescription>
+<para>File is contains class CardEvent must implement a card detection mechanism. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>CARDEVENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CARDEVENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_native_s_card_8h" kindref="compound">NativeSCard.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smartcards" kindref="compound">Smartcards</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18" refid="class_smartcards_1_1_card_event" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_smartcards_1_1_card_event" kindref="compound">CardEvent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="class_smartcards_1_1_card_event_1acd98536af5d07f06d825042fb2034a5a" kindref="member">CardEvent</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><ref refid="class_smartcards_1_1_card_event_1af6b75f44b9abb4a30691cd82b08496ae" kindref="member">~CardEvent</ref>();</highlight></codeline>
+<codeline lineno="31" refid="class_smartcards_1_1_card_event_1a0a9f442764a0bafa6e69baae9e03f512" refkind="member"><highlight class="normal"><sp/><sp/>QString<sp/><ref refid="class_smartcards_1_1_card_event_1a0a9f442764a0bafa6e69baae9e03f512" kindref="member">lastReader</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mLastReader;<sp/>}</highlight></codeline>
+<codeline lineno="35" refid="class_smartcards_1_1_card_event_1a80421ddc9ba99705db837308e4a9a9ef" refkind="member"><highlight class="normal"><sp/><sp/>QByteArray<sp/><ref refid="class_smartcards_1_1_card_event_1a80421ddc9ba99705db837308e4a9a9ef" kindref="member">lastATR</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mLastATR;<sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_card_event_1ab12c3f088bea09d80d7a969d17511bb1" kindref="member">setCardDetection</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDetect);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_card_event_1aeacc345b09da39552435a4fb94e1c7ad" kindref="member">stop</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_card_event_1a83c0930c96f193e23c0d59bcc9836969" kindref="member">run</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><ref refid="class_smartcards_1_1_card_event_1a9e5fcfa2e538e4d25df0571769c5f0df" kindref="member">timerEvent</ref>(QTimerEvent*<sp/>e);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/>signals:</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_card_event_1a6a2f9b5b090a064c009f3717238ca7c0" kindref="member">cardInserted</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray&amp;<sp/>ATR);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_card_event_1a22fd5a6d91ca6aff4cfb31a1651b9d8f" kindref="member">cardRemoved</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>readerName);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_card_event_1a49e048da421d6969008120b5c15b1d70" kindref="member">onStopCardEvents</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initStartTokenWatchThread(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>terminateStopSCardWatchThread(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>QScopedPointer&lt;Smartcards::WinSCard&gt;<sp/>m_sCard{<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_smartcards_1_1_win_s_card" kindref="compound">Smartcards::WinSCard</ref><sp/>};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>QThread*<sp/>m_Thread{<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>QMutex<sp/>mMutex;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>QString<sp/>mLastReader;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>QByteArray<sp/>mLastATR;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tId{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>QHash&lt;QString,<sp/>bool&gt;<sp/>m_Readers;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_bRunCardDetection{<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>CARDEVENT_H</highlight></codeline>
+    </programlisting>
+    <location file="cardevent.h"/>
+  </compounddef>
+</doxygen>

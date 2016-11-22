@@ -1,3 +1,6 @@
+//! \file NativeSCard.h
+//! \brief Header file for WinSCard class.
+//! \details File is contains source of class WinSCard must implement a winscard api.
 #include <QtCore/QVector>
 #include <winscard.h>
 
@@ -40,7 +43,7 @@ ReadersStates::ReadersStates(const QVector<SCARD_READERSTATEW>& readerStates)
 
 ReadersStates::~ReadersStates()
 {
- //Освобождаем память перед удалением map
+ //Release memory before delete map
  for (auto& item : mReaderStates)
   delete[] item.szReader;
 }
@@ -628,10 +631,6 @@ APDUResponse WinSCard::Transmit(APDUCommand ApduCmd)
    m_nProtocol=Reconnect(Shared, T0orT1, Leave);
    if(SUCCESS!=m_nLastError && m_bThrowingErrors)
     throw SCardException(m_nLastError);
-   //Только для Vigrid/Magistra
-   if(ApduCmd.getClass()==0x00 && ApduCmd.getIns()==0xC0)
-    return APDUResponse(0x62,0xa4);
-   //--------------------------
    RecvLength=RESPONSE_MAX_LENGTH;
    responseData.clear();
    m_nLastError= SCardTransmit(m_hCard, &ioRequest, reinterpret_cast<LPCBYTE>(commandData.constData()), static_cast<DWORD>(commandData.size()), nullptr, reinterpret_cast<LPBYTE>(responseData.data()), &RecvLength);

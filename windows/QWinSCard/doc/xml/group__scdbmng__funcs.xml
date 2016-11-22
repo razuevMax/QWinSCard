@@ -1,0 +1,546 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__scdbmng__funcs" kind="group">
+    <compoundname>scdbmng_funcs</compoundname>
+    <title>Smart Card Database Management Functions</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__scdbmng__funcs_1gaebed438346018a4fbb04aca247720aa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::AddReaderToGroup</definition>
+        <argsstring>(const QString &amp;ReaderName, const QString &amp;GroupName)</argsstring>
+        <name>AddReaderToGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Adds a reader to group to &apos;GroupName&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="411" column="1" bodyfile="NativeSCard.cpp" bodystart="382" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga266f41e727d32feca84c4d92e437e987" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ForgetCardType</definition>
+        <argsstring>(const QString &amp;cardName)</argsstring>
+        <name>ForgetCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <briefdescription>
+<para>Removes an introduced smart card from the smart card subsystem. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="416" column="1" bodyfile="NativeSCard.cpp" bodystart="396" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gadbc99870f524e931bcbbd21fea0308cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ForgetReader</definition>
+        <argsstring>(const QString &amp;ReaderName)</argsstring>
+        <name>ForgetReader</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <briefdescription>
+<para>removes a previously introduced reader from control by the smart card subsystem. It is removed from the smart card database, including from any reader group that it may have been added to. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="421" column="1" bodyfile="NativeSCard.cpp" bodystart="410" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gac64a3cafbf44d385aad68dbe3e8755aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::ForgetReaderGroup</definition>
+        <argsstring>(const QString &amp;GroupName)</argsstring>
+        <name>ForgetReaderGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Removes a previously introduced smart card reader group from the smart card subsystem. Although this function automatically clears all readers from the group, it does not affect the existence of the individual readers in the database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="426" column="1" bodyfile="NativeSCard.cpp" bodystart="424" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga2ad8a5052d40c206e5e6d1daba3d5dee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceReader</definition>
+        <argsstring>(const QString &amp;ReaderName, const QString &amp;DeviceName)</argsstring>
+        <name>IntroduceReader</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>DeviceName</declname>
+        </param>
+        <briefdescription>
+<para>Introduces a new name for an existing smart card reader. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="warning"><para>Smart card readers are automatically introduced to the system; a smart card reader vendor&apos;s setup program can also introduce a smart card reader to the system. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">DeviceName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the device. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="433" column="1" bodyfile="NativeSCard.cpp" bodystart="438" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gad1ff5c1953354297a30a0814ea84359d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceReaderGroup</definition>
+        <argsstring>(const QString &amp;GroupName)</argsstring>
+        <name>IntroduceReaderGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Introduces a reader group to the smart card subsystem. However, the reader group is not created until the group is specified when adding a reader to the smart card database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="438" column="1" bodyfile="NativeSCard.cpp" bodystart="452" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga78f4e61de1338eb88653211b719e33bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::RemoveReaderFromGroup</definition>
+        <argsstring>(const QString &amp;ReaderName, const QString &amp;GroupName)</argsstring>
+        <name>RemoveReaderFromGroup</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>ReaderName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>GroupName</declname>
+        </param>
+        <briefdescription>
+<para>Removes a reader from an existing reader group. This function has no effect on the reader. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ReaderName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the reader. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">GroupName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the group. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="444" column="1" bodyfile="NativeSCard.cpp" bodystart="466" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gaae12329492e5eac3d4f4380eb247a5af" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QVector&lt; QUuid &gt; &amp;guidInterfaces, const QByteArray &amp;cardAtr, const QByteArray &amp;cardAtrMask, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtrMask</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of identifiers (GUIDs) that identify the interfaces supported by the smart card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtrMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR mask. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="453" column="1" bodyfile="NativeSCard.cpp" bodystart="480" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga2f6bc81d9c913abb3b97f4cdbd0bff3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QVector&lt; QUuid &gt; &amp;guidInterfaces, const QByteArray &amp;cardAtr, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QVector&lt; QUuid &gt; &amp;</type>
+          <declname>guidInterfaces</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. Match by ATR and interfaces specified. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">guidInterfaces</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of identifiers (GUIDs) that identify the interfaces supported by the smart card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="461" column="1" bodyfile="NativeSCard.cpp" bodystart="500" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1ga0f7c3472da9823a4d1e9b3b82b9436f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QByteArray &amp;cardAtr, const QByteArray &amp;cardAtrMask, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtrMask</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. Match by ATR and ATR mask. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtrMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR mask. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="469" column="1" bodyfile="NativeSCard.cpp" bodystart="505" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="group__scdbmng__funcs_1gaec4c90719847e58d63b326b32629492f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Smartcards::WinSCard::IntroduceCardType</definition>
+        <argsstring>(const QString &amp;cardName, const QByteArray &amp;cardAtr, QUuid *pguidPrimaryProvider=nullptr)</argsstring>
+        <name>IntroduceCardType</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>cardName</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>cardAtr</declname>
+        </param>
+        <param>
+          <type>QUuid *</type>
+          <declname>pguidPrimaryProvider</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Introduces a smart card to the smart card subsystem (for the active user) by adding it to the smart card database. Match by ATR. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_s_card_exception" kindref="compound">SCardException</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when a Card error condition occurs and throwErrors is set true. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cardName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the card. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cardAtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The card ATR. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="inout">pguidPrimaryProvider</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, the pointer to the identifier (GUID) for the smart card&apos;s primary service provider. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NativeSCard.h" line="477" column="1" bodyfile="NativeSCard.cpp" bodystart="510" bodyend="513"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

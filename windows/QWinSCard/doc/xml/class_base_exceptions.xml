@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="class_base_exceptions" kind="class" language="C++" prot="public">
+    <compoundname>BaseExceptions</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">exception</basecompoundref>
+    <derivedcompoundref refid="class_s_card_exception" prot="public" virt="non-virtual">SCardException</derivedcompoundref>
+    <includes refid="baseexceptions_8h" local="no">baseexceptions.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_base_exceptions_1a291bc9f98189b94aa1b49474c622e21b" prot="public" static="no">
+        <name>@0</name>
+        <enumvalue id="class_base_exceptions_1a291bc9f98189b94aa1b49474c622e21baf75cfbb38113e56646c72d7c763ccc18" prot="public">
+          <name>UNRESOLVED_EXCEPTION</name>
+          <initializer>=-10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="12" column="1" bodyfile="baseexceptions.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_base_exceptions_1ae36667f712d317642bd32d5c007cc938" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString BaseExceptions::m_errorString</definition>
+        <argsstring></argsstring>
+        <name>m_errorString</name>
+        <briefdescription>
+<para>The exception message Qt-string. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="61" column="1" bodyfile="baseexceptions.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_base_exceptions_1ab06158eeb440473d47e1109024d27e19" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long BaseExceptions::m_errorCode</definition>
+        <argsstring></argsstring>
+        <name>m_errorCode</name>
+        <briefdescription>
+<para>The long error code. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="62" column="1" bodyfile="baseexceptions.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_base_exceptions_1aa774c51bcf2f8eee36cfbd7ee6fa4082" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseExceptions::BaseExceptions</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>BaseExceptions</name>
+        <briefdescription>
+<para>Default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="15" column="1" bodyfile="baseexceptions.cpp" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1ad245548c1d2c7a73e38eb6f851bf35f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseExceptions::BaseExceptions</definition>
+        <argsstring>(const BaseExceptions &amp;) noexcept</argsstring>
+        <name>BaseExceptions</name>
+        <param>
+          <type>const <ref refid="class_base_exceptions" kindref="compound">BaseExceptions</ref> &amp;</type>
+          <defname>_That</defname>
+        </param>
+        <briefdescription>
+<para>copy constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_That</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="class_base_exceptions" kindref="compound">BaseExceptions</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="19" column="1" bodyfile="baseexceptions.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1a592f8f049432839dd3702f98a53db37d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseExceptions::BaseExceptions</definition>
+        <argsstring>(const char *const &amp;) noexcept</argsstring>
+        <name>BaseExceptions</name>
+        <param>
+          <type>const char *const &amp;</type>
+          <defname>_What</defname>
+        </param>
+        <briefdescription>
+<para>c-string constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_What</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>c-string exception message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="23" column="1" bodyfile="baseexceptions.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1a309d510a2b0102932300d2a3a91065e2" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseExceptions::BaseExceptions</definition>
+        <argsstring>(const QString &amp;) noexcept</argsstring>
+        <name>BaseExceptions</name>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>_What</defname>
+        </param>
+        <briefdescription>
+<para>Qt-string constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_What</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Qt-string exception message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="27" column="1" bodyfile="baseexceptions.cpp" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1a0b69d611f20ddc2cae3ba2f2498a4062" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseExceptions::BaseExceptions</definition>
+        <argsstring>(long code) noexcept</argsstring>
+        <name>BaseExceptions</name>
+        <param>
+          <type>long</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+<para>error code constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>long error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="31" column="1" bodyfile="baseexceptions.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1a5f92aa2277ba66874a128160a04a7356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_base_exceptions" kindref="compound">BaseExceptions</ref> &amp;</type>
+        <definition>BaseExceptions &amp; BaseExceptions::operator=</definition>
+        <argsstring>(const BaseExceptions &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="class_base_exceptions" kindref="compound">BaseExceptions</ref> &amp;</type>
+          <defname>_That</defname>
+        </param>
+        <briefdescription>
+<para>Assignment operator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">_That</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other <ref refid="class_base_exceptions" kindref="compound">BaseExceptions</ref> object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A shallow copy of this object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="36" column="1" bodyfile="baseexceptions.cpp" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1a1a7857c450ea0ad4e77426cfd428a979" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BaseExceptions::~BaseExceptions</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>~BaseExceptions</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="39" column="1" bodyfile="baseexceptions.cpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1a88813e74a780773bab20fb43ae0d52e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * BaseExceptions::what</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>what</name>
+        <briefdescription>
+<para>override std::exception function what. Get c-string exception message </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>&quot;Unknown exception&quot; if it fails, else a pointer to a c-string exception message </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="43" column="1" bodyfile="baseexceptions.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1aee9fb2b470e820af7886edfe7a52e333" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString BaseExceptions::errorString</definition>
+        <argsstring>(void) const</argsstring>
+        <name>errorString</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get Qt-string exception message. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>&quot;Unknown exception&quot; if it fails, else a Qt-string exception message </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="47" column="1" bodyfile="baseexceptions.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1a757657cdb19292f7b3b5b8eedde8f688" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BaseExceptions::setErrorString</definition>
+        <argsstring>(const QString &amp;)</argsstring>
+        <name>setErrorString</name>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>errStr</defname>
+        </param>
+        <briefdescription>
+<para>Sets exception message Qt-string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">errStr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exception message Qt-string </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="51" column="1" bodyfile="baseexceptions.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1aff7e9733d9187facb91f3d10d72fe54d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long BaseExceptions::errorCode</definition>
+        <argsstring>(void) const</argsstring>
+        <name>errorCode</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get error code. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A long error code </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="55" column="1" bodyfile="baseexceptions.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_exceptions_1aa7fbde1d16b3ab5030424e909042c0dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BaseExceptions::setErrorCode</definition>
+        <argsstring>(long code)</argsstring>
+        <name>setErrorCode</name>
+        <param>
+          <type>long</type>
+          <declname>code</declname>
+        </param>
+        <briefdescription>
+<para>Sets error code. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The long error code </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="baseexceptions.h" line="59" column="1" bodyfile="baseexceptions.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class must implement a std::exception in Qt-style class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>SCardException</label>
+        <link refid="class_s_card_exception"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>BaseExceptions</label>
+        <link refid="class_base_exceptions"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>BaseExceptions</label>
+        <link refid="class_base_exceptions"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="baseexceptions.h" line="10" column="1" bodyfile="baseexceptions.h" bodystart="9" bodyend="63"/>
+    <listofallmembers>
+      <member refid="class_base_exceptions_1aa774c51bcf2f8eee36cfbd7ee6fa4082" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1ad245548c1d2c7a73e38eb6f851bf35f4" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1a592f8f049432839dd3702f98a53db37d" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1a309d510a2b0102932300d2a3a91065e2" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1a0b69d611f20ddc2cae3ba2f2498a4062" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>BaseExceptions</name></member>
+      <member refid="class_base_exceptions_1aff7e9733d9187facb91f3d10d72fe54d" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>errorCode</name></member>
+      <member refid="class_base_exceptions_1aee9fb2b470e820af7886edfe7a52e333" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>errorString</name></member>
+      <member refid="class_base_exceptions_1ab06158eeb440473d47e1109024d27e19" prot="private" virt="non-virtual"><scope>BaseExceptions</scope><name>m_errorCode</name></member>
+      <member refid="class_base_exceptions_1ae36667f712d317642bd32d5c007cc938" prot="private" virt="non-virtual"><scope>BaseExceptions</scope><name>m_errorString</name></member>
+      <member refid="class_base_exceptions_1a5f92aa2277ba66874a128160a04a7356" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>operator=</name></member>
+      <member refid="class_base_exceptions_1aa7fbde1d16b3ab5030424e909042c0dd" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>setErrorCode</name></member>
+      <member refid="class_base_exceptions_1a757657cdb19292f7b3b5b8eedde8f688" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>setErrorString</name></member>
+      <member refid="class_base_exceptions_1a291bc9f98189b94aa1b49474c622e21baf75cfbb38113e56646c72d7c763ccc18" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>UNRESOLVED_EXCEPTION</name></member>
+      <member refid="class_base_exceptions_1a88813e74a780773bab20fb43ae0d52e9" prot="public" virt="non-virtual"><scope>BaseExceptions</scope><name>what</name></member>
+      <member refid="class_base_exceptions_1a1a7857c450ea0ad4e77426cfd428a979" prot="public" virt="virtual"><scope>BaseExceptions</scope><name>~BaseExceptions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

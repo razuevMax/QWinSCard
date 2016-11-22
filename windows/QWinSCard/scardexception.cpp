@@ -1,3 +1,6 @@
+//! \file SCardException.cpp
+//! \brief Implements the SCardException class.
+//! \details File is contains source of class SCardException must implement a card exception based on WinSCard errors
 #include <QtCore/qmap.h>
 #include <QtCore/QObject>
 

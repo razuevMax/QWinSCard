@@ -1,0 +1,378 @@
+.TH "Smartcards::ReadersStates" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Smartcards::ReadersStates \- Interface class for Smart Card Tracking Functions\&. Contains readers states\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NativeSCard\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBReadersStates\fP (void)"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "\fBReadersStates\fP (const std::initializer_list< std::pair< QString, DWORD >> &ilist)"
+.br
+.RI "Constructor from initializer list\&. "
+.ti -1c
+.RI "\fBReadersStates\fP (PSCARD_READERSTATEW pReaderStates, DWORD cbReaderStates)"
+.br
+.RI "Constructor from array of Winscard structures SCARD_READERSTATE\&. "
+.ti -1c
+.RI "\fBReadersStates\fP (const QMap< QString, SCARD_READERSTATEW > &readerStates)"
+.br
+.RI "Constructor from QMap contains pairs {'ReaderName', SCARD_READERSTATE}\&. "
+.ti -1c
+.RI "\fBReadersStates\fP (const QVector< SCARD_READERSTATEW > &readerStates)"
+.br
+.RI "Constructor from QVector contains Winscard structures SCARD_READERSTATE\&. "
+.ti -1c
+.RI "\fB~ReadersStates\fP (void)"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "void \fBassign\fP (const QVector< SCARD_READERSTATEW > &readerStates)"
+.br
+.RI "Assigns the given reader states\&. "
+.ti -1c
+.RI "void \fBaddNewReader\fP (void)"
+.br
+.RI "Adds default winscard reader name for search new reader\&. "
+.ti -1c
+.RI "void \fBremoveNewReader\fP (void)"
+.br
+.RI "Removes default winscard reader name for new reader\&. "
+.ti -1c
+.RI "void \fBadd\fP (const QString &readerName, DWORD \fBcurrentState\fP, LPVOID \fBuserData\fP=nullptr, DWORD \fBeventState\fP=0)"
+.br
+.RI "Adds reader state in map\&. ATR not present\&. "
+.ti -1c
+.RI "void \fBadd\fP (const QString &readerName, DWORD \fBcurrentState\fP, const QByteArray &\fBATR\fP, LPVOID \fBuserData\fP=nullptr, DWORD \fBeventState\fP=0)"
+.br
+.RI "Adds reader state in map\&. ATR present\&. "
+.ti -1c
+.RI "bool \fBremove\fP (const QString &readerName)"
+.br
+.RI "Removes the given reader state\&. "
+.ti -1c
+.RI "DWORD \fBcurrentState\fP (const QString &readerName)"
+.br
+.RI "Current state\&. "
+.ti -1c
+.RI "DWORD \fBeventState\fP (const QString &readerName)"
+.br
+.RI "Event state\&. "
+.ti -1c
+.RI "QByteArray \fBATR\fP (const QString &readerName)"
+.br
+.RI "Atrs the given reader name\&. "
+.ti -1c
+.RI "LPVOID \fBuserData\fP (const QString &readerName)"
+.br
+.RI "User data\&. "
+.ti -1c
+.RI "void \fBsetCurrentState\fP (const QString &readerName, DWORD state)"
+.br
+.RI "Sets current state\&. "
+.ti -1c
+.RI "void \fBsetEventState\fP (const QString &readerName, DWORD state)"
+.br
+.RI "Sets event state\&. "
+.ti -1c
+.RI "void \fBsetATR\fP (const QString &readerName, const QByteArray &\fBATR\fP)"
+.br
+.RI "Sets ATR of card\&. "
+.ti -1c
+.RI "void \fBsetUserData\fP (const QString &readerName, LPVOID \fBuserData\fP)"
+.br
+.RI "Sets user data\&. "
+.ti -1c
+.RI "bool \fBreaderPresent\fP (const QString &readerName) const"
+.br
+.RI "Check present Reader in readerStates\&. "
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBWinSCard\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface class for Smart Card Tracking Functions\&. Contains readers states\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Smartcards::ReadersStates::ReadersStates (void)"
+
+.PP
+Default constructor\&. 
+.SS "Smartcards::ReadersStates::ReadersStates (const std::initializer_list< std::pair< QString, DWORD >> & ilist)"
+
+.PP
+Constructor from initializer list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIilist\fP The list of pair {'ReaderName', ReaderState}\&. 
+.RE
+.PP
+
+.SS "Smartcards::ReadersStates::ReadersStates (PSCARD_READERSTATEW pReaderStates, DWORD cbReaderStates)"
+
+.PP
+Constructor from array of Winscard structures SCARD_READERSTATE\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpReaderStates\fP Pointer to array of states of the readers\&. 
+.br
+\fIcbReaderStates\fP Size array of states of the readers\&. 
+.RE
+.PP
+
+.SS "Smartcards::ReadersStates::ReadersStates (const QMap< QString, SCARD_READERSTATEW > & readerStates)"
+
+.PP
+Constructor from QMap contains pairs {'ReaderName', SCARD_READERSTATE}\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderStates\fP Map of states of the readers by reader name\&. 
+.RE
+.PP
+
+.SS "Smartcards::ReadersStates::ReadersStates (const QVector< SCARD_READERSTATEW > & readerStates)"
+
+.PP
+Constructor from QVector contains Winscard structures SCARD_READERSTATE\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderStates\fP Vector of Winscard structures SCARD_READERSTATE\&. 
+.RE
+.PP
+
+.SS "Smartcards::ReadersStates::~ReadersStates (void)"
+
+.PP
+Destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Smartcards::ReadersStates::add (const QString & readerName, DWORD currentState, LPVOID userData = \fCnullptr\fP, DWORD eventState = \fC0\fP)"
+
+.PP
+Adds reader state in map\&. ATR not present\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.br
+\fIcurrentState\fP The current state\&. 
+.br
+\fIuserData\fP User defined data\&. 
+.br
+\fIeventState\fP The event state\&. 
+.RE
+.PP
+
+.SS "void Smartcards::ReadersStates::add (const QString & readerName, DWORD currentState, const QByteArray & ATR, LPVOID userData = \fCnullptr\fP, DWORD eventState = \fC0\fP)"
+
+.PP
+Adds reader state in map\&. ATR present\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.br
+\fIcurrentState\fP The current state\&. 
+.br
+\fIATR\fP The ATR of card\&. 
+.br
+\fIuserData\fP User defined data\&. 
+.br
+\fIeventState\fP The event state\&. 
+.RE
+.PP
+
+.SS "void Smartcards::ReadersStates::addNewReader (void)"
+
+.PP
+Adds default winscard reader name for search new reader\&. 
+.SS "void Smartcards::ReadersStates::assign (const QVector< SCARD_READERSTATEW > & readerStates)"
+
+.PP
+Assigns the given reader states\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderStates\fP Vector of Winscard structures SCARD_READERSTATE\&. 
+.RE
+.PP
+
+.SS "QByteArray Smartcards::ReadersStates::ATR (const QString & readerName)"
+
+.PP
+Atrs the given reader name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A QByteArray contains ATR of card in reader\&. 
+.RE
+.PP
+
+.SS "DWORD Smartcards::ReadersStates::currentState (const QString & readerName)"
+
+.PP
+Current state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a current state of reader\&. 
+.RE
+.PP
+
+.SS "DWORD Smartcards::ReadersStates::eventState (const QString & readerName)"
+
+.PP
+Event state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a event state of reader\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::ReadersStates::readerPresent (const QString & readerName) const"
+
+.PP
+Check present Reader in readerStates\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if it succeeds, false if it fails\&. 
+.RE
+.PP
+
+.SS "bool Smartcards::ReadersStates::remove (const QString & readerName)"
+
+.PP
+Removes the given reader state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP The reader name to remove\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if reader realy removed, false if reader not present in map\&. 
+.RE
+.PP
+
+.SS "void Smartcards::ReadersStates::removeNewReader (void)"
+
+.PP
+Removes default winscard reader name for new reader\&. 
+.SS "void Smartcards::ReadersStates::setATR (const QString & readerName, const QByteArray & ATR)"
+
+.PP
+Sets ATR of card\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.br
+\fIATR\fP The QByteArray contains ATR of card\&. 
+.RE
+.PP
+
+.SS "void Smartcards::ReadersStates::setCurrentState (const QString & readerName, DWORD state)"
+
+.PP
+Sets current state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.br
+\fIstate\fP The current state\&. 
+.RE
+.PP
+
+.SS "void Smartcards::ReadersStates::setEventState (const QString & readerName, DWORD state)"
+
+.PP
+Sets event state\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.br
+\fIstate\fP The event state\&. 
+.RE
+.PP
+
+.SS "void Smartcards::ReadersStates::setUserData (const QString & readerName, LPVOID userData)"
+
+.PP
+Sets user data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.br
+\fIuserData\fP User defined data pointer\&. 
+.RE
+.PP
+
+.SS "LPVOID Smartcards::ReadersStates::userData (const QString & readerName)"
+
+.PP
+User data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreaderName\fP Name of the reader\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to user defined data associate by reader\&. 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBWinSCard\fP\fC [friend]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

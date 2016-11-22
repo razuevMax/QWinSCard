@@ -1,3 +1,7 @@
+//! \file APDUResponse.cpp
+//!
+//! \brief Implements the class APDUResponse represents the APDU response sent by the card
+
 #include <winscard.h>
 #include <QtCore/QByteArray>
 #include <QtCore/QTextStream>

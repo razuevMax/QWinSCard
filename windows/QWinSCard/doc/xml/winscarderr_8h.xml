@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="winscarderr_8h" kind="file" language="C++">
+    <compoundname>winscarderr.h</compoundname>
+    <includes local="no">winerror.h</includes>
+    <includes local="no">winscard.h</includes>
+    <includedby refid="_native_s_card_8h" local="yes">NativeSCard.h</includedby>
+    <includedby refid="scardexception_8cpp" local="yes">scardexception.cpp</includedby>
+    <incdepgraph>
+      <node id="121">
+        <label>winscard.h</label>
+      </node>
+      <node id="119">
+        <label>winscarderr.h</label>
+        <link refid="winscarderr_8h"/>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>winerror.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="125">
+        <label>cardevent.cpp</label>
+        <link refid="cardevent_8cpp"/>
+      </node>
+      <node id="123">
+        <label>NativeSCard.h</label>
+        <link refid="_native_s_card_8h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>NativeSCard.cpp</label>
+        <link refid="_native_s_card_8cpp"/>
+      </node>
+      <node id="122">
+        <label>winscarderr.h</label>
+        <link refid="winscarderr_8h"/>
+        <childnode refid="123" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>scardexception.cpp</label>
+        <link refid="scardexception_8cpp"/>
+      </node>
+      <node id="124">
+        <label>cardevent.h</label>
+        <link refid="cardevent_8h"/>
+        <childnode refid="125" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_smartcards">Smartcards</innernamespace>
+    <briefdescription>
+<para>Header file contains enumerations of winscard error codes. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>WINSCARDERR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WINSCARDERR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;winerror.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;winscard.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_smartcards" kindref="compound">Smartcards</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14" refid="namespace_smartcards_1a5a6fe5c46ad3f6274e539bc0b2934282" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a5a6fe5c46ad3f6274e539bc0b2934282" kindref="member">FACILITY_CODES</ref>:DWORD</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="16" refid="namespace_smartcards_1a5a6fe5c46ad3f6274e539bc0b2934282acffb7a368ed057c6e7f367f231190241" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespace_smartcards_1a5a6fe5c46ad3f6274e539bc0b2934282acffb7a368ed057c6e7f367f231190241" kindref="member">SYSTEM_FACILITY</ref>=FACILITY_NULL,</highlight></codeline>
+<codeline lineno="17" refid="namespace_smartcards_1a5a6fe5c46ad3f6274e539bc0b2934282aae9d2f74d5e3d8a8df98f8898cb292fb" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespace_smartcards_1a5a6fe5c46ad3f6274e539bc0b2934282aae9d2f74d5e3d8a8df98f8898cb292fb" kindref="member">SCARD_FACILITY</ref>=FACILITY_SCARD</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3c" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3c" kindref="member">ERRCODES</ref><sp/>:<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="23" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca22772ace8439ab1ca7421f154d623ae8" kindref="member">SUCCESS</ref>=SCARD_S_SUCCESS,</highlight></codeline>
+<codeline lineno="24" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeaddc88c52455323fe960954cef65bfc" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeaddc88c52455323fe960954cef65bfc" kindref="member">INTERNAL_ERROR</ref>=SCARD_F_INTERNAL_ERROR,</highlight></codeline>
+<codeline lineno="25" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca2fa893d5b52df0a51e22011a34cd821a" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca2fa893d5b52df0a51e22011a34cd821a" kindref="member">CANCELLED</ref>=SCARD_E_CANCELLED,</highlight></codeline>
+<codeline lineno="26" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca27760961a74929a44181c4baa1d9cb38" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca27760961a74929a44181c4baa1d9cb38" kindref="member">INVALID_HANDLE</ref>=SCARD_E_INVALID_HANDLE,</highlight></codeline>
+<codeline lineno="27" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cad43edd0252e5ab0eed384c3c48de1a86" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cad43edd0252e5ab0eed384c3c48de1a86" kindref="member">INVALID_PARAMETER</ref>=SCARD_E_INVALID_PARAMETER,</highlight></codeline>
+<codeline lineno="28" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa22f9b36b9ff206a8c2c4304c950398d" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa22f9b36b9ff206a8c2c4304c950398d" kindref="member">INVALID_TARGET</ref>=SCARD_E_INVALID_TARGET,</highlight></codeline>
+<codeline lineno="29" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cadcf4ab46e8ae2204ff7112da05656584" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cadcf4ab46e8ae2204ff7112da05656584" kindref="member">NO_MEMORY</ref>=SCARD_E_NO_MEMORY,</highlight></codeline>
+<codeline lineno="30" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca56e67ddba1aa64a806ffc224573e7de1" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca56e67ddba1aa64a806ffc224573e7de1" kindref="member">WAITED_TOO_LONG</ref>=SCARD_F_WAITED_TOO_LONG,</highlight></codeline>
+<codeline lineno="31" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca4e572dd86342d991a7fb4c08f9ea0693" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca4e572dd86342d991a7fb4c08f9ea0693" kindref="member">INSUFFICIENT_BUFFER</ref>=SCARD_E_INSUFFICIENT_BUFFER,</highlight></codeline>
+<codeline lineno="32" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca974dde4af340ffca9a05ddb85bb3c7a3" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca974dde4af340ffca9a05ddb85bb3c7a3" kindref="member">UNKNOWN_READER</ref>=SCARD_E_UNKNOWN_READER,</highlight></codeline>
+<codeline lineno="33" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca87cb95c418491810ce103636e32002dc" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca87cb95c418491810ce103636e32002dc" kindref="member">TIMEOUT</ref>=SCARD_E_TIMEOUT,</highlight></codeline>
+<codeline lineno="34" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca743740df1f9524ddecfb1c20c96b31aa" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca743740df1f9524ddecfb1c20c96b31aa" kindref="member">SHARING_VIOLATION</ref>=SCARD_E_SHARING_VIOLATION,</highlight></codeline>
+<codeline lineno="35" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca4397cb7b6389c7677f94df5db408b6e5" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca4397cb7b6389c7677f94df5db408b6e5" kindref="member">NO_SMARTCARD</ref>=SCARD_E_NO_SMARTCARD,</highlight></codeline>
+<codeline lineno="36" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caff7cec8fb7de6b6fcd74df00de00eefa" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caff7cec8fb7de6b6fcd74df00de00eefa" kindref="member">UNKNOWN_CARD</ref>=SCARD_E_UNKNOWN_CARD,</highlight></codeline>
+<codeline lineno="37" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cada6a3b2055035b6bfadafc682c247425" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cada6a3b2055035b6bfadafc682c247425" kindref="member">CANT_DISPOSE</ref>=SCARD_E_CANT_DISPOSE,</highlight></codeline>
+<codeline lineno="38" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cad112434335e452e9a205ccfb60d3b1a3" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cad112434335e452e9a205ccfb60d3b1a3" kindref="member">PROTO_MISMATCH</ref>=SCARD_E_PROTO_MISMATCH,</highlight></codeline>
+<codeline lineno="39" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca5e173b02a6f36959423d140afea8b83b" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca5e173b02a6f36959423d140afea8b83b" kindref="member">NOT_READY</ref>=SCARD_E_NOT_READY,</highlight></codeline>
+<codeline lineno="40" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cad0d0a2df2e392c39fc84d75815ce899e" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cad0d0a2df2e392c39fc84d75815ce899e" kindref="member">INVALID_VALUE</ref>=SCARD_E_INVALID_VALUE,</highlight></codeline>
+<codeline lineno="41" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cacde823283a14b2f3a20a1e76e608874f" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cacde823283a14b2f3a20a1e76e608874f" kindref="member">SYSTEM_CANCELLED</ref>=SCARD_E_SYSTEM_CANCELLED,</highlight></codeline>
+<codeline lineno="42" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca267818cdc5771fe5bd23edaebef46bf3" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca267818cdc5771fe5bd23edaebef46bf3" kindref="member">COMM_ERROR</ref>=SCARD_F_COMM_ERROR,</highlight></codeline>
+<codeline lineno="43" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caf70fd9ab78ea3f9abf5a9a9ec76611db" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caf70fd9ab78ea3f9abf5a9a9ec76611db" kindref="member">UNKNOWN_ERROR</ref>=SCARD_F_UNKNOWN_ERROR,</highlight></codeline>
+<codeline lineno="44" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca5b809b11313d5ced9d5264d694597b9c" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca5b809b11313d5ced9d5264d694597b9c" kindref="member">INVALID_ATR</ref>=SCARD_E_INVALID_ATR,</highlight></codeline>
+<codeline lineno="45" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca224e509dc29c4ca770639a42baa00902" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca224e509dc29c4ca770639a42baa00902" kindref="member">NOT_TRANSACTED</ref>=SCARD_E_NOT_TRANSACTED,</highlight></codeline>
+<codeline lineno="46" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9da55d12c356588e9f618052e94838bd" kindref="member">READER_UNAVAILABLE</ref>=SCARD_E_READER_UNAVAILABLE,</highlight></codeline>
+<codeline lineno="47" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca27584f7b8dfbeba48a95e9b7c0d96dbc" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca27584f7b8dfbeba48a95e9b7c0d96dbc" kindref="member">SHUTDOWN</ref>=SCARD_P_SHUTDOWN,</highlight></codeline>
+<codeline lineno="48" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9a208ce83ea4b2d90da7cca6ca098206" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9a208ce83ea4b2d90da7cca6ca098206" kindref="member">PCI_TOO_SMALL</ref>=SCARD_E_PCI_TOO_SMALL,</highlight></codeline>
+<codeline lineno="49" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca7fbf40f9c8dcb51b3485c05799bb7172" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca7fbf40f9c8dcb51b3485c05799bb7172" kindref="member">READER_UNSUPPORTED</ref>=SCARD_E_READER_UNSUPPORTED,</highlight></codeline>
+<codeline lineno="50" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cae5e54b48f671abae9041747a517f6762" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cae5e54b48f671abae9041747a517f6762" kindref="member">DUPLICATE_READER</ref>=SCARD_E_DUPLICATE_READER,</highlight></codeline>
+<codeline lineno="51" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca77e52d1be0c265c0f481b66e18d8605a" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca77e52d1be0c265c0f481b66e18d8605a" kindref="member">CARD_UNSUPPORTED</ref>=SCARD_E_CARD_UNSUPPORTED,</highlight></codeline>
+<codeline lineno="52" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0639e3a38310dd2f02e69909a22358f2" kindref="member">NO_SERVICE</ref>=SCARD_E_NO_SERVICE,</highlight></codeline>
+<codeline lineno="53" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa906b26380da28089fff9b1e4720e8e3" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa906b26380da28089fff9b1e4720e8e3" kindref="member">CARD_SERVICE_STOPPED</ref>=SCARD_E_SERVICE_STOPPED,</highlight></codeline>
+<codeline lineno="54" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca502793123c91271e7c5b5d1a8e6f1aad" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca502793123c91271e7c5b5d1a8e6f1aad" kindref="member">UNEXPECTED</ref>=SCARD_E_UNEXPECTED,</highlight></codeline>
+<codeline lineno="55" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeae64ba719e03bd8698ac9cf4c5b2ec8" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeae64ba719e03bd8698ac9cf4c5b2ec8" kindref="member">ICC_INSTALLATION</ref>=SCARD_E_ICC_INSTALLATION,</highlight></codeline>
+<codeline lineno="56" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca830384aa7376be7b617911d1413ef5cd" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca830384aa7376be7b617911d1413ef5cd" kindref="member">ICC_CREATEORDER</ref>=SCARD_E_ICC_CREATEORDER,</highlight></codeline>
+<codeline lineno="57" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca4a190fe86e7859b959d4a89af9490005" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca4a190fe86e7859b959d4a89af9490005" kindref="member">UNSUPPORTED_FEATURE</ref>=SCARD_E_UNSUPPORTED_FEATURE,</highlight></codeline>
+<codeline lineno="58" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca2399abad7ab899dcbbe321bfdf9af1b8" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca2399abad7ab899dcbbe321bfdf9af1b8" kindref="member">DIR_NOT_FOUND</ref>=SCARD_E_DIR_NOT_FOUND,</highlight></codeline>
+<codeline lineno="59" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa52e6a3c9e2b4372c547b8460901a7df" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa52e6a3c9e2b4372c547b8460901a7df" kindref="member">FILE_NOT_FOUND</ref>=SCARD_E_FILE_NOT_FOUND,</highlight></codeline>
+<codeline lineno="60" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeb066a993b46cb9a2fb97ef09b940a6f" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeb066a993b46cb9a2fb97ef09b940a6f" kindref="member">NO_DIR</ref>=SCARD_E_NO_DIR,</highlight></codeline>
+<codeline lineno="61" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cadd55c7752f4eb60bbedc19bc29d1f4cc" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cadd55c7752f4eb60bbedc19bc29d1f4cc" kindref="member">NO_FILE</ref>=SCARD_E_NO_FILE,</highlight></codeline>
+<codeline lineno="62" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca07fd9a4e75127bba11e44c6fc5c0f2a4" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca07fd9a4e75127bba11e44c6fc5c0f2a4" kindref="member">NO_ACCESS</ref>=SCARD_E_NO_ACCESS,</highlight></codeline>
+<codeline lineno="63" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeb0ade3cd231c3f8e969542237941245" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caeb0ade3cd231c3f8e969542237941245" kindref="member">WRITE_TOO_MANY</ref>=SCARD_E_WRITE_TOO_MANY,</highlight></codeline>
+<codeline lineno="64" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca2b096c1dbeb7f4f531e334b0eb250d72" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca2b096c1dbeb7f4f531e334b0eb250d72" kindref="member">BAD_SEEK</ref>=SCARD_E_BAD_SEEK,</highlight></codeline>
+<codeline lineno="65" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca58331cd98cdb9c3997e70bde20b10905" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca58331cd98cdb9c3997e70bde20b10905" kindref="member">INVALID_CHV</ref>=SCARD_E_INVALID_CHV,</highlight></codeline>
+<codeline lineno="66" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca627afc3b4d0ee9bd9f565ad9989b6b05" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca627afc3b4d0ee9bd9f565ad9989b6b05" kindref="member">UNKNOWN_RES_MNG</ref><sp/>=SCARD_E_UNKNOWN_RES_MNG,</highlight></codeline>
+<codeline lineno="67" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa38705ed580460fbfd96dcc7eddde931" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa38705ed580460fbfd96dcc7eddde931" kindref="member">NO_SUCH_CERTIFICATE</ref><sp/>=SCARD_E_NO_SUCH_CERTIFICATE,</highlight></codeline>
+<codeline lineno="68" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca79f49f01efb27139e54a09633dd2b772" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca79f49f01efb27139e54a09633dd2b772" kindref="member">CERTIFICATE_UNAVAILABLE</ref><sp/>=SCARD_E_CERTIFICATE_UNAVAILABLE,</highlight></codeline>
+<codeline lineno="69" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca1e94a10231f83f3a601853d4484cd7e7" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca1e94a10231f83f3a601853d4484cd7e7" kindref="member">NO_READERS_AVAILABLE</ref><sp/>=SCARD_E_NO_READERS_AVAILABLE,</highlight></codeline>
+<codeline lineno="70" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa1aa7a88d27fa13ad5c86c51507de065" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa1aa7a88d27fa13ad5c86c51507de065" kindref="member">COMM_DATA_LOST</ref><sp/>=SCARD_E_COMM_DATA_LOST,</highlight></codeline>
+<codeline lineno="71" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9511e56c26563c3667285ec02feca792" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca9511e56c26563c3667285ec02feca792" kindref="member">NO_KEY_CONTAINER</ref><sp/>=SCARD_E_NO_KEY_CONTAINER,</highlight></codeline>
+<codeline lineno="72" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca8913c1bdcd543fc03c3210a404ee626e" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca8913c1bdcd543fc03c3210a404ee626e" kindref="member">SERVER_TOO_BUSY</ref><sp/>=SCARD_E_SERVER_TOO_BUSY,</highlight></codeline>
+<codeline lineno="73" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca455c111302fc64da475bc7e2c75e613b" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca455c111302fc64da475bc7e2c75e613b" kindref="member">UNSUPPORTED_CARD</ref><sp/>=SCARD_W_UNSUPPORTED_CARD,</highlight></codeline>
+<codeline lineno="74" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca02da031f454ca97468f30317262274c2" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca02da031f454ca97468f30317262274c2" kindref="member">UNRESPONSIVE_CARD</ref><sp/>=SCARD_W_UNRESPONSIVE_CARD,</highlight></codeline>
+<codeline lineno="75" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca07cdd860a87f82e68d184652afd4a24c" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca07cdd860a87f82e68d184652afd4a24c" kindref="member">UNPOWERED_CARD</ref><sp/>=SCARD_W_UNPOWERED_CARD,</highlight></codeline>
+<codeline lineno="76" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca1cebac85b1b2f83bf397bb42483b86f9" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca1cebac85b1b2f83bf397bb42483b86f9" kindref="member">RESET_CARD</ref><sp/>=SCARD_W_RESET_CARD,</highlight></codeline>
+<codeline lineno="77" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca8063c2f3eab7c5e9c4a82c746c7a5266" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca8063c2f3eab7c5e9c4a82c746c7a5266" kindref="member">REMOVED_CARD</ref><sp/>=SCARD_W_REMOVED_CARD,</highlight></codeline>
+<codeline lineno="78" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cafe9cd6ac50cc284a292e4ad56fdfab9e" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cafe9cd6ac50cc284a292e4ad56fdfab9e" kindref="member">SECURITY_VIOLATION</ref><sp/>=SCARD_W_SECURITY_VIOLATION,</highlight></codeline>
+<codeline lineno="79" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cadb4f81c575aeb67bd115d82dd8797028" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cadb4f81c575aeb67bd115d82dd8797028" kindref="member">WRONG_CHV</ref><sp/>=SCARD_W_WRONG_CHV,</highlight></codeline>
+<codeline lineno="80" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cac4520fae3354d9c6e8657806db4654a1" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cac4520fae3354d9c6e8657806db4654a1" kindref="member">CHV_BLOCKED</ref><sp/>=SCARD_W_CHV_BLOCKED,</highlight></codeline>
+<codeline lineno="81" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca398612c904d55dfc441dd7ef7722b4b2" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca398612c904d55dfc441dd7ef7722b4b2" kindref="member">CARD_EOF</ref><sp/>=SCARD_W_EOF,</highlight></codeline>
+<codeline lineno="82" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa7ebc3195405f11112641954df0f722e" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3caa7ebc3195405f11112641954df0f722e" kindref="member">CANCELLED_BY_USER</ref><sp/>=SCARD_W_CANCELLED_BY_USER,</highlight></codeline>
+<codeline lineno="83" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cabe899b36b97c26345705ea5b6a89fb88" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3cabe899b36b97c26345705ea5b6a89fb88" kindref="member">CARD_NOT_AUTHENTICATED</ref><sp/>=SCARD_W_CARD_NOT_AUTHENTICATED,</highlight></codeline>
+<codeline lineno="84" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca6185e3f4e9375744a7e8ab1d5026810d" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca6185e3f4e9375744a7e8ab1d5026810d" kindref="member">CACHE_ITEM_NOT_FOUND</ref><sp/>=SCARD_W_CACHE_ITEM_NOT_FOUND,</highlight></codeline>
+<codeline lineno="85" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0d519f3b3cec5c5623db6237fbdfa217" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0d519f3b3cec5c5623db6237fbdfa217" kindref="member">CACHE_ITEM_STALE</ref><sp/>=SCARD_W_CACHE_ITEM_STALE,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>_MSC_VER&gt;1700</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/>PIN_CACHE_EXPIRED<sp/>=SCARD_E_PIN_CACHE_EXPIRED,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/>NO_PIN_CACHE<sp/>=SCARD_E_NO_PIN_CACHE,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/>READ_ONLY_CARD<sp/>=SCARD_E_READ_ONLY_CARD,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/>CACHE_ITEM_TOO_BIG<sp/>=SCARD_W_CACHE_ITEM_TOO_BIG,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Standard<sp/>codes<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0584d9afcd20e0f4a3c6c1a4a8ca6b1c" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca0584d9afcd20e0f4a3c6c1a4a8ca6b1c" kindref="member">SYSTEM_INVALID_HANDLE</ref><sp/>=<sp/>ERROR_INVALID_HANDLE,</highlight></codeline>
+<codeline lineno="94" refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca7ecb0e9f64a93b09aca329698677e78a" refkind="member"><highlight class="normal"><sp/><ref refid="namespace_smartcards_1a948c06ea0f97d0b56ecb5ab5149baa3ca7ecb0e9f64a93b09aca329698677e78a" kindref="member">SYSTEM_NOT_SUPPORTED</ref><sp/>=<sp/>ERROR_NOT_SUPPORTED</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight><highlight class="comment">//namespace<sp/>Smartcards</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="winscarderr.h"/>
+  </compounddef>
+</doxygen>

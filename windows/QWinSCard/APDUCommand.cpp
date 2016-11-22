@@ -1,4 +1,8 @@
-﻿#include <QTextStream>
+﻿//! \file APDUCommand.cpp
+//!
+//! \brief Implements the class APDUCommand represents the APDU command
+
+#include <QTextStream>
 #include <qalgorithms.h>
 
 #include "APDUCommand.h"
@@ -69,7 +73,6 @@ QString APDUCommand::toString() const
 
 QByteArray APDUCommand::createCommandVector(void) const
 {
- // Build the command APDU
  QByteArray commandVector;
  int dataSize = m_vData.size();
  commandVector.push_back(static_cast<char>(m_bClass));

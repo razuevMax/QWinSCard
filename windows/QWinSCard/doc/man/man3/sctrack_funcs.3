@@ -1,0 +1,106 @@
+.TH "sctrack_funcs" 3 "Tue Nov 22 2016" "QWinSCard" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sctrack_funcs \- Smart Card Tracking Functions
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::GetStatusChange\fP (DWORD dwTimeout, \fBReadersStates\fP &readerStates)"
+.br
+.RI "Blocks execution until the current availability of the cards in a specific set of readers changes\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::LocateCards\fP (const QStringList &cards, \fBReadersStates\fP &readerStates)"
+.br
+.RI "Searches the readers listed in the readerStates parameter for a card with an ATR string that matches one of the card names specified in cards, returning immediately with the result\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::LocateCardsByATR\fP (const QVector< QPair< QByteArray, QByteArray >> &atrMask, \fBReadersStates\fP &readerStates)"
+.br
+.RI "Searches the readers listed in the readerStates parameter for a card with a name that matches one of the card names contained in one of the pair ATR and ATRMask specified by the atrMask parameter\&. "
+.ti -1c
+.RI "virtual void \fBSmartcards::WinSCard::CardCancel\fP (void)"
+.br
+.RI "Terminates all outstanding actions within a specific resource manager context\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "void Smartcards::WinSCard::CardCancel (void)\fC [virtual]\fP"
+
+.PP
+Terminates all outstanding actions within a specific resource manager context\&. The only requests that you can cancel are those that require waiting for external action by the smart card or user\&.
+.PP
+Any such outstanding action requests will terminate with a status indication that the action was canceled\&.
+.PP
+This is especially useful to force outstanding GetStatusChange calls to terminate\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+
+.SS "void Smartcards::WinSCard::GetStatusChange (DWORD dwTimeout, \fBReadersStates\fP & readerStates)\fC [virtual]\fP"
+
+.PP
+Blocks execution until the current availability of the cards in a specific set of readers changes\&. The caller supplies a list of readers to be monitored by an \fBReadersStates\fP and the maximum amount of time (in milliseconds) that it is willing to wait for an action to occur on one of the listed readers\&.
+.PP
+Note that GetStatusChange uses the user-supplied value in the CurrentState members of the ReaderStates as the definition of the current state of the readers\&.
+.PP
+The function returns when there is a change in availability, having filled in the EventState members of ReaderStates appropriately\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdwTimeout\fP The maximum amount of time, in milliseconds, to wait for an action\&. A value of zero causes the function to return immediately\&. A value of INFINITE causes this function never to time out\&. 
+.br
+\fIreaderStates\fP Class contains states of the readers\&. 
+.RE
+.PP
+
+.SS "void Smartcards::WinSCard::LocateCards (const QStringList & cards, \fBReadersStates\fP & readerStates)\fC [virtual]\fP"
+
+.PP
+Searches the readers listed in the readerStates parameter for a card with an ATR string that matches one of the card names specified in cards, returning immediately with the result\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcards\fP The cards names list\&. 
+.br
+\fIreaderStates\fP Class contains states of the readers\&. 
+.RE
+.PP
+
+.SS "void Smartcards::WinSCard::LocateCardsByATR (const QVector< QPair< QByteArray, QByteArray >> & atrMask, \fBReadersStates\fP & readerStates)\fC [virtual]\fP"
+
+.PP
+Searches the readers listed in the readerStates parameter for a card with a name that matches one of the card names contained in one of the pair ATR and ATRMask specified by the atrMask parameter\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fI\fBSCardException\fP\fP Thrown when a Card error condition occurs and throwErrors is set true\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIatrMask\fP Vector of pairs - ATR and ATRMask\&. 
+.br
+\fIreaderStates\fP Class contains states of the readers\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for QWinSCard from the source code\&.

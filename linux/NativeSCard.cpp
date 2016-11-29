@@ -383,10 +383,6 @@ APDUResponse WinSCard::Transmit(APDUCommand ApduCmd)
    m_nProtocol=Reconnect(Shared, T0orT1, Leave);
    if(SUCCESS!=m_nLastError && m_bThrowingErrors)
     throw SCardException(m_nLastError);
-   //Только для Vigrid/Magistra
-   if(ApduCmd.getClass()==0x00 && ApduCmd.getIns()==0xC0)
-    return APDUResponse(0x62,0xa4);
-   //--------------------------
    RecvLength=RESPONSE_MAX_LENGTH;
    responseData.clear();
    m_nLastError= SCardTransmit(m_hCard, &ioRequest, reinterpret_cast<LPCBYTE>(commandData.constData()), static_cast<DWORD>(commandData.size()), nullptr, reinterpret_cast<LPBYTE>(responseData.data()), &RecvLength);

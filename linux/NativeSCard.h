@@ -359,6 +359,7 @@ namespace Smartcards
   //! \brief Get list reader groups.
   //! \exception SCardException Thrown when a Card error condition occurs and throwErrors is set true.
   //! \return A list of reader groups.
+  //! @}
   virtual QStringList ListReaderGroups(void);
   //! \defgroup scresmng_funcs Resource Manager Context Functions
   //! @{
@@ -483,6 +484,7 @@ namespace Smartcards
   //! \exception SCardException Thrown when a Card error condition occurs and throwErrors is set true.
   //! \param[in]          dwTimeout    The maximum amount of time, in milliseconds, to wait for an action. A value of zero causes the function to return immediately. A value of INFINITE causes this function never to time out.
   //! \param[in,out] readerStates Class contains states of the readers.
+  //! @}
   virtual void GetStatusChange(DWORD dwTimeout, ReadersStates& readerStates);
 private:
  SCARDCONTEXT	m_hContext{ 0 };//!< Stores a handle that identifies the resource manager context.

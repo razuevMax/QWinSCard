@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['ccid_5freader_5fempty_5fstate',['CCID_READER_EMPTY_STATE',['../class_smartcards_1_1_win_s_card.html#a6621ccf2278841285455315894a329fd',1,'Smartcards::WinSCard']]],
+  ['ccid_5freader_5fpresent_5fstate',['CCID_READER_PRESENT_STATE',['../class_smartcards_1_1_win_s_card.html#a89ba38a5b378d2a27b16970d2e707215',1,'Smartcards::WinSCard']]],
+  ['channel_5fid',['CHANNEL_ID',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a96b35cddcc5bdfea5efb3e732d68a7c9',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['characteristics',['CHARACTERISTICS',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a062db79636125a5951b13b6ca36c8d9a',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fbwt',['CURRENT_BWT',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a1e9d5a74f9b794c2317dc53e119b5f4f',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fclk',['CURRENT_CLK',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#ae24983f2aa2894b4f301ad84ca0f088c',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fcwt',['CURRENT_CWT',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#ab44d2f9fb413da53d63d7a90c921cfd6',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fd',['CURRENT_D',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a562689e04ab6b07dc96caceeec33c5e2',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5febc_5fencoding',['CURRENT_EBC_ENCODING',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#aaf4a1e0bfea6821af468257d8f4ca3bf',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5ff',['CURRENT_F',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#ad17ee71aaaf044d82614bab949c61f5d',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fifsc',['CURRENT_IFSC',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a9ec99962b0062a0fce474988f99d6608',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fifsd',['CURRENT_IFSD',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a2f1032c0974e46099832de6f43940212',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fio_5fstate',['CURRENT_IO_STATE',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a123ef730e9310ec3840598bd4bd2c202',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fn',['CURRENT_N',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#ab37d557126bb8dbd93dbc7d959f7c288',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fprotocol_5ftype',['CURRENT_PROTOCOL_TYPE',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#aa156eefb70bca3f86394e9ede61abe58',1,'Smartcards::SCARD_ATTR_VALUE']]],
+  ['current_5fw',['CURRENT_W',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a55e2fe84bf041249c8fe98bd86472439',1,'Smartcards::SCARD_ATTR_VALUE']]]
+];

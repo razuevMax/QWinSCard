@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['unaware',['Unaware',['../namespace_smartcards.html#a2d6b9642fb19c8a8d2162c5ecca82ca0afb5a20d4be6620cf5b3ec3b6b468ee17',1,'Smartcards']]],
+  ['undefined',['Undefined',['../namespace_smartcards.html#ac11dd7126337a5bd53934318fff2fd7aa21a09371000f5134f35719b4763a85fe',1,'Smartcards']]],
+  ['unexpected',['UNEXPECTED',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3ca502793123c91271e7c5b5d1a8e6f1aad',1,'Smartcards']]],
+  ['unknown',['Unknown',['../namespace_smartcards.html#a2d6b9642fb19c8a8d2162c5ecca82ca0a0f7dcf3b02d7aa9ea13a580a83ae1499',1,'Smartcards']]],
+  ['unknown_5fcard',['UNKNOWN_CARD',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3caff7cec8fb7de6b6fcd74df00de00eefa',1,'Smartcards']]],
+  ['unknown_5ferror',['UNKNOWN_ERROR',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3caf70fd9ab78ea3f9abf5a9a9ec76611db',1,'Smartcards']]],
+  ['unknown_5freader',['UNKNOWN_READER',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3ca974dde4af340ffca9a05ddb85bb3c7a3',1,'Smartcards']]],
+  ['unknown_5fres_5fmng',['UNKNOWN_RES_MNG',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3ca627afc3b4d0ee9bd9f565ad9989b6b05',1,'Smartcards']]],
+  ['unpower',['Unpower',['../namespace_smartcards.html#a3fe0be63db3b2bc984dda304809dbe6aa16145730e3e5a470221139bc02778d87',1,'Smartcards']]],
+  ['unpowered',['Unpowered',['../namespace_smartcards.html#a2d6b9642fb19c8a8d2162c5ecca82ca0a2500bda913c390d182bb7cbaccb45213',1,'Smartcards']]],
+  ['unpowered_5fcard',['UNPOWERED_CARD',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3ca07cdd860a87f82e68d184652afd4a24c',1,'Smartcards']]],
+  ['unresolved_5fexception',['UNRESOLVED_EXCEPTION',['../class_base_exceptions.html#a291bc9f98189b94aa1b49474c622e21baf75cfbb38113e56646c72d7c763ccc18',1,'BaseExceptions']]],
+  ['unresponsive_5fcard',['UNRESPONSIVE_CARD',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3ca02da031f454ca97468f30317262274c2',1,'Smartcards']]],
+  ['unsupported_5fcard',['UNSUPPORTED_CARD',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3ca455c111302fc64da475bc7e2c75e613b',1,'Smartcards']]],
+  ['unsupported_5ffeature',['UNSUPPORTED_FEATURE',['../namespace_smartcards.html#a948c06ea0f97d0b56ecb5ab5149baa3ca4a190fe86e7859b959d4a89af9490005',1,'Smartcards']]],
+  ['unvailable',['Unvailable',['../namespace_smartcards.html#a2d6b9642fb19c8a8d2162c5ecca82ca0a0395df0019fa28e05d71f48da4b64751',1,'Smartcards']]],
+  ['user',['User',['../namespace_smartcards.html#a58ca156488c781fb42e2cf0a8b6bc34ba159444b7dc2ab03137ed24f5050727b4',1,'Smartcards']]]
+];

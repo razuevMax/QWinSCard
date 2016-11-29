@@ -7,7 +7,6 @@
 
 //! \namespace Smartcards
 //! \brief Namespace of smartcard classes
-
 namespace Smartcards
 {
 //! \class APDUCommand
@@ -125,7 +124,7 @@ public:
  QByteArray getData(void) const { return m_vData; }
  /*!
  \brief Get size of data in the byte array
- \return Class(CLA) byte
+ \return size_t cast of data size
  */
  size_t getDataSize(void) const { return static_cast<size_t>(m_vData.size()); }
  /*!

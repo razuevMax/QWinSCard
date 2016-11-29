@@ -4,6 +4,9 @@
 #ifndef CARDEVENT_H
 #define CARDEVENT_H
 
+#include <QObject>
+#include <QMutex>
+#include <QHash>
 #include "NativeSCard.h"
 
 //! \namespace Smartcards
@@ -43,7 +46,7 @@ namespace Smartcards
  void stop(void);
   //! \fn CardEvent::run(void)
   //! \brief Run detection mechanism Qt-slot
-  void run(void);
+ void run(void);
  protected:
   //! \fn CardEvent::timerEvent( QTimerEvent* e )
   //! \brief Qt timer event function

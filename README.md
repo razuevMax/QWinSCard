@@ -37,7 +37,7 @@ Qt 5
 pcsc-lite library for linux/mac
 
 # Sample code
-
+'''c++
 class QT_token_check : public QMainWindow
 {
 Q_OBJECT
@@ -127,4 +127,4 @@ void QT_token_check::cardInserted(const QString& readerName, const QByteArray& A
  
 }
 
-```
+'''

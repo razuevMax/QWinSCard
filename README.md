@@ -5,6 +5,8 @@ This library is built on top of the WinSCard native library (Windows Smart Card 
 
 Documentation available on GitHub Pages: https://razuevmax.github.io/QWinSCard/
 
+An example of implementation is available here: https://github.com/razuevMax/APDUUtility
+
 A detailed description of all WinSCard API functions is available in the MSDN Library Documentation (https://msdn.microsoft.com/en-us/library/aa374731(v=VS.85).aspx).
 A detailed description of pcsc-lite library is available on site https://pcsclite.alioth.debian.org/
 

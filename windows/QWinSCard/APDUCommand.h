@@ -2,8 +2,8 @@
 //! \brief Header file for APDUCommand class.
 #ifndef APDUCOMMAND_H
 #define APDUCOMMAND_H
+#include <QtCore>
 #include <winscard.h>
-#include <QtCore/QByteArray>
 
 //! \namespace Smartcards
 //! \brief Namespace of smartcard classes
@@ -32,7 +32,7 @@ public:
 	 \param[in] vData Data to send to the card if any, empty if no data to send.  Default is empty.
 	 \param[in] nLe Number of data expected, 0 if none. Default value is 0.
  */
- APDUCommand(BYTE bCla, BYTE bIns, BYTE bP1 = 0, BYTE bP2 = 0, const QByteArray& vData = QByteArray(), BYTE nLe = 0);
+ APDUCommand(BYTE bCla=0, BYTE bIns=0, BYTE bP1 = 0, BYTE bP2 = 0, const QByteArray& vData = QByteArray(), BYTE nLe = 0);
  /*!
  \brief Constructor with initilizer list
  \param[in] bCla Class(CLA) byte of APDU command
@@ -43,6 +43,7 @@ public:
  \param[in] nLe Number of data expected, 0 if none. Default value is 0.
  */
  APDUCommand(BYTE bCla, BYTE bIns, BYTE bP1, BYTE bP2, std::initializer_list<char> ilist, BYTE nLe = 0);
+ APDUCommand(const Smartcards::APDUCommand &other);
  /*!
  \brief Destructor
  */
@@ -140,4 +141,7 @@ public:
 };
 
 }
+
+Q_DECLARE_METATYPE(Smartcards::APDUCommand)
+
 #endif

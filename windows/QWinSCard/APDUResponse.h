@@ -69,4 +69,6 @@ public:
 };
 
 }
+Q_DECLARE_METATYPE(Smartcards::APDUResponse)
+
 #endif

@@ -1,9 +1,8 @@
 //! \file NativeSCard.h
 //! \brief Header file for WinSCard class.
 //! \details File is contains source of class WinSCard must implement a winscard api.
-#include <QtCore/QVector>
 #include <winscard.h>
-
+#include <QtCore>
 #include "NativeSCard.h"
 #include "scardexception.h"
 

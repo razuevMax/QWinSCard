@@ -20,6 +20,11 @@ APDUCommand::APDUCommand(BYTE bCla, BYTE bIns, BYTE bP1, BYTE bP2, std::initiali
  qCopy(ilist.begin(), ilist.end(), m_vData.begin());
 }
 
+APDUCommand::APDUCommand(const Smartcards::APDUCommand& other)
+ : m_bClass(other.m_bClass), m_bIns(other.m_bIns), m_bP1(other.m_bP1), m_bP2(other.m_bP2), m_nLe(other.m_nLe), m_vData(other.m_vData)
+{
+}
+
 APDUCommand::~APDUCommand(void)
 {
 }

@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "NativeSCard.h"
 #include "scardexception.h"
-#include <winscard.h>
 
 using namespace Smartcards;
 
@@ -15,35 +14,35 @@ ReadersStates::ReadersStates(const std::initializer_list<std::pair<QString, DWOR
   add(item.first, item.second);
 }
 
-ReadersStates::ReadersStates(PSCARD_READERSTATEW pReaderStates, DWORD cbReaderStates)
+ReadersStates::ReadersStates(SCARD_READERSTATE* pReaderStates, DWORD cbReaderStates)
 {
  for (DWORD idx = 0; idx<cbReaderStates; idx++)
-  mReaderStates.insert(QString::fromWCharArray(pReaderStates[idx].szReader),pReaderStates[idx]);
+  mReaderStates.insert(QString(pReaderStates[idx].szReader),pReaderStates[idx]);
 }
 
-ReadersStates::ReadersStates(const QMap<QString, SCARD_READERSTATEW>& readerStates)
+ReadersStates::ReadersStates(const QMap<QString, SCARD_READERSTATE>& readerStates)
  :mReaderStates(readerStates)
 {
 }
 
-ReadersStates::ReadersStates(const QVector<SCARD_READERSTATEW>& readerStates)
+ReadersStates::ReadersStates(const QVector<SCARD_READERSTATE>& readerStates)
 {
  for (auto item : readerStates)
-  mReaderStates.insert(QString::fromWCharArray(item.szReader), item);
+  mReaderStates.insert(QString(item.szReader), item);
 }
 
 ReadersStates::~ReadersStates()
 {
- //Освобождаем память перед удалением map
+ //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ map
  for (auto& item : mReaderStates)
   delete[] item.szReader;
 }
 
-void ReadersStates::assign(const QVector<SCARD_READERSTATEW>& readerStates)
+void ReadersStates::assign(const QVector<SCARD_READERSTATE>& readerStates)
 {
  mReaderStates.clear();
  for (auto item : readerStates)
-  mReaderStates.insert(QString::fromWCharArray(item.szReader), item);
+  mReaderStates.insert(QString(item.szReader), item);
 }
 
 void ReadersStates::addNewReader()
@@ -122,11 +121,11 @@ bool ReadersStates::readerPresent(const QString& readerName) const
 
 void ReadersStates::addDefault(const QString& readerName)
 {
- SCARD_READERSTATEW stateData;
+ SCARD_READERSTATE stateData;
  stateData.pvUserData = nullptr;
  stateData.dwCurrentState = 0;
  stateData.dwEventState = 0;
- stateData.szReader = toWCharArray(readerName);
+ stateData.szReader = (char*)readerName.unicode();
  stateData.cbAtr = 0;
  mReaderStates.insert(readerName,stateData);
 }
@@ -147,11 +146,11 @@ void ReadersStates::add(const QString& readerName, DWORD currentState, LPVOID us
 
 void ReadersStates::add(const QString& readerName, DWORD currentState, const QByteArray& ATR, LPVOID userData/*=nullptr*/, DWORD eventState/* = 0*/)
 {
- SCARD_READERSTATEW stateData;
+ SCARD_READERSTATE stateData;
  stateData.pvUserData = userData;
  stateData.dwCurrentState = currentState;
  stateData.dwEventState = eventState;
- stateData.szReader = toWCharArray(readerName);
+ stateData.szReader = (char*)readerName.unicode();
  stateData.cbAtr = ATR.size();
  qCopy(ATR.begin(), ATR.end(), stateData.rgbAtr);
  mReaderStates.insert(readerName,stateData);
@@ -166,11 +165,33 @@ WinSCard::WinSCard(void)
 {
 }
 
+WinSCard::WinSCard(SCARDCONTEXT context, SCARDHANDLE handle) :
+ m_hContext(context), m_hCard(handle), mContextEstablished(true), mCardConnected(handle != 0)
+{
+}
+
 WinSCard::~WinSCard(void)
 {
- m_bThrowingErrors=false;
- if(mContextEstablished)
+ m_bThrowingErrors = false;
+ if (mContextEstablished && m_bReleaseContext)
   ReleaseContext();
+}
+
+void WinSCard::setContext(SCARDCONTEXT context)
+{
+ if (mContextEstablished && m_bReleaseContext)
+  ReleaseContext();
+ m_hContext = context;
+ mContextEstablished = true;
+ m_bReleaseContext = false;
+}
+
+void WinSCard::setHandle(SCARDHANDLE handle)
+{
+ if (mCardConnected)
+  Disconnect(Leave);
+ m_hCard = handle;
+ mCardConnected = true;
 }
 
 QByteArray WinSCard::GetCardStatus(DWORD& state, DWORD& protocol)
@@ -185,8 +206,8 @@ QByteArray WinSCard::GetCardStatus(DWORD& state, DWORD& protocol)
  }
  DWORD	pchReaders = AUTOALLOCATE;
  DWORD cByte = 32;
- wchar_t *szListReaders = nullptr;
- m_nLastError = SCardStatusW(m_hCard, szListReaders, &pchReaders, &state, &protocol, reinterpret_cast<LPBYTE>(atr.data()), &cByte);
+ char *szListReaders = nullptr;
+ m_nLastError = SCardStatus(m_hCard, szListReaders, &pchReaders, &state, &protocol, reinterpret_cast<LPBYTE>(atr.data()), &cByte);
  if (SUCCESS == m_nLastError)
  {
   atr.resize(static_cast<int>(cByte));
@@ -207,22 +228,22 @@ QStringList WinSCard::ListReaders(void)
    throw SCardException(m_nLastError);
   return readers;
  }
- QVector<wchar_t> readersV;
+ QVector<char> readersV;
  DWORD	pchReaders = 0;
- wchar_t *pReader;
- m_nLastError=SCardListReadersW(m_hContext, nullptr, nullptr,&pchReaders);
+ char *pReader;
+ m_nLastError=SCardListReaders(m_hContext, nullptr, nullptr,&pchReaders);
  if(SUCCESS==m_nLastError)
  {
   readersV.resize(static_cast<int>(pchReaders));
-  m_nLastError=SCardListReadersW(m_hContext, nullptr, readersV.data(),&pchReaders);
+  m_nLastError=SCardListReaders(m_hContext, nullptr, readersV.data(),&pchReaders);
   if(SUCCESS==m_nLastError)
    {
     pReader=readersV.data();
     while('\0'!=*pReader)
      {
-      readers.append(QString::fromWCharArray(pReader));
+      readers.append(QString(pReader));
       // Advance to the next value.
-      pReader = pReader + wcslen(pReader) + 1;
+      pReader = pReader + strlen(pReader) + 1;
      }
    }
  }
@@ -241,21 +262,21 @@ QStringList WinSCard::ListReaderGroups(void)
    throw SCardException(m_nLastError);
   return result;
  }
- QVector<wchar_t> readerGroupsV;
+ QVector<char> readerGroupsV;
  DWORD	pchreaderGroups = 0;
- wchar_t *preaderGroup;
- m_nLastError = SCardListReaderGroupsW(m_hContext, nullptr, &pchreaderGroups);
+ char *preaderGroup;
+ m_nLastError = SCardListReaderGroups(m_hContext, nullptr, &pchreaderGroups);
  if (SUCCESS == m_nLastError)
  {
   readerGroupsV.resize(static_cast<size_t>(pchreaderGroups));
-  m_nLastError = SCardListReaderGroupsW(m_hContext, readerGroupsV.data(), &pchreaderGroups);
+  m_nLastError = SCardListReaderGroups(m_hContext, readerGroupsV.data(), &pchreaderGroups);
   if (SUCCESS == m_nLastError)
   {
    preaderGroup = readerGroupsV.data();
    while ('\0' != *preaderGroup)
    {
-    result.append(QString::fromWCharArray(preaderGroup));
-    preaderGroup = preaderGroup + wcslen(preaderGroup) + 1;
+    result.append(QString(preaderGroup));
+    preaderGroup = preaderGroup + strlen(preaderGroup) + 1;
    }
   }
  }
@@ -308,7 +329,7 @@ long WinSCard::Connect(const QString& Reader, SHARE ShareMode, PROTOCOL Preferre
  }
  if (mCardConnected)
   Disconnect(Leave);
- m_nLastError=SCardConnectW(m_hContext, reinterpret_cast<LPCWSTR>(Reader.unicode()),ShareMode,PreferredProtocols,&m_hCard,&m_nProtocol);
+ m_nLastError=SCardConnect(m_hContext, reinterpret_cast<LPCSTR>(Reader.unicode()),ShareMode,PreferredProtocols,&m_hCard,&m_nProtocol);
  if(RESET_CARD==m_nLastError)
   {
    m_nLastError=SCardReconnect(m_hCard,ShareMode,PreferredProtocols,Smartcards::Leave,&m_nProtocol);
@@ -431,7 +452,7 @@ void WinSCard::GetStatusChange(DWORD dwTimeout, ReadersStates& readerStates)
    throw SCardException(m_nLastError);
  }
  auto readerStatesData = readerStates.mReaderStates.values().toVector();
- m_nLastError = SCardGetStatusChangeW(m_hContext, dwTimeout, readerStatesData.data(), readerStatesData.size());
+ m_nLastError = SCardGetStatusChange(m_hContext, dwTimeout, readerStatesData.data(), readerStatesData.size());
  if (SUCCESS != m_nLastError && m_bThrowingErrors)
   throw SCardException(m_nLastError);
  readerStates.assign(readerStatesData);

@@ -1,23 +1,23 @@
 #include "stdafx.h"
 #include "baseexceptions.h"
 
-BaseExceptions::BaseExceptions()
+BaseExceptions::BaseExceptions() noexcept
  :m_errorCode(UNRESOLVED_EXCEPTION)
 {
 
 }
 
-BaseExceptions::BaseExceptions( const char * const & _What)
+BaseExceptions::BaseExceptions( const char * const & _What) noexcept
  :m_errorString(_What), m_errorCode(UNRESOLVED_EXCEPTION)
 {
 }
 
-BaseExceptions::BaseExceptions( const BaseExceptions& _That)
+BaseExceptions::BaseExceptions( const BaseExceptions& _That) noexcept
 {
  *this = _That;
 }
 
-BaseExceptions::BaseExceptions( const QString& _What)
+BaseExceptions::BaseExceptions( const QString& _What) noexcept
  :m_errorString(_What), m_errorCode(UNRESOLVED_EXCEPTION)
 {
 
@@ -35,7 +35,7 @@ BaseExceptions& BaseExceptions::operator=( const BaseExceptions& _That)
  return *this;
 }
 
-const char* BaseExceptions::what() const
+const char* BaseExceptions::what() const noexcept
 {
  return m_errorString.isEmpty() ? "Unknown exception" : m_errorString.toLocal8Bit().constData();
 }

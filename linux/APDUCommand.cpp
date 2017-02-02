@@ -8,7 +8,7 @@ APDUCommand::APDUCommand(BYTE bCla, BYTE bIns, BYTE bP1, BYTE bP2, const QByteAr
 {
 }
 
-APDUCommand::APDUCommand(BYTE bCla, BYTE bIns, BYTE bP1, BYTE bP2, std::initializer_list<char> ilist, BYTE nLe = 0)
+APDUCommand::APDUCommand(BYTE bCla, BYTE bIns, BYTE bP1, BYTE bP2, std::initializer_list<char> ilist, BYTE nLe)
  : m_bClass(bCla), m_bIns(bIns), m_bP1(bP1), m_bP2(bP2), m_nLe(nLe)
 {
  qCopy(ilist.begin(), ilist.end(), m_vData.begin());

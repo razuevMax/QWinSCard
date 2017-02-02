@@ -3,7 +3,7 @@
 //! \details File is contains class BaseExceptions must implement a std::exception in Qt-style class
 #ifndef BASEEXCEPTIONS_H
 #define BASEEXCEPTIONS_H
-#include <stdexcpt.h>
+#include <exception>
 
 //! \brief This class must implement a std::exception in Qt-style class
 class BaseExceptions: public std::exception

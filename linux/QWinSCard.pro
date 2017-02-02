@@ -8,6 +8,7 @@ QT       -= gui
 
 TARGET = QWinSCard
 TEMPLATE = lib
+CONFIG += staticlib
 
 DEFINES += QWINSCARD_LIBRARY
 
@@ -26,7 +27,8 @@ HEADERS +=\
     cardevent.h \
     NativeSCard.h \
     scardexception.h \
-    winscarderr.h
+    winscarderr.h \
+    stdafx.h
 
 unix {
     target.path = /usr/lib

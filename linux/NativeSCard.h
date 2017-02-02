@@ -8,6 +8,7 @@
 #include "APDUCommand.h"
 #include "WinSCardErr.h"
 #include "pcsc-lite/pcsclite.h"
+#include "pcsc-lite/winscard.h"
 
 //! \namespace Smartcards
 //! \brief Namespace of smartcard classes
@@ -208,22 +209,22 @@ namespace Smartcards
   //! \brief Constructor from array of Winscard structures SCARD_READERSTATE.
   //! \param[in] pReaderStates  Pointer to array of states of the readers.
   //! \param[in] cbReaderStates Size array of states of the readers.
-  ReadersStates(PSCARD_READERSTATEW pReaderStates, DWORD cbReaderStates);
+  ReadersStates(SCARD_READERSTATE* pReaderStates, DWORD cbReaderStates);
   //! \fn ReadersStates::ReadersStates(const QMap<QString, SCARD_READERSTATEW>& readerStates)
   //! \brief Constructor from QMap contains pairs {"ReaderName", SCARD_READERSTATE}.
   //! \param[in] readerStates Map of states of the readers by reader name.
-  ReadersStates(const QMap<QString, SCARD_READERSTATEW>& readerStates);
+  ReadersStates(const QMap<QString, SCARD_READERSTATE>& readerStates);
   //! \fn ReadersStates::ReadersStates(const QVector<SCARD_READERSTATEW>& readerStates)
   //! \brief Constructor from QVector contains Winscard structures SCARD_READERSTATE.
   //! \param[in] readerStates Vector of Winscard structures SCARD_READERSTATE.
-  ReadersStates(const QVector<SCARD_READERSTATEW>& readerStates);
+  ReadersStates(const QVector<SCARD_READERSTATE>& readerStates);
   //! \fn ReadersStates::~ReadersStates()
   //! \brief Destructor.
   ~ReadersStates(void);
   //! \fn void ReadersStates::assign(const QVector<SCARD_READERSTATEW>& readerStates)
   //! \brief Assigns the given reader states.
   //! \param[in] readerStates Vector of Winscard structures SCARD_READERSTATE.
-  void assign(const QVector<SCARD_READERSTATEW>& readerStates);
+  void assign(const QVector<SCARD_READERSTATE>& readerStates);
   //! \fn void ReadersStates::addNewReader()
   //! \brief Adds default winscard reader name for search new reader.
   void addNewReader(void);
@@ -306,7 +307,7 @@ namespace Smartcards
   //! \param[in] str The Qt-string.
   //! \return Str as a wchar_t*.
   static wchar_t* toWCharArray(const QString& str);
-  QMap<QString, SCARD_READERSTATEW> mReaderStates;//!< QMap contains reader states by reader name
+  QMap<QString, SCARD_READERSTATE> mReaderStates;//!< QMap contains reader states by reader name
  };
 
  //! This class must implement a winscard api.
@@ -321,17 +322,28 @@ namespace Smartcards
   //! \fn WinSCard::WinSCard(void)
   //! \brief Default constructor. 
   WinSCard(void);
-  //! \fn WinSCard::~WinSCard(void)
-  //! \brief Destructor.
-  virtual ~WinSCard(void);
-  //! \fn SCARDCONTEXT context(void) const
-  //! \brief Get current resource manager context.
-  //! \return A current resource manager context.
-  SCARDCONTEXT context(void) const { return m_hContext; }
-  //! \fn  SCARDHANDLE handle(void) const
-  //! \brief Get current card handle.
-  //! \return A current card handle.
-  SCARDHANDLE handle(void) const { return m_hCard; }
+  //! \fn WinSCard::WinSCard(SCARDCONTEXT context, SCARDHANDLE handle)
+    //! \brief Constructor with external handles.
+    WinSCard(SCARDCONTEXT context, SCARDHANDLE handle = 0);
+    //! \fn WinSCard::~WinSCard(void)
+    //! \brief Destructor.
+    virtual ~WinSCard(void);
+    //! \fn SCARDCONTEXT context(void) const
+    //! \brief Get current resource manager context.
+    //! \return A current resource manager context.
+    SCARDCONTEXT context(void) const { return m_hContext; }
+    //! \fn  SCARDHANDLE handle(void) const
+    //! \brief Get current card handle.
+    //! \return A current card handle.
+    SCARDHANDLE handle(void) const { return m_hCard; }
+    //! \fn void setContext(SCARDCONTEXT context)
+    //! \brief Set new resource manager context. Release current context.
+    //! \param[in] context A new resource manager context.
+    void setContext(SCARDCONTEXT context);
+    //! \fn  void setHandle(SCARDHANDLE handle)
+    //! \brief Set new card handle. Disconnect current handle.
+    //! \param[in] handle A new card handle.
+    void setHandle(SCARDHANDLE handle);
   //! \fn throwErrors(bool isThrowingErrors)
   //! \brief Set the flag of throwing exception on errors.
   //! \param[in] isThrowingErrors If true - throwing exceptions on errros, else stores errors in lastError.
@@ -496,6 +508,7 @@ private:
  APDUCommand mLastCommand{ 0,0,0,0 };//!< Stores last transmit command
  APDUResponse mLastResponse{ 0,0 };//!< Stores last response from transit command
  bool m_bThrowingErrors{ true };//!< Flag of control throwing exceptions
+ bool m_bReleaseContext{ true };
 };
 
 }

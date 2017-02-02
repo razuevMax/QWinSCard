@@ -22,5 +22,6 @@ var files =
     [ "scardexception.h", "scardexception_8h.html", [
       [ "SCardException", "class_s_card_exception.html", "class_s_card_exception" ]
     ] ],
+    [ "stdafx.h", "stdafx_8h.html", null ],
     [ "winscarderr.h", "winscarderr_8h.html", "winscarderr_8h" ]
 ];

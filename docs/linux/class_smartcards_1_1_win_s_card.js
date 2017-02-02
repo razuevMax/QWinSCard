@@ -1,6 +1,7 @@
 var class_smartcards_1_1_win_s_card =
 [
     [ "WinSCard", "class_smartcards_1_1_win_s_card.html#a9fd7130808a88297531533da3ee945af", null ],
+    [ "WinSCard", "class_smartcards_1_1_win_s_card.html#a62ea37466c9392c7d6ab1e635985ca74", null ],
     [ "~WinSCard", "class_smartcards_1_1_win_s_card.html#aefe248f13043030e959599763ee722a6", null ],
     [ "BeginTransaction", "group__scredacs__funcs.html#gac0f9a5c3b9517c82b63c8872f4868ba3", null ],
     [ "CardControl", "group__scdacs__funcs.html#ga16dd963ea05534b92bdbfb97c0a6eb3b", null ],
@@ -26,6 +27,8 @@ var class_smartcards_1_1_win_s_card =
     [ "Reconnect", "group__scredacs__funcs.html#gab1c3fb8473dd41399a5a3743cd0fcc5f", null ],
     [ "ReleaseContext", "group__scresmng__funcs.html#gae385b71f00634fe32921eb64af1b7b23", null ],
     [ "SetAttribute", "group__scdacs__funcs.html#ga442c84421b38f4b3dab7b85f9be8cc5a", null ],
+    [ "setContext", "class_smartcards_1_1_win_s_card.html#a98da9f1a0e7361f684ee3902cf910add", null ],
+    [ "setHandle", "class_smartcards_1_1_win_s_card.html#ac45560786d6349b3065df675d01c19ad", null ],
     [ "throwErrors", "class_smartcards_1_1_win_s_card.html#a21c95690ffc55975119c3e415777284c", null ],
     [ "Transmit", "group__scredacs__funcs.html#ga93b60c5c1df8550e6772b53c2ab0e7af", null ]
 ];

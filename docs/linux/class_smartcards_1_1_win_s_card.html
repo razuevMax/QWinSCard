@@ -99,6 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9fd7130808a88297531533da3ee945af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smartcards_1_1_win_s_card.html#a9fd7130808a88297531533da3ee945af">WinSCard</a> (void)</td></tr>
 <tr class="memdesc:a9fd7130808a88297531533da3ee945af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a9fd7130808a88297531533da3ee945af">More...</a><br /></td></tr>
 <tr class="separator:a9fd7130808a88297531533da3ee945af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ea37466c9392c7d6ab1e635985ca74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smartcards_1_1_win_s_card.html#a62ea37466c9392c7d6ab1e635985ca74">WinSCard</a> (SCARDCONTEXT <a class="el" href="class_smartcards_1_1_win_s_card.html#a6039ae592ce26bf7c4041f06a3c5550e">context</a>, SCARDHANDLE <a class="el" href="class_smartcards_1_1_win_s_card.html#acced1451b7c08146d626af62281bdc2e">handle</a>=0)</td></tr>
+<tr class="memdesc:a62ea37466c9392c7d6ab1e635985ca74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with external handles.  <a href="#a62ea37466c9392c7d6ab1e635985ca74">More...</a><br /></td></tr>
+<tr class="separator:a62ea37466c9392c7d6ab1e635985ca74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefe248f13043030e959599763ee722a6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smartcards_1_1_win_s_card.html#aefe248f13043030e959599763ee722a6">~WinSCard</a> (void)</td></tr>
 <tr class="memdesc:aefe248f13043030e959599763ee722a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#aefe248f13043030e959599763ee722a6">More...</a><br /></td></tr>
 <tr class="separator:aefe248f13043030e959599763ee722a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +111,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acced1451b7c08146d626af62281bdc2e"><td class="memItemLeft" align="right" valign="top">SCARDHANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smartcards_1_1_win_s_card.html#acced1451b7c08146d626af62281bdc2e">handle</a> (void) const</td></tr>
 <tr class="memdesc:acced1451b7c08146d626af62281bdc2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current card handle.  <a href="#acced1451b7c08146d626af62281bdc2e">More...</a><br /></td></tr>
 <tr class="separator:acced1451b7c08146d626af62281bdc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98da9f1a0e7361f684ee3902cf910add"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smartcards_1_1_win_s_card.html#a98da9f1a0e7361f684ee3902cf910add">setContext</a> (SCARDCONTEXT <a class="el" href="class_smartcards_1_1_win_s_card.html#a6039ae592ce26bf7c4041f06a3c5550e">context</a>)</td></tr>
+<tr class="memdesc:a98da9f1a0e7361f684ee3902cf910add"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set new resource manager context. Release current context.  <a href="#a98da9f1a0e7361f684ee3902cf910add">More...</a><br /></td></tr>
+<tr class="separator:a98da9f1a0e7361f684ee3902cf910add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45560786d6349b3065df675d01c19ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smartcards_1_1_win_s_card.html#ac45560786d6349b3065df675d01c19ad">setHandle</a> (SCARDHANDLE <a class="el" href="class_smartcards_1_1_win_s_card.html#acced1451b7c08146d626af62281bdc2e">handle</a>)</td></tr>
+<tr class="memdesc:ac45560786d6349b3065df675d01c19ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set new card handle. Disconnect current handle.  <a href="#ac45560786d6349b3065df675d01c19ad">More...</a><br /></td></tr>
+<tr class="separator:ac45560786d6349b3065df675d01c19ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21c95690ffc55975119c3e415777284c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_smartcards_1_1_win_s_card.html#a21c95690ffc55975119c3e415777284c">throwErrors</a> (bool <a class="el" href="class_smartcards_1_1_win_s_card.html#a0c7c232e82e5c50fcccf15eb1073d04d">isThrowingErrors</a>)</td></tr>
 <tr class="memdesc:a21c95690ffc55975119c3e415777284c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the flag of throwing exception on errors.  <a href="#a21c95690ffc55975119c3e415777284c">More...</a><br /></td></tr>
 <tr class="separator:a21c95690ffc55975119c3e415777284c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,7 +211,7 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><p>This class must implement a winscard api. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9fd7130808a88297531533da3ee945af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fd7130808a88297531533da3ee945af">&sect;&nbsp;</a></span>WinSCard()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fd7130808a88297531533da3ee945af">&sect;&nbsp;</a></span>WinSCard() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,6 +227,36 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
+
+</div>
+</div>
+<a id="a62ea37466c9392c7d6ab1e635985ca74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62ea37466c9392c7d6ab1e635985ca74">&sect;&nbsp;</a></span>WinSCard() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WinSCard::WinSCard </td>
+          <td>(</td>
+          <td class="paramtype">SCARDCONTEXT&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SCARDHANDLE&#160;</td>
+          <td class="paramname"><em>handle</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor with external handles. </p>
 
 </div>
 </div>
@@ -392,6 +431,58 @@ Static Public Attributes</h2></td></tr>
 
 <p>Get last error code. </p>
 <dl class="section return"><dt>Returns</dt><dd>Last error code. SUCCESS if no error. </dd></dl>
+
+</div>
+</div>
+<a id="a98da9f1a0e7361f684ee3902cf910add"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98da9f1a0e7361f684ee3902cf910add">&sect;&nbsp;</a></span>setContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Smartcards::WinSCard::setContext </td>
+          <td>(</td>
+          <td class="paramtype">SCARDCONTEXT&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set new resource manager context. Release current context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">context</td><td>A new resource manager context. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac45560786d6349b3065df675d01c19ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45560786d6349b3065df675d01c19ad">&sect;&nbsp;</a></span>setHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Smartcards::WinSCard::setHandle </td>
+          <td>(</td>
+          <td class="paramtype">SCARDHANDLE&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set new card handle. Disconnect current handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>A new card handle. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

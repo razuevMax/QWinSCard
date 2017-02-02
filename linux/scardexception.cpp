@@ -81,6 +81,6 @@ QString SCardException::getMessage(long code)
 {
  if (errorMessages.contains(code))
   return errorMessages.value(code);
- std::string errMsg(pcsc_stringify_error(code));
+ QString errMsg(pcsc_stringify_error(code));
  return errMsg;
 }

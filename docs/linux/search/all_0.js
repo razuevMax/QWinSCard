@@ -12,7 +12,7 @@ var searchData=
   ['apduresponse',['APDUResponse',['../class_smartcards_1_1_a_p_d_u_response.html#aae53df1c480c57c4cd57f7d4e0c55736',1,'Smartcards::APDUResponse::APDUResponse(const QByteArray &amp;vData=QByteArray())'],['../class_smartcards_1_1_a_p_d_u_response.html#a3eaea96da4c51e754017ba7627d80665',1,'Smartcards::APDUResponse::APDUResponse(const APDUResponse &amp;response)'],['../class_smartcards_1_1_a_p_d_u_response.html#a2288f7962057d42484413e883e238e7c',1,'Smartcards::APDUResponse::APDUResponse(BYTE sw1, BYTE sw2)']]],
   ['apduresponse_2ecpp',['APDUResponse.cpp',['../_a_p_d_u_response_8cpp.html',1,'']]],
   ['apduresponse_2eh',['APDUResponse.h',['../_a_p_d_u_response_8h.html',1,'']]],
-  ['assign',['assign',['../class_smartcards_1_1_readers_states.html#a5d74d9ffa87a0cd10dd28578f0d21af9',1,'Smartcards::ReadersStates']]],
+  ['assign',['assign',['../class_smartcards_1_1_readers_states.html#a55d01110a0eca7ce4ebec912576769ff',1,'Smartcards::ReadersStates']]],
   ['atr',['ATR',['../class_smartcards_1_1_readers_states.html#a665c077e0a8cc7b107f38e9677306d91',1,'Smartcards::ReadersStates']]],
   ['atr_5flength',['ATR_LENGTH',['../class_smartcards_1_1_win_s_card.html#aba8b91adf974f3fbc7671bc227117a5d',1,'Smartcards::WinSCard']]],
   ['atr_5fstring',['ATR_STRING',['../class_smartcards_1_1_s_c_a_r_d___a_t_t_r___v_a_l_u_e.html#a272d8e5a0527b6fe32ff8c09ac27d0dd',1,'Smartcards::SCARD_ATTR_VALUE']]],
